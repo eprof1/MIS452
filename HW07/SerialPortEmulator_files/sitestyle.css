@@ -1,0 +1,88 @@
+img {border: none;}
+
+/* Masthead Styles -------------------------------------------------------------*/
+
+#headerTop {background-image: url(images/masthead/BackgroundSlice.jpg);}
+
+#headerLinks {float: right; margin: 25px 0px 0px 0px;}
+
+#headerLinks a {font-family: "Lucida Grande", Geneva, Helvetica, Arial, sans-serif; font-size: 12px; color: #FFF; text-align: center; text-decoration: none; padding: 0px 5px 0px 15px; }
+
+#headerBottom {background-image: url(images/masthead/BackgroundSlice_2.jpg); padding: 0px;}
+
+.advancedSearch {font-family: Arial, sans-serif; font-size: 11px;}
+
+#form1 {margin-bottom: 0; padding-bottom: 0;}
+
+#searchBar {font-family: "Lucida Sans Unicode", "Lucida Grande", Arial, Helvetica, sans-serif; font-size: 12px; color: #666;}
+
+/*Styles for the Navigation ----------------------------------------------------*/
+
+
+#navigation {width: 150px;}
+
+html>body #navigation {width: 145px; border-right: 5px solid #EEE;}
+
+#navTop, #navBottom {background-color: #014073;}
+ 
+#allNav {border: none;}
+
+
+#navigation ul {list-style: none; margin: 0px; padding: 0;}
+
+#navigation ul ul, #navigation ul ul ul, #navigation ul ul ul ul {display: none;}
+
+#mavigation ul ul ul {padding-left: 6px;}
+
+#navigation ul ul ul ul {padding-left: 6px; background-color: #EEE;} 
+
+#navigation ul a {display: block; font-family: "Lucida Grande", Geneva, Helvetica, Arial, Sans-Serif; padding: 7px 0px 6px 5px; font-weight: bold; color: #036; text-decoration: none;  height: 100%; font-size: 12px;  background-color: #DDD; border-top: 1px solid #EEE; border-bottom: 1px solid #CCC; margin: 0;}
+html>body #navigation ul a {width: 100%;}
+
+#navigation ul ul a {font-family: "Lucida Grande", Geneva, Helvetica, Arial, Sans-Serif; font-size: 10px; font-weight: bold; color: #555; background-color: #EEE; border-top: 1px solid #FFF; border-bottom: 1px solid #CCC; padding: 4px 0px 3px 5px; margin: 0px 0px -1px 0px;}
+html>body #navigation ul ul a {margin: 0;}
+
+#navigation ul ul ul a {font-family: "Lucida Grande", "Lucida Sans Unicode", Geneva, Helvetica, Arial, Sans-Serif; font-size: 10px; color: #333; font-weight: normal; background-color: #DDD; border: 0; margin: 0px 0px -1px 0px; padding: 3px 0px 2px 12px;}
+html>body #navigation ul ul ul a {width: 138px; margin: 0;}
+
+#navigation ul ul ul ul a {font-size: 10px; background-color: #EEE; border-bottom: 1px solid #DDD; border-top: 0px solid #EEE; margin: 0;}
+
+#navigation ul ul ul ul ul a {padding-left: 14px;}
+
+html>body #navigation ul ul ul ul a {margin: 0; width: 132px;}
+html>body #navigation ul ul ul ul ul a {margin: 0; width: 124px;}
+html>body #navigation ul ul ul ul ul ul a {margin: 0; width: 118px;}
+html>body #navigation ul ul ul ul ul ul ul a {margin: 0; width: 112px;}
+
+
+#navigation ul a:hover {background-color: #CCC; border-top: 1px solid #CCC;}
+#navigation ul ul a:hover {background-color: #CCC;}
+#navigation ul ul ul a:hover {background-color: #CCC; border-top: 0px;}
+#navigation ul ul ul ul a:hover {background-color: #DDD;}
+
+#navArrowbyProduct, #navArrowbyUse, #navArrowshopInMaine, #navArrowmyAccount, #navArrowshoppingHelp, #navArrowproductHelp, #navArrowpolicies, #navArrowtheCompany, #navArrowservicesPrograms  
+{padding: 0; margin: 0px 2px 0px -3px;}
+
+/* Matching Delorme parent site Styles */
+html {margin: 0px; padding: 0px; height: 100%;}
+body {margin: 0px; height: 100%; font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, sans-serif; font-size: 13px;}
+.pageTitle {font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #F60; padding: 10px 0px; font-weight: bold;}
+
+/*Tech Support Site styles*/
+#supportSpace {margin:5px 0}
+.bodyCopy {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px; line-height: normal; color: 444444}
+.standardBold {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; line-height: 14px; color: #000000}
+.stanBoldRed {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; color: #990000; line-height: 14px}
+.xtraSmallPlain {  font-family: Arial, Helvetica, sans-serif; font-size: 10px; line-height: 12px}
+.fancyTitle {  font-family: Georgia, "Times New Roman", Times, serif; font-size: 14px; font-weight: bold; color: #003366; line-height: 16px; text-decoration: none}
+.stanBoldBlue {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; color: #003366; line-height: 14px}
+.stanColored {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px; line-height: 14px; color: #006699}
+.bodyCopyItalic { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px; line-height: 14px; font-style: italic; color: #444444}
+a:hover {  color: #0066CC}
+a {  text-decoration: underline}
+.Dropdown {  font-family: Arial, Helvetica, sans-serif; font-size: 10px; line-height: 12px}
+.bodyCopyLink {  font-family: Verdana, Arial, Helvetica, sans-serif; color: #003366; font-size: 11px; line-height: 14px}
+.stanBoldWhite {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; color: #FFFFFF; line-height: 14px}
+.regMark {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 9px; text-decoration: none; color: #444444}
+.bodyCopyLinkNoUnder { font-family: Verdana, Arial, Helvetica, sans-serif; color: #003366; font-size: 11px; line-height: 14px ; text-decoration: none}
+.stanBoldBlueNoUnder { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; color: #003366; line-height: 14px ; text-decoration: none}

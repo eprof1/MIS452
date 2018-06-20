@@ -1,0 +1,730 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>DeLorme Serial Emulation Driver for Earthmate® GPS Receivers</title>
+
+
+	
+		
+		<meta name="GENERATOR" content="Microsoft Visual Studio .NET 7.1">
+		<meta name="CODE_LANGUAGE" content="Visual Basic .NET 7.1">
+		<meta name="vs_defaultClientScript" content="JavaScript">
+		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+		<link href="SerialPortEmulator_files/sitestyle.css" rel="stylesheet">
+		<script language="JavaScript" type="text/javascript" src="SerialPortEmulator_files/productnav_istore.js"></script><!-- START OF SDC Advanced Tracking Code --><!-- Copyright (c) 1996-2005 WebTrends Inc.  All rights reserved. --><!-- V8.0 --><!-- $DateTime: 2006/04/07 16:45:14 $ -->
+		
+
+
+
+<script type="text/javascript"><!--
+var gService = false;
+var gTimeZone = -5;
+// Code section for Enable First-Party Cookie Tracking
+function dcsCookie(){
+	if (typeof(dcsOther)=="function"){
+		dcsOther();
+	}
+	else if (typeof(dcsPlugin)=="function"){
+		dcsPlugin();
+	}
+	else if (typeof(dcsFPC)=="function"){
+		dcsFPC(gTimeZone);
+	}
+}
+function dcsGetCookie(name){
+	var pos=document.cookie.indexOf(name+"=");
+	if (pos!=-1){
+		var start=pos+name.length+1;
+		var end=document.cookie.indexOf(";",start);
+		if (end==-1){
+			end=document.cookie.length;
+		}
+		return unescape(document.cookie.substring(start,end));
+	}
+	return null;
+}
+function dcsGetCrumb(name,crumb){
+	var aCookie=dcsGetCookie(name).split(":");
+	for (var i=0;i<aCookie.length;i++){
+		var aCrumb=aCookie[i].split("=");
+		if (crumb==aCrumb[0]){
+			return aCrumb[1];
+		}
+	}
+	return null;
+}
+function dcsGetIdCrumb(name,crumb){
+	var cookie=dcsGetCookie(name);
+	var id=cookie.substring(0,cookie.indexOf(":lv="));
+	var aCrumb=id.split("=");
+	for (var i=0;i<aCrumb.length;i++){
+		if (crumb==aCrumb[0]){
+			return aCrumb[1];
+		}
+	}
+	return null;
+}
+function dcsFPC(offset){
+	if (typeof(offset)=="undefined"){
+		return;
+	}
+	if (document.cookie.indexOf("WTLOPTOUT=")!=-1){
+		return;
+	}
+	var name=gFpc;
+	var dCur=new Date();
+	var adj=(dCur.getTimezoneOffset()*60000)+(offset*3600000);
+	dCur.setTime(dCur.getTime()+adj);
+	var dExp=new Date(dCur.getTime()+315360000000);
+	var dSes=new Date(dCur.getTime());
+	WT.co_f=WT.vt_sid=WT.vt_f=WT.vt_f_a=WT.vt_f_s=WT.vt_f_d=WT.vt_f_tlh=WT.vt_f_tlv="";
+	if (document.cookie.indexOf(name+"=")==-1){
+		if ((typeof(gWtId)!="undefined")&&(gWtId!="")){
+			WT.co_f=gWtId;
+		}
+		else if ((typeof(gTempWtId)!="undefined")&&(gTempWtId!="")){
+			WT.co_f=gTempWtId;
+			WT.vt_f="1";
+		}
+		else{
+			WT.co_f="2";
+			var cur=dCur.getTime().toString();
+			for (var i=2;i<=(32-cur.length);i++){
+				WT.co_f+=Math.floor(Math.random()*16.0).toString(16);
+			}
+			WT.co_f+=cur;
+			WT.vt_f="1";
+		}
+		if (typeof(gWtAccountRollup)=="undefined"){
+			WT.vt_f_a="1";
+		}
+		WT.vt_f_s=WT.vt_f_d="1";
+		WT.vt_f_tlh=WT.vt_f_tlv="0";
+	}
+	else{
+		var id=dcsGetIdCrumb(name,"id");
+		var lv=parseInt(dcsGetCrumb(name,"lv"));
+		var ss=parseInt(dcsGetCrumb(name,"ss"));
+		if ((id==null)||(id=="null")||isNaN(lv)||isNaN(ss)){
+			return;
+		}
+		WT.co_f=id;
+		var dLst=new Date(lv);
+		WT.vt_f_tlh=Math.floor((dLst.getTime()-adj)/1000);
+		dSes.setTime(ss);
+		if ((dCur.getTime()>(dLst.getTime()+1800000))||(dCur.getTime()>(dSes.getTime()+28800000))){
+			WT.vt_f_tlv=Math.floor((dSes.getTime()-adj)/1000);
+			dSes.setTime(dCur.getTime());
+			WT.vt_f_s="1";
+		}
+		if ((dCur.getDay()!=dLst.getDay())||(dCur.getMonth()!=dLst.getMonth())||(dCur.getYear()!=dLst.getYear())){
+			WT.vt_f_d="1";
+		}
+	}
+	WT.co_f=escape(WT.co_f);
+	WT.vt_sid=WT.co_f+"."+(dSes.getTime()-adj);
+	var expiry="; expires="+dExp.toGMTString();
+	document.cookie=name+"="+"id="+WT.co_f+":lv="+dCur.getTime().toString()+":ss="+dSes.getTime().toString()+expiry+"; path=/"+(((typeof(gFpcDom)!="undefined")&&(gFpcDom!=""))?("; domain="+gFpcDom):(""));
+	if (document.cookie.indexOf(name+"=")==-1){
+		WT.co_f=WT.vt_sid=WT.vt_f_s=WT.vt_f_d=WT.vt_f_tlh=WT.vt_f_tlv="";
+		WT.vt_f=WT.vt_f_a="2";
+	}
+}
+
+// Code section for Use the new first-party cookie generated with this tag.
+var gFpc="WT_FPC";
+var gConvert=true;
+
+// Code section for Set the First-Party Cookie domain
+var gFpcDom=".delorme.com";
+
+function dcsAdv(){
+	dcsFunc("dcsET");
+	dcsFunc("dcsCookie");
+	dcsFunc("dcsAdSearch");
+	dcsFunc("dcsTP");
+}
+
+//-->
+</script><!-- END OF SDC Advanced Tracking Code --><!-- START OF SmartSource Data Collector TAG --><!-- Copyright (c) 1996-2005 WebTrends Inc.  All rights reserved. --><!-- V8.0 --><!-- $DateTime: 2006/04/07 16:45:14 $ -->
+
+
+
+
+
+
+<script type="text/javascript"><!--
+var gDomain="weblogs.delorme.com";
+var gDcsId="dcsqya5q6l39xagzfrxccol8e_7p6r";
+
+if ((typeof(gConvert)!="undefined")&&gConvert&&(document.cookie.indexOf(gFpc+"=")==-1)&&(document.cookie.indexOf("WTLOPTOUT=")==-1)){
+	document.write("<SCR"+"IPT TYPE='text/javascript' SRC='"+"http"+(window.location.protocol.indexOf('https:')==0?'s':'')+"://"+gDomain+"/"+gDcsId+"/wtid.js"+"'><\/SCR"+"IPT>");
+}
+//-->
+</script>
+<script type="text/javascript"><!--
+var gImages=new Array;
+var gIndex=0;
+var DCS=new Object();
+var WT=new Object();
+var DCSext=new Object();
+var gQP=new Array();
+var gI18n=false;
+if (window.RegExp){
+	var RE={"%09":/\t/g,"%20":/ /g,"%23":/\#/g,"%26":/\&/g,"%2B":/\+/g,"%3F":/\?/g,"%5C":/\\/g,"%22":/\"/g,"%7F":/\x7F/g,"%A0":/\xA0/g};
+	var I18NRE={"%25":/\%/g};
+}
+
+// Add customizations here
+
+function dcsVar(){
+	var dCurrent=new Date();
+	WT.tz=dCurrent.getTimezoneOffset()/60*-1;
+	if (WT.tz==0){
+		WT.tz="0";
+	}
+	WT.bh=dCurrent.getHours();
+	WT.ul=navigator.appName=="Netscape"?navigator.language:navigator.userLanguage;
+	if (typeof(screen)=="object"){
+		WT.cd=navigator.appName=="Netscape"?screen.pixelDepth:screen.colorDepth;
+		WT.sr=screen.width+"x"+screen.height;
+	}
+	if (typeof(navigator.javaEnabled())=="boolean"){
+		WT.jo=navigator.javaEnabled()?"Yes":"No";
+	}
+	if (document.title){
+		WT.ti=gI18n?dcsEscape(dcsEncode(document.title),I18NRE):document.title;
+	}
+	WT.js="Yes";
+	WT.jv=dcsJV();
+	if (document.body&&document.body.addBehavior){
+		document.body.addBehavior("#default#clientCaps");
+		if (document.body.connectionType){
+			WT.ct=document.body.connectionType;
+		}
+		document.body.addBehavior("#default#homePage");
+		WT.hp=document.body.isHomePage(location.href)?"1":"0";
+	}
+	if (parseInt(navigator.appVersion)>3){
+		if ((navigator.appName=="Microsoft Internet Explorer")&&document.body){
+			WT.bs=document.body.offsetWidth+"x"+document.body.offsetHeight;
+		}
+		else if (navigator.appName=="Netscape"){
+			WT.bs=window.innerWidth+"x"+window.innerHeight;
+		}
+	}
+	WT.fi="No";
+	if (window.ActiveXObject){
+		for(var i=10;i>0;i--){
+			try{
+				var flash = new ActiveXObject("ShockwaveFlash.ShockwaveFlash."+i);
+				WT.fi="Yes";
+				WT.fv=i+".0";
+				break;
+			}
+			catch(e){
+			}
+		}
+	}
+	else if (navigator.plugins&&navigator.plugins.length){
+		for (var i=0;i<navigator.plugins.length;i++){
+			if (navigator.plugins[i].name.indexOf('Shockwave Flash')!=-1){
+				WT.fi="Yes";
+				WT.fv=navigator.plugins[i].description.split(" ")[2];
+				break;
+			}
+		}
+	}
+	if (gI18n){
+		WT.em=(typeof(encodeURIComponent)=="function")?"uri":"esc";
+		if (typeof(document.defaultCharset)=="string"){
+			WT.le=document.defaultCharset;
+		} 
+		else if (typeof(document.characterSet)=="string"){
+			WT.le=document.characterSet;
+		}
+	}
+	WT.tv="8.0.0";
+	WT.sp="@@SPLITVALUE@@";
+	DCS.dcsdat=dCurrent.getTime();
+	DCS.dcssip=window.location.hostname;
+	DCS.dcsuri=window.location.pathname;
+	if (window.location.search){
+		DCS.dcsqry=window.location.search;
+		if (gQP.length>0){
+			for (var i=0;i<gQP.length;i++){
+				var pos=DCS.dcsqry.indexOf(gQP[i]);
+				if (pos!=-1){
+					var front=DCS.dcsqry.substring(0,pos);
+					var end=DCS.dcsqry.substring(pos+gQP[i].length,DCS.dcsqry.length);
+					DCS.dcsqry=front+end;
+				}
+			}
+		}
+	}
+	if ((window.document.referrer!="")&&(window.document.referrer!="-")){
+		if (!(navigator.appName=="Microsoft Internet Explorer"&&parseInt(navigator.appVersion)<4)){
+			DCS.dcsref=gI18n?dcsEscape(window.document.referrer, I18NRE):window.document.referrer;
+		}
+	}
+}
+
+function dcsA(N,V){
+	return "&"+N+"="+dcsEscape(V, RE);
+}
+
+function dcsEscape(S, REL){
+	if (typeof(REL)!="undefined"){
+		var retStr = new String(S);
+		for (R in REL){
+			retStr = retStr.replace(REL[R],R);
+		}
+		return retStr;
+	}
+	else{
+		return escape(S);
+	}
+}
+
+function dcsEncode(S){
+	return (typeof(encodeURIComponent)=="function")?encodeURIComponent(S):escape(S);
+}
+
+function dcsCreateImage(dcsSrc){
+	if (document.images){
+		gImages[gIndex]=new Image;
+		if ((typeof(gHref)!="undefined")&&(gHref.length>0)){
+			gImages[gIndex].onload=gImages[gIndex].onerror=dcsLoadHref;
+		}
+		gImages[gIndex].src=dcsSrc;
+		gIndex++;
+	}
+	else{
+		document.write('<IMG ALT="" BORDER="0" NAME="DCSIMG" WIDTH="1" HEIGHT="1" SRC="'+dcsSrc+'">');
+	}
+}
+
+function dcsMeta(){
+	var elems;
+	if (document.all){
+		elems=document.all.tags("meta");
+	}
+	else if (document.documentElement){
+		elems=document.getElementsByTagName("meta");
+	}
+	if (typeof(elems)!="undefined"){
+		for (var i=1;i<=elems.length;i++){
+			var meta=elems.item(i-1);
+			if (meta.name){
+				if (meta.name.indexOf('WT.')==0){
+					WT[meta.name.substring(3)]=(gI18n&&(meta.name.indexOf('WT.ti')==0))?dcsEscape(dcsEncode(meta.content),I18NRE):meta.content;
+				}
+				else if (meta.name.indexOf('DCSext.')==0){
+					DCSext[meta.name.substring(7)]=meta.content;
+				}
+				else if (meta.name.indexOf('DCS.')==0){
+					DCS[meta.name.substring(4)]=(gI18n&&(meta.name.indexOf('DCS.dcsref')==0))?dcsEscape(meta.content,I18NRE):meta.content;
+				}
+			}
+		}
+	}
+}
+
+function dcsTag(){
+	if (document.cookie.indexOf("WTLOPTOUT=")!=-1){
+		return;
+	}
+	var P="http"+(window.location.protocol.indexOf('https:')==0?'s':'')+"://"+gDomain+(gDcsId==""?'':'/'+gDcsId)+"/dcs.gif?";
+	for (N in DCS){
+		if (DCS[N]) {
+			P+=dcsA(N,DCS[N]);
+		}
+	}
+	for (N in WT){
+		if (WT[N]) {
+			P+=dcsA("WT."+N,WT[N]);
+		}
+	}
+	for (N in DCSext){
+		if (DCSext[N]) {
+			P+=dcsA(N,DCSext[N]);
+		}
+	}
+	if (P.length>2048&&navigator.userAgent.indexOf('MSIE')>=0){
+		P=P.substring(0,2040)+"&WT.tu=1";
+	}
+	dcsCreateImage(P);
+}
+
+function dcsJV(){
+	var agt=navigator.userAgent.toLowerCase();
+	var major=parseInt(navigator.appVersion);
+	var mac=(agt.indexOf("mac")!=-1);
+	var nn=((agt.indexOf("mozilla")!=-1)&&(agt.indexOf("compatible")==-1));
+	var nn4=(nn&&(major==4));
+	var nn6up=(nn&&(major>=5));
+	var ie=((agt.indexOf("msie")!=-1)&&(agt.indexOf("opera")==-1));
+	var ie4=(ie&&(major==4)&&(agt.indexOf("msie 4")!=-1));
+	var ie5up=(ie&&!ie4);
+	var op=(agt.indexOf("opera")!=-1);
+	var op5=(agt.indexOf("opera 5")!=-1||agt.indexOf("opera/5")!=-1);
+	var op6=(agt.indexOf("opera 6")!=-1||agt.indexOf("opera/6")!=-1);
+	var op7up=(op&&!op5&&!op6);
+	var jv="1.1";
+	if (nn6up||op7up){
+		jv="1.5";
+	}
+	else if ((mac&&ie5up)||op6){
+		jv="1.4";
+	}
+	else if (ie5up||nn4||op5){
+		jv="1.3";
+	}
+	else if (ie4){
+		jv="1.2";
+	}
+	return jv;
+}
+
+function dcsFunc(func){
+	if (typeof(window[func])=="function"){
+		window[func]();
+	}
+}
+
+dcsVar();
+dcsMeta();
+dcsFunc("dcsAdv");
+dcsTag();
+//-->
+</script><!-- END OF SmartSource Data Collector  TAG -->
+
+
+	
+
+	<link rel="SHORTCUT ICON" href="http://www.delorme.com/siteicon.ico"></head><noscript>
+<IMG ALT="" BORDER="0" NAME="DCSIMG" WIDTH="1" HEIGHT="1"
+SRC="http://weblogs.delorme.com/dcsqya5q6l39xagzfrxccol8e_7p6r/njs.gif?dcsuri=/nojavascript&amp;WT.js=No&amp;WT.tv=8.0.0">
+</noscript><body topmargin="0" leftmargin="0" onload="javascript:openNav();showContent();" alink="#990000" bgcolor="white" link="#003366" marginheight="0" marginwidth="0" vlink="#666666">
+		<div style="background-image: url(images/BackgroundSlice.jpg);">
+
+	<div id="headerLinks"><a href="http://www.delorme.com/support/">Technical Support Home</a></div>
+
+	<div><a href="http://www.delorme.com/"><img src="SerialPortEmulator_files/Logo.jpg" alt="DeLorme Home" border="0" height="69" width="274"></a></div>
+
+</div>
+
+
+
+<div style="padding: 0px; background-image: url(images/BackgroundSlice_2.jpg);">
+
+	
+
+	<div><a href="http://www.delorme.com/"><img src="SerialPortEmulator_files/Logo_bottom.jpg" alt="DeLorme Home" border="0" height="36" width="149"></a></div>
+
+</div>
+		<table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<tbody><tr>
+				<td rowspan="2" valign="top" width="115">
+					<table align="left" border="0" cellpadding="0" cellspacing="0" width="150">
+						<tbody><tr>
+							<td bgcolor="#eeeeee"><div id="navigation">
+	<ul id="allNav">
+		<li><a href="javascript:choosePage('/default.aspx')">Shop</a></li>
+			<ul id="shop">
+				<li><a id="byProductLink" href="javascript:openSection('byProduct')"><img src="SerialPortEmulator_files/right_arrow.gif" id="navArrowbyProduct">SHOP BY PRODUCT</a></li>				
+					<ul id="byProduct">
+						<li><a href="javascript:choosePage('DELibeCCtpSctDspRte.jsp?section=10048')" id="10048">Top Sellers</a></li>
+						<li><a href="javascript:choosePage('DELibeCCtpSctDspRte.jsp?section=10047')" id="10047">Newest Releases</a></li>
+						<li><a id="10043" href="javascript:choosePage('DELibeCCtpSctDspRte.jsp?section=10043')">Earthmate GPS</a></li>
+							<ul id="10043sub">
+								<li><a id="10091" href="javascript:choosePage('DELibeCCtpSctDspRte.jsp?section=10091')">Laptop GPS</a></li>
+								<li><a id="10092" href="javascript:choosePage('DELibeCCtpSctDspRte.jsp?section=10092')">Bluetooth Wireless GPS</a></li>
+								<li><a id="10095" href="javascript:choosePage('DELibeCCtpSctDspRte.jsp?section=10095')">Bluetooth GPS Accessories</a></li>
+							</ul>
+						<li><a href="javascript:choosePage('DELibeCCtpSctDspRte.jsp?section=10120')" id="10120">Street Atlas USA</a></li>
+							<ul id="10120sub">
+								<li><a id="10121" href="javascript:choosePage('DELibeCCtpSctDspRte.jsp?section=10121')">Street Atlas USA 2007 Software</a></li>
+								<li><a id="10122" href="javascript:choosePage('DELibeCCtpSctDspRte.jsp?section=10122')">Laptop GPS BUNDLES with Street Atlas USA 2007</a></li>
+								<li><a id="10123" href="javascript:choosePage('DELibeCCtpSctDspRte.jsp?section=10123')">Bluetooth Wireless GPS BUNDLES with Street Atlas USA 2007</a></li>
+								<!--<li><a id="10180" href="javascript:choosePage('DELibeCCtpSctDspRte.jsp?section=10180')">Street Atlas USA for Networks</a></li>-->
+							</ul>
+						<li><a href="javascript:choosePage('DELibeCCtpSctDspRte.jsp?section=10045')" id="10045">Topo USA</a></li>
+							<ul id="10045sub">
+								<li><a id="10050" href="javascript:choosePage('DELibeCCtpSctDspRte.jsp?section=10050')">Topo USA 6.0 National &amp; Regional Editions</a></li>
+								<li><a id="10051" href="javascript:choosePage('DELibeCCtpSctDspRte.jsp?section=10051')">Topo USA 6.0 GPS Bundles</a></li>
+								<li><a id="10052" href="javascript:choosePage('DELibeCCtpSctDspRte.jsp?section=10052')">3-D TopoQuads 2.0</a></li>
+									<ul id="10052sub">
+										<li><a id="10053" href="javascript:choosePage('DELibeCCtpSctDspRte.jsp?section=10053')">3-D TopoQuads 2.0 on DVD</a></li>
+										<li><a id="10054" href="javascript:choosePage('DELibeCCtpSctDspRte.jsp?section=10054')">3-D TopoQuads 2.0 on CD</a></li>
+									</ul>
+							</ul>						
+						<li><a id="10044" href="javascript:choosePage('DELibeCCtpSctDspRte.jsp?section=10044')">XMap GIS Solutions</a></li>
+							<ul id="10044sub">
+								<li><a id="10161" href="javascript:choosePage('DELibeCCtpSctDspRte.jsp?section=10161')">XMap 5.0 GIS Software Suite</a></li>
+									<ul id="10161sub">
+										<li><a id="10162" href="javascript:choosePage('DELibeCCtpSctDspRte.jsp?section=10162')">XMap 5.0 GIS Enterprise</a></li>
+										<li><a id="10163" href="javascript:choosePage('DELibeCCtpSctDspRte.jsp?section=10163')">XMap 5.0 GIS Editor</a></li>
+										<li><a id="10164" href="javascript:choosePage('DELibeCCtpSctDspRte.jsp?section=10164')">XMap 5.0 Professional</a></li>
+									</ul>
+								<li><a id="10058" href="javascript:choosePage('DELibeCCtpSctDspRte.jsp?section=10058')">DATA for XMap</a></li>
+									<ul id="10058sub">
+										<li><a id="10061" href="javascript:choosePage('DELibeCCtpSctDspRte.jsp?section=10061')">Base Map Data</a></li>
+											<ul id="10061sub">
+												<li><a id="10062" href="javascript:choosePage('DELibeCCtpSctDspRte.jsp?section=10062')">USA Street Data</a></li>
+												<li><a id="10063" href="javascript:choosePage('DELibeCCtpSctDspRte.jsp?section=10063')">USA Topographic Data</a></li>
+												<li><a id="10064" href="javascript:choosePage('DELibeCCtpSctDspRte.jsp?section=10064')">3-D TopoQuads Base Maps, by US State</a></li>
+													<ul id="10064sub">
+														<li><a id="10065" href="javascript:choosePage('DELibeCCtpSctDspRte.jsp?section=10065')">3-D TopoQuads Base Maps, by US State, on CD</a></li>
+														<li><a id="10066" href="javascript:choosePage('DELibeCCtpSctDspRte.jsp?section=10066')">3-D TopoQuads Base Maps, by US State, on DVD</a></li>
+													</ul>
+											</ul>
+										<li><a id="10067" href="javascript:choosePage('DELibeCCtpSctDspRte.jsp?section=10067')">Imagery Data</a></li>
+											<ul id="10067sub">
+												<li><a id="10068" href="javascript:choosePage('DELibeCCtpSctDspRte.jsp?section=10068')">Sat 10 Imagery</a></li>
+												<li><a id="10069" href="javascript:choosePage('DELibeCCtpSctDspRte.jsp?section=10069')">Aerial Data Packets (ADPs)</a></li>
+												<li><a id="10070" href="javascript:choosePage('DELibeCCtpSctDspRte.jsp?section=10070')">Color Aerial Imagery</a></li>
+											</ul>
+										<li><a id="10071" href="javascript:choosePage('DELibeCCtpSctDspRte.jsp?section=10071')">Supplementary Data</a></li>
+											<ul id="10071sub">
+												<li><a id="10072" href="javascript:choosePage('DELibeCCtpSctDspRte.jsp?section=10072')">NGS (National Geological Survey) Benchmarks</a></li>
+												<li><a id="10073" href="javascript:choosePage('DELibeCCtpSctDspRte.jsp?section=10073')">Township &amp; Range Data</a></li>
+												<li><a id="10074" href="javascript:choosePage('DELibeCCtpSctDspRte.jsp?section=10074')">U.S. Census Data</a></li>
+												<li><a id="10075" href="javascript:choosePage('DELibeCCtpSctDspRte.jsp?section=10075')">U.S. ZIP Code Polygons</a></li>
+												<li><a id="10076" href="javascript:choosePage('DELibeCCtpSctDspRte.jsp?section=10076')">USA-Canada Phone Data</a></li>
+											</ul>
+										<li><a id="10165" href="javascript:choosePage('DELibeCCtpSctDspRte.jsp?section=10165')">Data Available on Hard Drive</a></li>
+									</ul>
+								<li><a id="10059" href="javascript:choosePage('DELibeCCtpSctDspRte.jsp?section=10059')">Specialty GIS Software</a></li>
+								<!--<li><a id="10063" href="javascript:choosePage('DELibeCCtpSctDspRte.jsp?section=10063')">GIS Services</a></li>//-->
+								<!--<li><a id="#" href="#">Training</a></li>//-->
+								<!--<li><a id="10064" href="javascript:choosePage('DELibeCCtpSctDspRte.jsp?section=10064')">GIS Products, by Market</a></li>
+									<ul id="10064sub">
+										<li><a id="10065" href="javascript:choosePage('DELibeCCtpSctDspRte.jsp?section=10065')">GIS for Energy—Telecom</a></li>
+										<li><a id="10066" href="javascript:choosePage('DELibeCCtpSctDspRte.jsp?section=10066')">GIS for Public Safety</a></li>
+										<li><a id="10000" href="javascript:choosePage('DELibeCCtpSctDspRte.jsp?section=10000')">GIS for Real Estate</a></li>
+										<li><a id="10068" href="javascript:choosePage('DELibeCCtpSctDspRte.jsp?section=10068')">GIS for Natural Resource Management</a></li>
+									</ul>//-->
+								<li><a id="10060" href="javascript:choosePage('DELibeCCtpSctDspRte.jsp?section=10060')">Express Shop for XMap Solutions</a></li>	
+							</ul>
+						<li><a id="10042" href="javascript:choosePage('DELibeCCtpSctDspRte.jsp?section=10042')">Paper Atlases &amp; Wall Maps</a></li>
+							<ul id="10042sub">
+								<li><a id="10096" href="javascript:choosePage('DELibeCCtpSctDspRte.jsp?section=10096')">Atlas &amp; Gazetteers, by State</a></li>
+								<li><a id="10097" href="javascript:choosePage('DELibeCCtpSctDspRte.jsp?section=10097')">Atlas &amp; Gazetteers, Boxed Value Sets</a></li>
+								<li><a id="10098" href="javascript:choosePage('DELibeCCtpSctDspRte.jsp?section=10098')">Wall Maps</a></li>
+							</ul>
+						<!--<li><a id="10123" href="javascript:choosePage('DELibeCCtpSctDspRte.jsp?section=10123')">Enterprise Solutions</a></li>	
+						<li><a id="10049" href="javascript:choosePage('DELibeCCtpSctDspRte.jsp?section=10049')">DeLorme DATA Mart</a></li>
+							<ul id="10049sub">
+								<li><a id="10100" href="javascript:choosePage('DELibeCCtpSctDspRte.jsp?section=10100')">Data for Street Atlas USA Plus</a></li>
+								<li><a id="10101" href="javascript:choosePage('DELibeCCtpSctDspRte.jsp?section=10101')">Data for Topo USA</a></li>
+								<li><a id="10099" href="javascript:choosePage('DELibeCCtpSctDspRte.jsp?section=10099')">Data for XMap/GIS Solutions</a></li>
+									<ul id="10139sub">
+										<li><a id="10140" href="javascript:choosePage('DELibeCCtpSctDspRte.jsp?section=10140')">Base Map Data</a></li>
+											<ul id="10140sub">
+												<li><a id="10153" href="javascript:choosePage('DELibeCCtpSctDspRte.jsp?section=10153')">World Base Maps</a></li>
+												<li><a id="10154" href="javascript:choosePage('DELibeCCtpSctDspRte.jsp?section=10154')">U.S. Street Data</a></li>
+												<li><a id="10155" href="javascript:choosePage('DELibeCCtpSctDspRte.jsp?section=10155')">U.S. Topographic Data</a></li>
+												<li><a id="10152" href="javascript:choosePage('DELibeCCtpSctDspRte.jsp?section=10152')">3-D TopoQuads Base Maps, by US State</a></li>
+													<ul id="10152sub">
+														<li><a id="10156" href="javascript:choosePage('DELibeCCtpSctDspRte.jsp?section=10156')">3-D TopoQuad Base Maps, by US State, on CD</a></li>
+														<li><a id="10157" href="javascript:choosePage('DELibeCCtpSctDspRte.jsp?section=10157')">3-D TopoQuads Base Maps, by US State, on DVD</a></li>
+													</ul>
+											</ul>
+										<li><a id="10141" href="javascript:choosePage('DELibeCCtpSctDspRte.jsp?section=10141')">Satellite & Aerial Imagery</a></li>
+											<ul id="10141sub">
+												<li><a id="10145" href="javascript:choosePage('DELibeCCtpSctDspRte.jsp?section=10145')">Best Resolution</a></li>
+												<li><a id="10146" href="javascript:choosePage('DELibeCCtpSctDspRte.jsp?section=10146')">Better Resolution</a></li>
+												<li><a id="10147" href="javascript:choosePage('DELibeCCtpSctDspRte.jsp?section=10147')">Good Resolution</a></li>
+											</ul>
+										<li><a id="10142" href="javascript:choosePage('DELibeCCtpSctDspRte.jsp?section=10142')">Supplementary Data</a></li>
+										<li><a id="10143" href="javascript:choosePage('DELibeCCtpSctDspRte.jsp?section=10143')">Data by Market</a></li>
+											<ul id="10143sub">
+												<li><a id="10148" href="javascript:choosePage('DELibeCCtpSctDspRte.jsp?section=10148')">Data for Energy - TelCom</a></li>
+												<li><a id="10149" href="javascript:choosePage('DELibeCCtpSctDspRte.jsp?section=10149')">Data for Public Safety</a></li>
+												<li><a id="10150" href="javascript:choosePage('DELibeCCtpSctDspRte.jsp?section=10150')">Data for Real Estate</a></li>
+												<li><a id="10151" href="javascript:choosePage('DELibeCCtpSctDspRte.jsp?section=10151')">Data for Natural Resource Management</a></li>
+											</ul>
+										<li><a id="10144" href="javascript:choosePage('DELibeCCtpSctDspRte.jsp?section=10144')">Express Shop for Data</a></li>
+									</ul>
+								<li><a id="10136" href="javascript:choosePage('DELibeCCtpSctDspRte.jsp?section=10136')">Stand Alone Data Packages</a></li>
+							</ul>//-->
+						
+					</ul>
+				<li><a id="byUseLink" href="javascript:openSection('byUse')"><img src="SerialPortEmulator_files/right_arrow.gif" id="navArrowbyUse">SHOP BY USE</a></li>
+					<ul id="byUse">
+						<li><a id="familyTravel" href="javascript:choosePage('/byUse/familytravel/familytravel.aspx')">Family &amp; Motorcoach Travel</a></li>
+						<li><a id="outdoorRecreation" href="javascript:choosePage('/byUse/outdoorrecreation/outdoorrecreation.aspx')">Outdoor Recreation</a></li>
+						<li><a id="businessNavigation" href="javascript:choosePage('/byUse/businessnavigation/businessnavigation.aspx')">Business Navigation</a></li>
+						<li><a id="educationResearch" href="javascript:choosePage('/byUse/educationresearch/default.aspx')">Education &amp; Research</a></li>
+						<li><a id="energyTelecom" href="javascript:choosePage('/byUse/energytelecom/energytelecom.aspx')">Energy - Telecom</a></li>
+						<li><a id="government" href="javascript:choosePage('/byUse/government/default.aspx')">Government</a></li>
+						<li><a id="insurance" href="javascript:choosePage('/byUse/insurance/default.aspx')">Insurance</a></li>
+						<li><a id="naturalResources" href="javascript:choosePage('/byUse/naturalresources/naturalresources.aspx')">Natural Resources</a></li>
+						<li><a id="gpsSolutions" href="javascript:choosePage('/byUse/gpsmodules/gpsmodules.aspx')">OEM GPS Solutions</a></li>
+						<li><a id="publicSafety" href="javascript:choosePage('/byUse/publicsafety/publicsafety.aspx')">Public Safety</a></li>
+						<li><a id="realEstate" href="javascript:choosePage('/byUse/realestate/realestate.aspx')">Real Estate</a></li>
+					</ul>
+				<li><a id="glossary" href="javascript:choosePage('/glossary.aspx')">MAPPING &amp; GIS GLOSSARY</a></li>
+				<li><a id="shopInMaineLink" href="javascript:openSection('shopInMaine')"><img src="SerialPortEmulator_files/right_arrow.gif" id="navArrowshopInMaine">SHOP IN MAINE</a></li>
+					<ul id="shopInMaine">
+						<li><a id="mapstore" href="javascript:choosePage('/mapstore/default.aspx')">Visit the DeLorme Map Store</a></li>
+						<li><a id="demos" href="javascript:choosePage('/mapstore/demonstrations.aspx')">Product Demonstrations</a></li>
+					</ul>
+			</ul>
+		<li><a href="javascript:choosePage('/customerservice/default.aspx')">Customer Service</a></li>
+			<ul id="customerService">
+				<li><a id="contactUs" href="javascript:choosePage('/customerservice/contactus.aspx')">CONTACT DELORME</a></li>
+				<li><a href="javascript:openSection('myAccount')"><img src="SerialPortEmulator_files/right_arrow.gif" id="navArrowmyAccount">MY ACCOUNT</a></li>
+					<ul id="myAccount">
+						<li><a id="orderHistory" href="javascript:choosePage('DELibeCOtdOrdSumMain.jsp?a=b')">Order History</a></li>
+						<li><a href="javascript:choosePage('DELibeCAcdPersonalInfo.jsp?a=b')" id="personalInformation">Personal Information</a></li>
+						<li><a href="javascript:choosePage('DELibeCAcdPassword.jsp?a=b')" id="changePassword">Change Password</a></li>
+						<li><a href="javascript:choosePage('DELibeCAddAddrBook.jsp?a=b')" id="addressBook">Address Book</a></li>
+						<li><a href="javascript:choosePage('DELibeCPmdPmtBook.jsp?a=b')" id="paymentBook">Payment Information</a></li>
+						<li><a href="javascript:choosePage('DELibeCAcdPreferences.jsp?a=b')" id="preferences">Preferences</a></li>
+					</ul>	
+				<li><a id="shoppingHelpLink" href="javascript:openSection('shoppingHelp')"><img src="SerialPortEmulator_files/right_arrow.gif" id="navArrowshoppingHelp">SHOPPING HELP</a></li>
+					<ul id="shoppingHelp">
+						<li><a id="pricingTax" href="javascript:choosePage('/customerservice/pricingsalestax.aspx')">Pricing &amp; Sales Tax</a></li>
+						<li><a id="shipping" href="javascript:choosePage('/customerservice/shippingdelivery.aspx')">Shipping &amp; Delivery</a></li>
+						<li><a id="returns" href="javascript:choosePage('/customerservice/returnpolicy.aspx')">Returns</a></li>
+						<li><a id="internationalOrders" href="javascript:choosePage('/customerservice/internationalorders.aspx')">International Orders</a></li>
+					</ul>
+				<li><a id="productHelpLink" href="javascript:openSection('productHelp')"><img src="SerialPortEmulator_files/right_arrow.gif" id="navArrowproductHelp">PRODUCT HELP</a></li>
+					<ul id="productHelp">
+						<li><a href="http://forum.delorme.com/" target="_blank">Forums</a></li>
+						<li><a href="javascript:choosePage('/support/')">Technical Support</a></li>
+						<li><a id="newsletterArchive" href="javascript:choosePage('/customerservice/newsletters.aspx')">Newsletter Archive</a></li>
+					</ul>
+				<li><a id="policiesLink" href="javascript:openSection('policies')"><img src="SerialPortEmulator_files/right_arrow.gif" id="navArrowpolicies">POLICIES</a></li>
+					<ul id="policies">
+						<li><a id="auctions" href="javascript:choosePage('/customerservice/auctionsandpiracy.aspx')">Auctions &amp; Piracy</a></li>
+						<li><a id="copyright" href="javascript:choosePage('/customerservice/copyrightinfo.aspx')">Copyright &amp; Intellectual Property Information</a></li>
+						<li><a id="agreements" href="javascript:choosePage('/customerservice/licenseagreements.aspx')">License Agreements</a></li>
+						<li><a id="security" href="javascript:choosePage('/customerservice/secureshopping.aspx')">Secure Online Shopping</a></li>
+						<li><a id="upgrades" href="javascript:choosePage('/customerservice/upgradepolicy.aspx')">Upgrades</a></li>
+						<li><a id="privacy" href="javascript:choosePage('/customerservice/privacy.aspx')">Your Privacy Rights</a></li>
+					</ul>
+			</ul>
+		<li><a href="javascript:choosePage('/support/search.aspx')">Technical Support</a></li>
+			<ul style="display: block;" id="technicalSupport">
+				<li><a id="TSTT" href="javascript:choosePage('/support/results.aspx?tt=yes')">TOP TEN DOCS</a></li>
+				<li><a id="TSNewest" href="javascript:choosePage('/support/results.aspx?recent=Yes')">NEWEST INFORMATION</a></li>
+				<li><a style="color: rgb(255, 102, 0);" id="TSSearch" href="javascript:choosePage('/support/search.aspx')">SEARCH</a></li>
+				<li><a href="http://forum.delorme.com/" target="_blank">FORUMS</a></li>
+				<li><a id="TSContact" href="javascript:choosePage('/support/policy.asp')">CONTACT TECHNICAL SUPPORT</a></li>
+				<li><a id="TSData" href="javascript:choosePage('/support/revisions.asp')">SUBMIT DATA REVISIONS</a></li>
+			</ul>	
+		<li><a href="javascript:choosePage('/about/default.aspx')">About DeLorme</a></li>
+			<ul id="aboutDeLorme">
+				<li><a id="theCompanyLink" href="javascript:openSection('theCompany')"><img src="SerialPortEmulator_files/right_arrow.gif" id="navArrowtheCompany">THE COMPANY</a></li>
+					<ul id="theCompany">
+						<li><a id="history" href="javascript:choosePage('/about/innovation.aspx')">A History of Innovation</a></li>
+						<li><a id="introduction" href="javascript:choosePage('/about/ourcompany.aspx')">An Introduction to DeLorme</a></li>
+						<li><a id="careers" href="javascript:choosePage('/about/careers.aspx')">Career Opportunities</a></li>
+						<li><a id="environment" href="javascript:choosePage('/about/environmentalresponsibility.aspx')">Environmental Responsibility</a></li>
+						<li><a id="news" href="javascript:choosePage('/about/pressreleaseandnews.aspx')">Press Releases</a></li>
+					</ul>
+				<li><a id="servicesProgramsLink" href="javascript:openSection('servicesPrograms')"><img src="SerialPortEmulator_files/right_arrow.gif" id="navArrowservicesPrograms">SERVICES &amp; PROGRAMS</a></li>
+					<ul id="servicesPrograms">
+						<li><a id="eartha" href="javascript:choosePage('/about/eartha.aspx')">Eartha, The World's Largest Globe</a></li>
+					</ul>
+			</ul>
+	</ul>
+	<!--<div id="navBottom"><img src="navBottom.gif"/></div>-->
+</div></td>
+						</tr>
+					</tbody></table>
+				</td>
+				<td colspan="2" class="bodyCopyItalic" valign="top">
+					
+					<table cellpadding="10" cellspacing="0" width="100%">
+						<tbody><tr>
+							<td>
+								<p class="bodyCopy"><!--MODIFIED DATE--><em>Updated
+										6/19/2007
+										<br>
+										<!--DOCUMENT ID--> Article ID:
+										319
+									</em>
+								</p>
+								<!--TITLE-->
+								<p class="fancyTitle">DeLorme Serial Emulation Driver for Earthmate® GPS Receivers
+									
+									<br>
+								</p>
+								<!--SUMMARY-->
+								<p class="bodyCopy">This
+update installs the DeLorme Serial Emulation Driver so that the USB
+Earthmate GPS, Earthmate GPS LT-20, Earthmate GPS PN-20, and Earthmate
+GPS BT-20 can be recognized in NMEA 0183 compliant mapping applications.</p>
+								<!--Heading1-->
+								<h2 class="stanBoldBlue"></h2><span class="bodyCopy"> <p><span class="stanBoldRed">Note</span>:
+This driver is not for use with the 64bit version of Windows. This
+driver is also not supported when coming out of sleep or hibernation
+mode. </p>
+            <!--Heading1-->
+            <strong class="stanBoldBlue">To Download and Install the Update</strong>
+            <p>Before
+installing this update, plug the Earthmate GPS into an available USB
+Port to allow Windows to recognize the GPS as an HID device.</p>
+            <ol>
+              <li>Click <strong class="standardBold">Download Now</strong> at the bottom of this list.   
+              </li><li>Save the file to the desktop.   
+              </li><li>Locate DeLorme Serial Emulator1.1.exe and   double-click it.   
+              </li><li>Click <strong class="standardBold">Next</strong>.   
+              </li><li>Select the "I accept the terms of this license agreement" option.   
+              </li><li>Click <strong class="standardBold">Next</strong>.   
+              </li><li>Restart the computer when prompted.<br>
+                  <strong class="standardBold">Note</strong>: The   installation will resume once the computer has restarted.   
+              </li><li>Click <strong class="standardBold">Next</strong>.   
+              </li><li>Click <strong class="standardBold">Finish</strong>.   
+              </li><li>Right-click on the DeLorme Serial Emulator system tray icon and select <span class="standardBold"><strong>Ports</strong></span><strong>...</strong> from the pop-up menu.   
+              </li><li>Select NMEA next to the COM Port you wish to use and close the utility.   
+              </li><li>Open the mapping application.   
+              </li><li>In
+the GPS Settings, select NMEA as the device and the COM port you
+selected in step 11 as the COM port the device is connected to. </li><li>Start the GPS. </li>
+            </ol>
+            <p><a href="http://www.delorme.com/support/Downloads/GPS/Install%20Serial%20Emulator.exe" class="stanBoldBlue">Download Now</a> (14   MB)</p>
+            <p class="stanBoldBlue">About the DeLorme Serial Emulator</p>
+            <p>The
+DeLorme Serial Emulator is a system tray utility that provides access
+to the settings and status of an Earthmate reciever. You can also use
+the Configure Virtual COM Ports utility to assign up to three different
+COM Ports for the Earthmate GPS reciever. The Earthmate GPS reciever
+can be configured to work with up to three different applications at
+the same time. </p>
+            <p>The utility contains the following items:</p>
+            <ul>
+              <li><strong class="standardBold">About</strong> - Shows the version of the utility.   
+              </li><li><strong class="standardBold">Monitor</strong>... - Opens the <strong class="standardBold">Monitor GPS Status</strong> window.   
+              </li><li><strong class="standardBold">Ports</strong>... - Allows you to configure the Virtual COM   Ports.<br>
+                  <img src="SerialPortEmulator_files/ID217IMG001.jpg" height="232" width="249">
+              </li><li><strong class="standardBold">Auto-Start</strong> - Automatically starts the GPS when it is   plugged in.   
+              </li><li><strong class="standardBold">Start</strong> - Starts the GPS.   
+              </li><li><strong class="standardBold">Stop</strong> - Stops the GPS.   
+              </li><li><strong class="standardBold">Exit</strong> - Exits the utility. </li>
+            </ul>            <p class="fancyTitle">&nbsp;</p></span><h2 class="stanBoldBlue"></h2><span class="bodyCopy"></span><h2 class="stanBoldBlue"></h2><span class="bodyCopy"></span>
+							</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+					</tbody></table>
+					
+				</td>
+			</tr>
+		</tbody></table>
+		<table align="center" border="0" cellpadding="0" cellspacing="8" width="100%"> 
+<tbody><tr><td><p class="bodyCopy"><img src="SerialPortEmulator_files/dot.htm" border="0" height="1" width="90%"></p>
+	  <p class="bodyCopy">If this document does not resolve your problem, try <a href="http://www.delorme.com/support/search.aspx">searching</a> for other help documents or, if your issue is not addressed within this site, send an <a href="http://www.delorme.com/support/email.asp">email</a> to DeLorme Technical Support.</p>
+	  <p class="bodyCopy"><b>Note:</b> Response times will vary due to fluctuations in volume and staffing.</p>
+      </td></tr></tbody></table>
+<table align="center" border="0" cellpadding="0" cellspacing="8" width="100%"> 
+<tbody><tr><td><p class="bodyCopy"><img src="SerialPortEmulator_files/dot.gif" border="0" height="1" width="90%"></p>
+      <p class="bodyCopy"><a class="bodyCopyLinkNoUnder" href="http://www.delorme.com/default.aspx">Home</a> | 
+        <a class="bodyCopyLinkNoUnder" href="http://www.delorme.com/customerservice/">Customer Service</a> | <a class="bodyCopyLinkNoUnder" href="http://www.delorme.com/about/">About DeLorme</a></p>
+  <p class="bodyCopy">Copyright © 2006 DeLorme.<br>
+  Latitude 43°48.491' North, Longitude 70°09.844' West</p></td></tr></tbody></table>
+
+	</body></html>
