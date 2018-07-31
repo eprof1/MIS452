@@ -1,148 +1,228 @@
-<%@LANGUAGE="VBSCRIPT" CODEPAGE="1252"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<!-- DW6 -->
-<!--#include file="../../../../Scripts/constants.asp" -->
+<!doctype html>
+<html lang="en">
 
 <head>
-<title>MIS452Homework05</title> 
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<link href="../../../../global.css" rel="stylesheet" type="text/css" />
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap -->
+	<link href="../css/bootstrap.css" rel="stylesheet">
+
+    <!-- constant file to update email, firstname, lastname, starid, section on students' pages -->
+    <script src="../js/constants.js"></script>
+
+    <!-- model assignment file, version 1 released 2018/02/18 PgP -->
+
+    <title>MIS452Summative06</title>
 </head>
 
-<body bgcolor="#FFFFFF" text="#000000">
-<form action="http://course1.winona.edu/ppaulson/Scripts/ProcessHW.asp" method="post" name="frmHW" id="frmHW"> 
-<h2 align="center"><i><font color="#cc00ff">MIS 452 
-      <% response.write(semester) %> 
-  Homework Assignment</font></i></h2>
-<table width="100%" border="1" cellspacing="1" cellpadding="1"> 
-<tr bgcolor="#00FFFF"> <td width="36%">First Name:    <input type="text" name="FirstName" size="30" maxlength="50" />
-</td>
-<td width="40%">Last Name:  <input type="text" name="LastName" size="25" maxlength="50" /></td>
-<td width="24%"> WID:  <input type="password" name="PIN" /></td>
-</tr> <tr bgcolor="#00FFFF"> 
-<td width="36%">Semester: <select name="Semester">
-            <option selected="selected"><% response.write(semester) %></option>
-</select> 
-</td><td>Class: <select name="Class">
-  <option>MIS452</option>
-</select> 
-</td>
-<td><input name="InstID" type="hidden" id="InstID" value="00617282" /></td>
-</tr> <tr bgcolor="#00FFFF"> <td width="36%">Section: 
-    <select name="Section">
-      <option selected="selected">01</option>
-      <option>99</option>
-    </select>
-</td>
-<td colspan="2"> 
-Assignment:  <select name="Assignment">
-    <option>01</option>
-    <option>02</option>
-    <option>03</option>
-    <option>04</option>
-    <option selected="selected">05</option>
-    <option>06</option>
-    <option>07</option>
-    <option>08</option>
-    <option>09</option>
-    <option>10</option>
-    <option>99</option>
-  </select></td>
-</tr><tr bgcolor="#00FFFF"><td colspan="3">&nbsp;</td></tr><tr bgcolor="#FF0000"><td colspan="3"><div align="center"><input type="submit" name="Submit" value="Submit" />
-        </div></td></tr> 
-</table>
- <p><br /> 
-  <font color="#FF0000"><b>400   points</b></font></p>
- <h2 class="MsoTitle" align="center"><font color="#cc00ff"><i><U> Chapter 6&nbsp;&nbsp; Errors </U></i></font></h2>
- <h2 class="MsoTitle" align="center">Questions</h2>
- <p align="left"><strong><font color="#0000FF">(50) 1. Why are CRC calculations done in hardware instead of software? <br />
-  Note: do not only rely on the book for the answer.<br />
-  Explain your answer.
- </font></strong><br />
-    <label>
-    <input name="q1" type="text" id="q1" size="100" maxlength="100" />
-    </label>
-    <br />
- </p>
+<body onload="setVariables()"> 
+
+  <form class="container-fluid" action="https://eprofessor.azurewebsites.net/code/ProcessFormData.asp" method="post" name="frmAssignment" id="frmAssignment">
+    <input name="InstID" id="InstID" value="00617282" type="hidden">
+
+    <h1 class=" text-center">Errors</h1>
+
+<!-- -start-Student, class and assignment information. Assignment hard-coded, other values from constants.js file-start -->
+    <div class="row col-lg-12">
+      <div class="col-lg-3">
+        <label class="text-primary" for="FirstName">First Name:</label>
+        <input class="form-control" name="FirstName" id="FirstName"  type="text" value="default first name" readonly="readonly">
+      </div>
+      <div class="col-lg-3">
+        <label class="text-primary" for="LastName">Last Name:</label>
+        <input class="form-control" name="LastName" id="LastName"  type="text" value="default last name" readonly="readonly">
+      </div>
+      <div class="col-lg-3">
+        <label class="text-primary" for="pin">StarID:</label>
+        <input class="form-control" name="pin" id="pin"  type="text" value="default StarID" readonly="readonly">
+      </div>
+      <div class="col-lg-3">
+        <label class="text-primary" for="email">Email:</label>
+        <input class="form-control" name="email" id="email"  type="email" value="default email address" readonly="readonly">
+      </div>
+    </div>
+
+    <div class="row col-lg-12">
+      <div class="col-lg-3">
+        <label class="text-primary" for="semester">Semester:</label>
+        <input class="form-control" name="semester" id="semester"  type="text" value="default" readonly="readonly">
+     </div>
+      <div class="col-lg-3">
+        <label class="text-primary" for="class">Class:</label>
+        <input class="form-control" name="class" id="class" value="xClass" type="text" readonly="readonly">
+      </div>
+      <div class="col-lg-3">
+        <label class="text-primary" for="section">Section:</label>
+        <input class="form-control" name="section" id="section"  value="default" type="text"  readonly="readonly">
+      </div>
+      <div class="col-lg-3"> 
+        <label class="text-primary" for="assignment">Assignment:</label>
+        <input class="form-control" name="assignment" id="assignment" value="Summative06" type="text" readonly="readonly">
+      </div>    
+    </div>
+<!-- -end-Student, class and assignment information-end -->
+
+<!-- Calculate the correct path for saving the files -->
+<script>Path = startPath + xStarID + "&#92;OneDrive - MNSCU&#92;" + xClass + "&#92;" + document.getElementById("assignment").value + "&#92;"; </script> 
+
+
+        <div class="col-lg-12">
+            <br /><input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit"> <br />
+        </div>
+  
+        <div class="col-lg-12 h3 text-danger">
+            1050 Points <hr />
+        </div>
+      
+<!-- -start-objectives-start -->
+    <div class="col-lg-12"><a href="#Objectives" class="btn btn-info" data-toggle="collapse">Learning Objectives</a></div>      
+      <div id="Objectives" class=" collapse in col-lg-12">
+
+<!--Above this line similar except for Assignment number and title   -->
+
+
+
+          <hr />
+    </div>
+<!-- -end-objectives-end -->
+
+
+    <div class=" col-lg-12"><a href="#Exercise01" class="btn btn-info" data-toggle="collapse">Questions</a></div>        
+      
+       <div id="Exercise01" class="collapse in  col-lg-12"> 
+
+
+       <p>Investigate CRC (Cyclic Redundancy Check) calculations.<br />
+              Note: do not only rely on the book for the answer.<br />
+              Consult Lynda.com and Wikipedia.
+          </p>
+
+     
+     
+     (50) 1. Why are CRC calculations often done in hardware instead of software? <br />
+Briefly explain your answer.
+ <br />
+              <!-- Enter your answer in the VALUE field below   GROK -->        
+              <input name="q1" id="q1" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text"> <br />
  <hr />
- <h2 align="center">Review Questions</h2>
- <p align="left">page 190 (p198 in 5e)</p>
- <p align="left"><strong><font color="#0000FF">(25) 1. What is white noise and how does it affect a signal?</font></strong><br />
-   <textarea name="q2" cols="100" rows="6" id="q2"></textarea>
- </p>
- <p align="left"><strong><font color="#0000FF">(25) 7.&nbsp; Will proper shielding of a medium increase or decrease the chance of errors? <br />
-   Explain your reasoning.</font></strong><br />
-   <label>
-   <textarea name="q3" cols="100" rows="6" id="q3"></textarea>
-</label>
- </p>
-  <p><strong>(25) 15.&nbsp; What type of errors will cyclic checksum not detect?</strong></p>
-  <table width="100%"  border="1" cellspacing="2" cellpadding="2">
-    <tr>
-      <th><div align="left">
-        <p>&nbsp;</p>
-        <p>&nbsp;</p>
-        <p>&nbsp;</p>
-      </div></th>
-    </tr>
-  </table>
-  <p><strong><font color="#0000FF">(25)&nbsp; 20. In communication systems, what does timeout mean?</font></strong><br />
-    <textarea name="q4" cols="100" rows="4" id="q4"></textarea> 
-  </p>
-  <hr />
- <h2 align="center">Exercises </h2>
- <p align="left">page 191 </p>
- <p align="left">(25) <strong><font color="#0000FF"> 6. Given the character <br />
+
+</div>
+
+
+
+<div class=" col-lg-12"><a href="#Exercise02" class="btn btn-info" data-toggle="collapse">Review Questions</a></div>        
+      
+<div id="Exercise02" class="collapse in  col-lg-12"> 
+
+<p >page 190 (p198 in 5e)</p>
+
+(25) 2. Briefly explain the concept of white noise:<br />            
+
+<!-- Enter your answer in the VALUE field below   GROK -->        
+<input name="q2" id="q2" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text"> <br />
+
+(25) 3. Briefly explain how white noise affects a signal:<br />            
+<!-- Enter your answer in the VALUE field below   GROK -->        
+<input name="q3" id="q3" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text"> <br />
+
+
+
+<p >(25) 4.  Will proper shielding of a medium increase or decrease the chance of errors? <br />
+Briefly explain your reasoning.<br />
+
+
+            <!-- Enter your answer in the VALUE field below   GROK -->        
+            <input name="q4" id="q4" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text"> <br />
+
+</p>
+<p>(25) 5. What type of errors will cyclic checksum not detect?</p>
+              <!-- Enter your answer in the VALUE field below   GROK -->        
+              <input name="q5" id="q5" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text"> <br />
+
+
+<p>(25) 6. In communication systems, what does timeout mean?<br />
+              <!-- Enter your answer in the VALUE field below   GROK -->        
+              <input name="q6" id="q6" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text"> <br />
+
+</p>
+<hr />
+
+</div>
+
+<div class=" col-lg-12"><a href="#Exercise03" class="btn btn-info" data-toggle="collapse">Exercises</a></div>        
+      
+<div id="Exercise03" class="collapse in  col-lg-12"> 
+
+ <p >page 191 </p>
+ <p >You are given the character string <br />
   1010010<br />
-  what bit will be added to support odd parity?
- </font></strong><br />
-    <textarea name="q5" cols="100" rows="4" id="q5"></textarea>
+  (25) 7. What bit must be added to support odd parity?
+ <br />
+<!-- Enter your answer in the VALUE field below   GROK -->        
+<input name="q7" id="q7" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text"> <br />
+
     <br />
   </p>
- <p align="left">   (25) <strong> 7.&nbsp; Generate the parity bits and longitudanal parity bits for even parity for the characters:</strong> </p>
- <table width="100%"  border="1" cellspacing="2" cellpadding="2">
+
+
+ <p >   Generate the parity bits and the longitudanal parity bits for even parity for the characters: </p>
+<div class="table-responsive-lg">
+
+ <table width="100%" class="table-bordered table-striped "  >
    <tr>
-     <th width="25%">&nbsp;</th>
-     <th width="57%">Characters</th>
-     <th width="18%">Even Parity</th>
+     <th scope="col">&nbsp;</th>
+     <th scope="col">Characters</th>
+     <th scope="col">Even Parity</th>
    </tr>
    <tr>
      <td>&nbsp;</td>
-     <td><div align="center"><strong>0 1 0 1 0 1 0</strong></div></td>
-     <td>&nbsp;</td>
+     <td><div >0 1 0 1 0 1 0</div></td>
+     <td>(25) 8. <!-- Enter your answer in the VALUE field below   GROK -->        
+<input name="q8" id="q8" size="10" maxlength="10" class="form-control" value="Enter the parity bit" type="text"> </td>
    </tr>
    <tr>
      <td>&nbsp;</td>
-     <td><div align="center"><strong>0 0 1 1 0 1 0</strong></div></td>
-     <td>&nbsp;</td>
+     <td><div >0 0 1 1 0 1 0</div></td>
+     <td>(25) 9.  <!-- Enter your answer in the VALUE field below   GROK -->        
+              <input name="q9" id="q9" size="10" maxlength="10" class="form-control" value="Enter the parity bit" type="text"></td>
    </tr>
    <tr>
      <td>&nbsp;</td>
-     <td><div align="center"><strong>0 0 1 1 1 1 0</strong></div></td>
-     <td>&nbsp;</td>
+     <td><div >0 0 1 1 1 1 0</div></td>
+     <td>(25) 10. <input name="q10" id="q10" size="10" maxlength="10" class="form-control" value="Enter the parity bit" type="text"></td>
    </tr>
    <tr>
      <td>&nbsp;</td>
-     <td><div align="center"><strong>1 1 1 1 1 1 0</strong></div></td>
-     <td>&nbsp;</td>
+     <td><div >1 1 1 1 1 1 0</div></td>
+     <td>(25) 11. <!-- Enter your answer in the VALUE field below   GROK -->        
+              <input name="q11" id="q11" size="10" maxlength="10" class="form-control" value="Enter the parity bit" type="text"></td>
    </tr>
    <tr>
      <td>&nbsp;</td>
-     <td><div align="center"><strong>0 0 0 0 1 1 0</strong></div></td>
-     <td>&nbsp;</td>
+     <td><div >0 0 0 0 1 1 0</div></td>
+     <td>(25) 12. <!-- Enter your answer in the VALUE field below   GROK -->        
+              <input name="q12" id="q12" size="10" maxlength="10" class="form-control" value="Enter the parity bit" type="text"></td>
    </tr>
    <tr>
      <th>Longitudanal Even Parity </th>
-     <td><div align="center"><strong></strong></div></td>
-     <td>&nbsp;</td>
+     <td><div ></div></td>
+     <td>(25) 13. <!-- Enter your answer in the VALUE field below   GROK -->        
+              <input name="q13" id="q13" size="10" maxlength="10" class="form-control" value="Enter the parity bit" type="text"></td>
    </tr>
  </table>
- <p align="left">&nbsp;  </p>
- <p align="left">(<strong>75</strong>) 25. The 12-bit string 010111110010 with embedded Hamming code bits (c8, c4, c2, c1) has just arrived.&nbsp; <font color="#0000FF"><strong>Is there an error?&nbsp; If so, which bit is in error?</strong></font><br />
-  Use the following table to solve this problem.<br />
-  Reference pages 193, 194</p>
- <table width="100%"  border="1" cellspacing="2" cellpadding="2">
+</div>
+
+<hr />
+    
+<p >The 12-bit string 010111110010 with embedded Hamming code bits (c8, c4, c2, c1) has just arrived.<br />
+This indicates that there an error.<br />
+Your job is to determine which bit is in error.<br />
+Use the following table to solve this problem.<br />
+Reference pages 193, 194</p>
+
+<div class="table-responsive-lg">
+ <table  width="100%" class="table-bordered">
    <tr>
      <td>b12</td>
      <td>b11</td>
@@ -157,7 +237,7 @@ Assignment:  <select name="Assignment">
      <td>c2</td>
      <td>c1</td>
     </tr>
-   <tr>
+   <tr >
      <td bgcolor="#FFFF00">0</td>
      <td bgcolor="#FFFF00">1</td>
      <td bgcolor="#FFFF00">0</td>
@@ -242,76 +322,190 @@ Assignment:  <select name="Assignment">
      <td>&nbsp;</td>
    </tr>
  </table>
- <p align="left"><strong class="FormQuestion">Is there an error? If so, where?</strong><br />
-   <textarea name="q6" cols="100" rows="3" id="q6"></textarea>
+</div>
+<br />
+
+ <p >(75) 14. What is and where is the error? <br />
+<!-- Enter your answer in the VALUE field below   GROK -->        
+<input name="q14" id="q14" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text"> <br />
+
   </p>
  <hr />
- <h2 align="center">Thinking Outside the Box</h2>
- <p align="left">page 192 </p>
- <p align="left"><font color="#0000FF"><b>(75) 2. Your boss has heard a lot about cyclic redundancy checksum (CRC) but is not convinced that it is much better than simple parity.<br />
+
+</div>
+
+
+
+<div class=" col-lg-12"><a href="#Exercise04" class="btn btn-info" data-toggle="collapse">Thinking Outside the Box</a></div>        
+      
+<div id="Exercise04" class="collapse in  col-lg-12"> 
+
+
+
+ <p >page 192 </p>
+ <p > Your boss has heard a lot about cyclic redundancy checksum (CRC) but is not convinced that it is much better than simple parity.<br />
    You quote some of the numbers and probabilities of error detection, but they mean little to him.<br />
    If you could give a more concrete example of how good cyclic redundancy checksum is, you might win the boss over.<br />
    Reference the probabilities in Table 6-4.<br />
-   <img src="CRCErrors.png" width="759" height="316" border="1" /><br />
- </b></font></p>
- <p align="left">
-   <label>
-     <textarea name="q9" cols="120" id="q9"></textarea>
-   </label>
+   <img src="CRCErrors.png" class="img-responsive"  alt="crc errors" /><br />
  </p>
+ <p >
+(75) 15. Provide your boss with a brief example showing the value of using good cyclic redundancy checksums.
+<!-- Enter your answer in the VALUE field below   GROK -->        
+<input name="q15" id="q15" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text"> <br />
+</p>
  <hr />
- <p align="left"><font color="#0000FF"><b>   If your company transmits a continuous stream at 128,000 bits per second, how much time will pass before CRC lets an error slip through? <br />
+
+
+ <p >   If your company transmits a continuous stream at 128,000 bits per second, how much time will pass before CRC lets an error slip through? <br />
    Assume an error rate of one frame in 10,000<br />
    Assume a frame consists of 1,000 bits <br />
-   Explain your reasoning, and show your calculations. <br />
-   </b><strong>
-    <textarea name="q7" cols="120" rows="14" id="q7"></textarea>
-    </strong></font><font color="#0000FF"><strong>
-    </strong></font></p>
+(50) 16. Briefly explain your reasoning, and show your calculations. <br />
+   
+<!-- Enter your answer in the VALUE field below   GROK -->        
+<input name="q16" id="q16" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text"> <br />
+    
+</p>
  <hr />
- <p align="left"><font color="#0000FF"><strong>    </strong></font></p> 
- <h2 align="center">Hands-on Projects </h2>
+
+Provide an Excel spreadsheet with your calculations, and units.
+<p>(50) 17. Save your file 'ErrorTimeCalcs.xlsx' to the ' 
+    <span id="zPath" ></span>              
+<script>document.getElementById("zPath").innerHTML = Path; </script>' folder.<br /> 
+
+
+</p>
+</div>
+
+<div  class="col-lg-12 text-danger" >
+<h2>ErrorTimeCalcs.xlsx</h2>
+<hr />
+</div>
+
+
+
+<div class=" col-lg-12"><a href="#Exercise05" class="btn btn-info" data-toggle="collapse">Hands-on Projects</a></div>        
+      
+<div id="Exercise05" class="collapse in  col-lg-12"> 
+
  page 193 
- <p align="left"><strong><font color="#0000FF">(50) 7.&nbsp; Are there any CRC generating polynomials other than those listed in this chapter? </font></strong><font color="#0000FF"><b><br />
- </b><strong>
- <textarea name="q8" cols="100" rows="3" id="q8"></textarea>
- </strong></font> </p>
+ <p >(50) 18. List a CRC generating polynomial other than one listed in this chapter? <br />
+ 
+<!-- Enter your answer in the VALUE field below   GROK -->        
+<input name="q18" id="q18" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text"> <br />
+
+  </p>
  <hr />
- <hr />
- <p align="left">Important: Assignments can have two parts.<br />
-   <b><U>1. Form Part </U></b><br />
-   <b><font color="#0000FF">The form part has blue background for your personal
-  information, or dark blue text for questions </font></b>. <font color="#0000FF"><b>The
-  form part is answered by placing your answer in the 'Init val' field as shown
-  below.&nbsp; Do not delete any of the TextField boxes! This method will keep
-  your answer in your .html file when you publish / ftp your homework to your
-  studentwebsite. Never change the Name field (q1, q2...)! </b></font> </p>
- <p><img src="../HW01/TextFieldProperties.png" alt="Properties Panel" width="776" height="127" /></p>
-<table width="98%" border="1" cellspacing="1" cellpadding="1"> 
-<tr> <td>&nbsp;</td>
-</tr> 
-</table><p><U><b>2. Normal Html Part</b></U><br />
-  The 
-normal html sections will have black text. You can type your answers into the 
-table provided.<br />
-When you have completed this HW assignment 
-publish (ftp) it to your studentwebs site.<br /> 
-Make sure to activate the hyperlink 
-for this assignment on your HW template file.<br /> 
-Use a web browser to make sure 
-you can view the completed assignment with your answers and make sure that any 
-graphics files are visible and correctly linked.<br /> 
-Correct any problems that 
-you find.</p><p>When you are satisfied that your assignment has been done correctly 
-fill in the form fields for First Name, Last Name, PIN, Semester, Class, Section 
-and Assignment. Remember to choose a PIN number at the start of the semester. 
-You will use this PIN number to verify that your homework was indeed submitted.</p><table width="29%" border="1" cellspacing="1" cellpadding="1" bgcolor="#00FFFF"> 
-<tr> <td> <div align="center">These fields have a blue background. </div></td></tr> 
-</table><p>Once this is done, press the submit button. This sends a copy of your 
-assignment answers to the professor. If all goes well, you will see a confirmation 
-page. At this point your homework has been submitted. Before this, you have not 
-completed your assignment.<br />
- </p></form>
-<p>&nbsp;</p>
-</body>
-</html>
+</div>
+
+
+
+     
+<!--  From here to end difference question numbers and Summative numbering for PDF of file uploaded to D2L    -->
+
+     
+    <div class="col-lg-12"><a href="#ExercisePDF" class="btn btn-info" data-toggle="collapse">Exercise-PDF File Creation</a></div>
+      
+    <div id="ExercisePDF" class="collapse in  col-lg-12"> 
+            <p>Use a web browser to verify that you have published your website to https://classes.winona.edu/... <br />
+                Check that your name, StarID, email, class, semester, section and all of your answers are correct and visible. <br />
+                From the menu choose File&gt;Print... and using &quot;Microsoft Print to PDF&quot; save a copy of this assignment as a .pdf file in your   ' 
+                  <span id="dPath" ></span>
+                <script>document.getElementById("dPath").innerHTML = Path; </script>' folder.<br /> 
+
+            </p>
+           <br />
+               
+          <p>(50) 19. Save your file 'WebPage.pdf' to the ' 
+                  <span id="ePath" ></span>              
+<script>document.getElementById("ePath").innerHTML = Path; </script>' folder.<br /> 
+
+
+          </p>
+
+      <div  class="text-danger" >
+         <h2>WebPage.pdf</h2>
+          <hr />
+      </div>
+
+        <p>  Create one .pdf (portable document format) file from the screen shots that you have taken by following these steps.</p>
+        
+        <ol>             
+          <li> Open File Explorer, make sure the screen shot files are properly named(Ex1, Ex2 , Ex3.. ) &nbsp; </li>
+          <li> Select all of the screen shots to be combined. </li>         
+          <li>Right Click and select &#39;Print&#39; from the short-cut menu.      </li>
+          <li>In the bottom center of the &#39;Print Pictures&#39; dialog box uncheck the box &quot;Fit picture to frame&quot;</li>    
+          <li>Click on &#39;Print&#39; and save the file with the name&nbsp; &quot;ScreenShots.pdf&quot; in your '
+              <span id="fPath" ></span>              
+              <script>document.getElementById("fPath").innerHTML = Path; </script>' folder.<br /> </li>
+        </ol>
+
+
+          <p>(50) 20. Save your file 'ScreenShots.pdf' to the ' 
+                  <span id="gPath" ></span>              
+<script>document.getElementById("gPath").innerHTML = Path; </script>' folder.<br /> 
+
+          </p>
+
+      <div  class="text-danger" >
+         <h2>ScreenShots.pdf</h2>
+          <hr />
+      </div>
+
+
+       <p>  &nbsp;</p>
+         <p>  Use PDFill to merge the WebPage.pdf file with the ScreenShots.pdf file, and save it as &#39;Summative06.pdf&#39; in ' 
+                  <span id="hPath" ></span>              
+<script>document.getElementById("hPath").innerHTML = Path; </script>' folder.<br /> 
+
+         </p>
+
+
+        <p>(50) 21. Upload your file 'Summative06.pdf' to the D2L 'Summative06' Assignment folder.</p>
+
+      <div  class="text-danger" >
+         <h2>Summative06.pdf</h2>
+      </div>
+      <hr />
+
+        </div> 
+
+
+
+
+  <div class="col-lg-12"><a href="#ExerciseAssignmentSubmission" class="btn btn-info" data-toggle="collapse">Exercise-Assignment Submission</a></div>
+ 
+  <div id="ExerciseAssignmentSubmission" class="collapse in  col-lg-12">
+                <p>Use a browser to view your completed and published website at: https://classes.winona.edu/...      <br /> 
+                    Ensure that you have linked this assignment on your home page.
+                Note that your screen shots do not have to be completed to perform this step.<br>  </p>
+
+            (50) 22. Home Page Hyperlink<br />
+            Check and verify that this assignment is hyperlinked on your home page.<br /><br />
+
+            (50) 23. Assignment submission<br />
+            Press the Submit button at the top or bottom of this page.
+                Read and follow instructions on the confirmation page.&nbsp; Correct any errors.</div> 
+           <hr />
+
+ 
+     
+      <div class="col-lg-12"><br /><input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit"> <br /></div>
+
+  
+  </form> 
+
+
+
+    <!-- Creative Commons License Info -->
+    <div id="xLicense" class=" col-lg-12 text-muted" ></div>
+
+   <div id="xfooter" class=" col-lg-12 text-muted"></div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+	<script src="../js/jquery-1.js"></script>
+
+	<!-- Include all compiled plugins (below), or include individual files as needed --> 
+	<script src="../js/bootstrap.js"></script>
+  
+</body></html>
