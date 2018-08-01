@@ -13,7 +13,7 @@
 
     <!-- model assignment file, version 1 released 2018/02/18 PgP -->
 
-    <title>MIS452Summative10</title>
+    <title>MIS452Summative11</title>
 </head>
 
 <body onload="setVariables()"> 
@@ -21,7 +21,7 @@
   <form class="container-fluid" action="https://eprofessor.azurewebsites.net/code/ProcessFormData.asp" method="post" name="frmAssignment" id="frmAssignment">
     <input name="InstID" id="InstID" value="00617282" type="hidden">
 
-    <h1 class=" text-center">Internet</h1>
+    <h1 class=" text-center">Voice and Data Networks</h1>
 
 <!-- -start-Student, class and assignment information. Assignment hard-coded, other values from constants.js file-start -->
     <div class="row col-lg-12">
@@ -58,7 +58,7 @@
       </div>
       <div class="col-lg-3"> 
         <label class="text-primary" for="assignment">Assignment:</label>
-        <input class="form-control" name="assignment" id="assignment" value="Summative10" type="text" readonly="readonly">
+        <input class="form-control" name="assignment" id="assignment" value="Summative11" type="text" readonly="readonly">
       </div>    
     </div>
 <!-- -end-Student, class and assignment information-end -->
@@ -91,13 +91,13 @@
     <div class=" col-lg-12"><a href="#Exercise01" class="btn btn-info" data-toggle="collapse">Questions</a></div>        
       
        <div id="Exercise01" class="collapse in  col-lg-12"> 
-          <p>The Internet<br />
+          <p>Silos?<br />
               Note: do not only rely on the book for the answer.<br />
               Consult Lynda.com and Wikipedia.
           </p>
 
       
-                <p> (25) 1. What organization or person(s) is/are primarily responsible for the design and structure of the Internet?</p>
+                <p> (25) 1. Briefly state whether companies benefit from maintaining separate departments for data networking, and their phone systems.</p>
               
               <!-- Enter your answer in the VALUE field below   GROK -->        
               <input name="q1" id="q1" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text"> <br />
@@ -107,45 +107,86 @@
  
  <hr />
 
- <hr /> 
 
 
-
-    <div class=" col-lg-12"><a href="#Exercise03" class="btn btn-info" data-toggle="collapse">Exercises</a></div>        
+ 
+<div class=" col-lg-12"><a href="#Exercise03" class="btn btn-info" data-toggle="collapse">Exercises</a></div>        
       
-       <div id="Exercise03" class="collapse in  col-lg-12"> 
- <p >page 348 (p356 in 5e)</p>
- <p >(25) 2. Some of the new protocols such as Internet Protocol version 6 are not including 
-   any kind of error-detection scheme on the data portion of the packet. <br />
-   What is the 
-   significance of this trend?<br />
-              <!-- Enter your answer in the VALUE field below   GROK -->        
-              <input name="q2" id="q2" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text"> <br />
-  <br />
- </p>
- <hr />
+<div id="Exercise03" class="collapse in  col-lg-12"> 
 
+ <p >page 383 (p392 in 5e)</p>
+ <p >(75) For each of the following scenarios, state whether a telephone line or a trunk should be used:<br />
+
+
+  (25) 2. the connection from your home to the local telephone company<br />
+    <!-- Enter your answer in the VALUE field below   GROK -->        
+    <input name="q2" id="q2" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text"> <br />
+
+
+  (25) 3. the connection between a large company&rsquo;s PBX and the telephone company<br />
+              <!-- Enter your answer in the VALUE field below   GROK -->        
+              <input name="q3" id="q3" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text"> <br />
+
+  (25) 4. the connection between two central offices<br />
+              <!-- Enter your answer in the VALUE field below   GROK -->        
+              <input name="q4" id="q4" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text"> <br />
+
+<br />
+ </p>
+ <p > You dial in to your Internet service provider using your 56k modem. Once<br />
+   connected, your data rate is shown as 42,000 bps,  not 56k bps. <br />
+   List four possible  reasons.<br />
+
+(25) 5.
+              <!-- Enter your answer in the VALUE field below   GROK -->        
+              <input name="q5" id="q5" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text"> <br />
+(25) 6.
+              <!-- Enter your answer in the VALUE field below   GROK -->        
+              <input name="q6" id="q6" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text"> <br />
+(25) 7.
+              <!-- Enter your answer in the VALUE field below   GROK -->        
+              <input name="q7" id="q7" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text"> <br />
+
+(25) 8.
+              <!-- Enter your answer in the VALUE field below   GROK -->        
+              <input name="q8" id="q8" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text"> <br />
+</p>
+ <hr />
 </div>
+
+
 
 <div class=" col-lg-12"><a href="#Exercise04" class="btn btn-info" data-toggle="collapse">Thinking Outside the Box</a></div>        
       
 <div id="Exercise04" class="collapse in  col-lg-12"> 
- <p >page 348</p>
- <p > You are working for a company that wants to begin electronic data interchange (EDI) with two other companies that supply parts.<br />
-   Your company produces mobile telephones, and the other two companies produce batteries and telephone keypads.<br />
-   When your company places an order with the battery company, it specifies battery size, type, power and quantity.&nbsp; <br />
-   When your company places an order with the keypad company, it specifies keypad configuration, power consumption, dimensions and color.<br />
-   <br />
-  (75) 3. Briefly explain how XML can be used to support EDI between these companies. <br />
-    
+ <p >page 385</p>
+ <p > Your company needs to create or install an application or service that allows employees to dial in using a phone, or use some type of Internet connection from a remote (read not at the company) location and using a single connection access their e-mail, voice mail and data files.<br />
+ 
+  Investigate the necessary hardware and software requirements.</p>
+
+<p>
+   
+(50) 9. What kind of system or systems would allow this?<br />
               <!-- Enter your answer in the VALUE field below   GROK -->        
-              <input name="q3" id="q3" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text"> <br />
+              <input name="q9" id="q9" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text"> <br />
+
+(50) 10. Briefly describe the necessary hardware requirements.<br />
+              <!-- Enter your answer in the VALUE field below   GROK -->        
+              <input name="q10" id="q10" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text"> <br />
+
+(50) 11. Briefly describe the necessary software requirements.<br />
+              <!-- Enter your answer in the VALUE field below   GROK -->        
+              <input name="q11" id="q11" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text"> <br />
+
 
    </p>
  <hr />
+
+
 </div>
-   
-     
+
+
+
 <!--  From here to end difference question numbers and Summative numbering for PDF of file uploaded to D2L    -->
 
      
@@ -161,7 +202,7 @@
             </p>
            <br />
                
-          <p>(50) 4. Save your file 'WebPage.pdf' to the ' 
+          <p>(50) 23. Save your file 'WebPage.pdf' to the ' 
                   <span id="ePath" ></span>              
 <script>document.getElementById("ePath").innerHTML = Path; </script>' folder.<br /> 
 
@@ -186,7 +227,7 @@
         </ol>
 
 
-          <p>(50) 5. Save your file 'ScreenShots.pdf' to the ' 
+          <p>(50) 24. Save your file 'ScreenShots.pdf' to the ' 
                   <span id="gPath" ></span>              
 <script>document.getElementById("gPath").innerHTML = Path; </script>' folder.<br /> 
 
@@ -199,17 +240,17 @@
 
 
        <p>  &nbsp;</p>
-         <p>  Use PDFill to merge the WebPage.pdf file with the ScreenShots.pdf file, and save it as &#39;Summative10.pdf&#39; in ' 
+         <p>  Use PDFill to merge the <strong>WebPage.pdf</strong> file with the <strong>ScreenShots.pdf </strong>file, and save it as &#39;<strong>Summative11.pdf</strong>&#39; in ' 
                   <span id="hPath" ></span>              
 <script>document.getElementById("hPath").innerHTML = Path; </script>' folder.<br /> 
 
          </p>
 
 
-        <p>(50) 6. Upload your file 'Summative10.pdf' to the D2L 'Summative10' Assignment folder.</p>
+        <p>(50) 25. Upload your file 'Summative11.pdf' to the D2L 'Summative11' Assignment folder.</p>
 
       <div  class="text-danger" >
-         <h2>Summative10.pdf</h2>
+         <h2>Summative11.pdf</h2>
       </div>
       <hr />
 
@@ -225,10 +266,10 @@
                     Ensure that you have linked this assignment on your home page.
                 Note that your screen shots do not have to be completed to perform this step.<br>  </p>
 
-            (50) 7. Home Page Hyperlink<br />
+            (50) 26. Home Page Hyperlink<br />
             Check and verify that this assignment is hyperlinked on your home page.<br /><br />
 
-            (50) 8. Assignment submission<br />
+            (50) 27. Assignment submission<br />
             Press the Submit button at the top or bottom of this page.
                 Read and follow instructions on the confirmation page.&nbsp; Correct any errors.</div> 
            <hr />
