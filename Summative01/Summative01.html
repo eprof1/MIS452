@@ -16,508 +16,585 @@
     <title>MIS452Summative01</title>
 </head>
 
-<body onload="setVariables()"> 
+<body onload="setVariables()">
 
-  <form class="container-fluid" action="https://eprofessor.azurewebsites.net/code/ProcessFormData.asp" method="post" name="frmAssignment" id="frmAssignment">
-    <input name="InstID" id="InstID" value="00617282" type="hidden">
+    <form class="container-fluid" action="https://eprofessor.azurewebsites.net/code/ProcessFormData.asp" method="post" name="frmAssignment" id="frmAssignment">
+        <input name="InstID" id="InstID" value="00617282" type="hidden">
 
-    <h1 class=" text-center">Introduction to Telecommunications</h1>
+        <h1 class=" text-center">Introduction to Telecommunications</h1>
 
-<!-- -start-Student, class and assignment information. Assignment hard-coded, other values from constants.js file-start -->
-    <div class="row col-lg-12">
-      <div class="col-lg-3">
-        <label class="text-primary" for="FirstName">First Name:</label>
-        <input class="form-control" name="FirstName" id="FirstName"  type="text" value="default first name" readonly="readonly">
-      </div>
-      <div class="col-lg-3">
-        <label class="text-primary" for="LastName">Last Name:</label>
-        <input class="form-control" name="LastName" id="LastName"  type="text" value="default last name" readonly="readonly">
-      </div>
-      <div class="col-lg-3">
-        <label class="text-primary" for="pin">StarID:</label>
-        <input class="form-control" name="pin" id="pin"  type="text" value="default StarID" readonly="readonly">
-      </div>
-      <div class="col-lg-3">
-        <label class="text-primary" for="email">Email:</label>
-        <input class="form-control" name="email" id="email"  type="email" value="default email address" readonly="readonly">
-      </div>
-    </div>
+        <!-- -start-Student, class and assignment information. Assignment hard-coded, other values from constants.js file-start -->
+        <div class="row col-lg-12">
+            <div class="col-lg-3">
+                <label class="text-primary" for="FirstName">First Name:</label>
+                <input class="form-control" name="FirstName" id="FirstName" type="text" value="default first name" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="LastName">Last Name:</label>
+                <input class="form-control" name="LastName" id="LastName" type="text" value="default last name" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="pin">StarID:</label>
+                <input class="form-control" name="pin" id="pin" type="text" value="default StarID" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="email">Email:</label>
+                <input class="form-control" name="email" id="email" type="email" value="default email address" readonly="readonly">
+            </div>
+        </div>
 
-    <div class="row col-lg-12">
-      <div class="col-lg-3">
-        <label class="text-primary" for="semester">Semester:</label>
-        <input class="form-control" name="semester" id="semester"  type="text" value="default" readonly="readonly">
-     </div>
-      <div class="col-lg-3">
-        <label class="text-primary" for="class">Class:</label>
-        <input class="form-control" name="class" id="class" value="xClass" type="text" readonly="readonly">
-      </div>
-      <div class="col-lg-3">
-        <label class="text-primary" for="section">Section:</label>
-        <input class="form-control" name="section" id="section"  value="default" type="text"  readonly="readonly">
-      </div>
-      <div class="col-lg-3"> 
-        <label class="text-primary" for="assignment">Assignment:</label>
-        <input class="form-control" name="assignment" id="assignment" value="Summative01" type="text" readonly="readonly">
-      </div>    
-    </div>
-<!-- -end-Student, class and assignment information-end -->
+        <div class="row col-lg-12">
+            <div class="col-lg-3">
+                <label class="text-primary" for="semester">Semester:</label>
+                <input class="form-control" name="semester" id="semester" type="text" value="default" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="class">Class:</label>
+                <input class="form-control" name="class" id="class" value="xClass" type="text" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="section">Section:</label>
+                <input class="form-control" name="section" id="section" value="default" type="text" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="assignment">Assignment:</label>
+                <input class="form-control" name="assignment" id="assignment" value="Summative01" type="text" readonly="readonly">
+            </div>
+        </div>
+        <!-- -end-Student, class and assignment information-end -->
 
-<!-- Calculate the correct path for saving the files -->
-<script>Path = startPath + xStarID + "&#92;OneDrive - MNSCU&#92;" + xClass + "&#92;" + document.getElementById("assignment").value + "&#92;"; </script> 
+        <!-- Calculate the correct path for saving the files -->
+        <script>Path = startPath + xStarID + "&#92;OneDrive - MNSCU&#92;" + xClass + "&#92;" + document.getElementById("assignment").value + "&#92;"; </script>
 
 
         <div class="col-lg-12">
-            <br /><input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit"> <br />
+            <br />
+            <input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit">
+            <br />
         </div>
-  
+
         <div class="col-lg-12 h3 text-danger">
-            1425 Points <hr />
+            1425 Points
+            <hr />
         </div>
-      
-<!-- -start-objectives-start -->
-    <div class="col-lg-12"><a href="#Objectives" class="btn btn-info" data-toggle="collapse">Learning Objectives</a></div>      
-      <div id="Objectives" class=" collapse in col-lg-12">
 
-<!--Above this line similar except for Assignment number and title   -->
-          <ul>
-              <li>Demonstrate major network components</li>
-              <li>Demonstrate basic computer network example</li>
-              <li>Explain how 'convergence' applies to computer networks</li>
-              <li>Explain purpose of network architecture</li>
-              <li>Explain the use of TCP/IP protocol</li>
-          </ul>
+        <!-- -start-objectives-start -->
+        <div class="col-lg-12"><a href="#Objectives" class="btn btn-info" data-toggle="collapse">Learning Objectives</a></div>
+        <div id="Objectives" class=" collapse in col-lg-12">
 
+            <!--Above this line similar except for Assignment number and title   -->
+            <ul>
+                <li>Demonstrate major network components</li>
+                <li>Demonstrate basic computer network example</li>
+                <li>Explain how 'convergence' applies to computer networks</li>
+                <li>Explain purpose of network architecture</li>
+                <li>Explain the use of TCP/IP protocol</li>
+            </ul>
 
-          <hr />
-    </div>
-<!-- -end-objectives-end -->
 
+            <hr />
+        </div>
+        <!-- -end-objectives-end -->
 
-    <div class=" col-lg-12"><a href="#Exercise01" class="btn btn-info" data-toggle="collapse">Questions</a></div>        
-      
-       <div id="Exercise01" class="collapse in  col-lg-12"> 
-          <p>What is telecommunications?<br />
-              Note: do not only rely on the book for the answer.<br />
-              Consult Lynda.com and Wikipedia.
-          </p>
 
-      
-                <p> (25) 1. Briefly state what the practice and study of I<a href="https://en.wikipedia.org/wiki/Information_and_communications_technology" class="bg-info text-white" target="_blank">CT-Information and Communications Technology</a>, is about.</p>
-              
-              <!-- Enter your answer in the VALUE field below   GROK -->        
-              <input name="q1" id="q1" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text"> <br />
+        <div class=" col-lg-12"><a href="#Exercise01" class="btn btn-info" data-toggle="collapse">Questions</a></div>
 
-         </div>  
+        <div id="Exercise01" class="collapse in  col-lg-12">
+            <p>
+                What is telecommunications?<br />
+                Note: do not only rely on the book for the answer.<br />
+                Consult Lynda.com and Wikipedia.
+            </p>
 
- 
- <hr />
 
+            <p>(25) 1. Briefly state what the practice and study of I<a href="https://en.wikipedia.org/wiki/Information_and_communications_technology" class="bg-info text-white" target="_blank">CT-Information and Communications Technology</a>, is about.</p>
 
+            <!-- Enter your answer in the VALUE field below   GROK -->
+            <input name="q1" id="q1" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text">
+            <br />
 
-<div class=" col-lg-12"><a href="#Exercise02" class="btn btn-info" data-toggle="collapse">Review Questions</a></div>        
-      
-<div id="Exercise02" class="collapse in  col-lg-12"> 
+        </div>
 
-          <p>Fill in the seven layers of the OSI (Open Systems Interconnection) model in the spaces below.<br /><br />
 
-              (25) 2. Layer number 7:<br />            
+        <hr />
 
-              <!-- Enter your answer in the VALUE field below   GROK -->        
-              <input name="q2" id="q2" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text"> <br />
 
-              (25) 3. Layer number 6:<br />             
 
-              <!-- Enter your answer in the VALUE field below   GROK -->        
-              <input name="q3" id="q3" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text"> <br />
+        <div class=" col-lg-12"><a href="#Exercise02" class="btn btn-info" data-toggle="collapse">Review Questions</a></div>
 
-              (25) 4. Layer number 5:<br />             
+        <div id="Exercise02" class="collapse in  col-lg-12">
 
-              <!-- Enter your answer in the VALUE field below   GROK -->        
-              <input name="q4" id="q4" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text"> <br />
+            <p>
+                Fill in the seven layers of the OSI (Open Systems Interconnection) model in the spaces below.<br />
+                <br />
 
-              (25) 5. Layer number 4:<br />             
+                (25) 2. Layer number 7:<br />
 
-              <!-- Enter your answer in the VALUE field below   GROK -->        
-              <input name="q5" id="q5" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text"> <br />
+                <!-- Enter your answer in the VALUE field below   GROK -->
+                <input name="q2" id="q2" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text">
+                <br />
 
-              (25) 6. Layer number 3:<br />             
+                (25) 3. Layer number 6:<br />
 
-              <!-- Enter your answer in the VALUE field below   GROK -->        
-              <input name="q6" id="q6" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text"> <br />
+                <!-- Enter your answer in the VALUE field below   GROK -->
+                <input name="q3" id="q3" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text">
+                <br />
 
-              (25) 7. Layer number 2:<br />             
+                (25) 4. Layer number 5:<br />
 
-              <!-- Enter your answer in the VALUE field below   GROK -->        
-              <input name="q7" id="q7" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text"> <br />
+                <!-- Enter your answer in the VALUE field below   GROK -->
+                <input name="q4" id="q4" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text">
+                <br />
 
-              (25) 8. Layer number 1:<br />             
+                (25) 5. Layer number 4:<br />
 
-              <!-- Enter your answer in the VALUE field below   GROK -->        
-              <input name="q8" id="q8" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text"> <br />
+                <!-- Enter your answer in the VALUE field below   GROK -->
+                <input name="q5" id="q5" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text">
+                <br />
 
-          </p>
+                (25) 6. Layer number 3:<br />
 
-      
-      <hr />
+                <!-- Enter your answer in the VALUE field below   GROK -->
+                <input name="q6" id="q6" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text">
+                <br />
 
+                (25) 7. Layer number 2:<br />
 
+                <!-- Enter your answer in the VALUE field below   GROK -->
+                <input name="q7" id="q7" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text">
+                <br />
 
+                (25) 8. Layer number 1:<br />
 
- <p > Fill in the 5 layers of the TCP/IP (Transmission Control Protocol/Internet Protocol)  suite in the table below:<br /><br />
-
-              (25) 9. Layer number 5:<br />             
-
-              <!-- Enter your answer in the VALUE field below   GROK -->        
-              <input name="q9" id="q9" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text"> <br />
-     
-              (25) 10. Layer number 4:<br />             
-
-              <!-- Enter your answer in the VALUE field below   GROK -->        
-              <input name="q10" id="q10" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text"> <br />
-
-              (25) 11. Layer number 3:<br />             
-
-              <!-- Enter your answer in the VALUE field below   GROK -->        
-              <input name="q11" id="q11" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text"> <br />
-
-              (25) 12. Layer number 2:<br />             
-
-              <!-- Enter your answer in the VALUE field below   GROK -->        
-              <input name="q12" id="q12" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text"> <br />
-
-              (25) 13. Layer number 1:<br />             
-
-              <!-- Enter your answer in the VALUE field below   GROK -->        
-              <input name="q13" id="q13" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text"> <br />
-
-          </p>
-
-       
-      <hr />
-      
-      <p> Investigate how convergence applies to the telecommunications industry, then briefly answer the following questions.<br /><br />
-
-              (50) 14. With respect to the various technologies:<br />             
-
-              <!-- Enter your answer in the VALUE field below   GROK -->        
-              <input name="q14" id="q14" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text"> <br />
-
-              (50) 15. With respect to wireless technologies:<br />             
-
-              <!-- Enter your answer in the VALUE field below   GROK -->        
-              <input name="q15" id="q15" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text"> <br />
-
-      </p>
-
-       </div> 
-      <hr />
-
-
-
-
-    <div class=" col-lg-12"><a href="#Exercise03" class="btn btn-info" data-toggle="collapse">Exercises</a></div>        
-      
-       <div id="Exercise03" class="collapse in  col-lg-12"> 
-
-          <p>Using the TCP/IP suite list the progression of messages as the 'Get File' command moves from your computer, through routers, to the server 'classes' and back.<br />
-              Assume it travels from your computer, through 2 routers, then to the web server.<br />
-              Hint: remember the TCP/IP suite from the question above.<br /><br />
-
-              (50) 16. List messages:<br />             
-
-              <!-- Enter your answer in the VALUE field below   GROK -->        
-              <input name="q16" id="q16" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text"> <br />
-
-              (50) 17. List two characteristics that distinguish a personal area network from other types of networks:<br />             
-
-              <!-- Enter your answer in the VALUE field below   GROK -->        
-              <input name="q17" id="q17" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text"></p>
-
-              <hr />
-
-              <p>Open Windows File Explorer and navigate to the folder with your username for this class, located on the T: drive.<br />
-               (50) 18.  Briefly describe the contents of this folder.
-              <!-- Enter your answer in the VALUE field below   GROK -->        
-              <input name="q18" id="q18" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text"> <br />
-
-
-              </p>
-
-              <p>Leave File Explorer visible, and now open a browser window, and navigate to your website homepage by using a url (web adderss) of the following format:<br />
-             <code>       https://classes.winona.edu/20193000084/&lt;username&gt;/ </code><br />
-               (50) 19.   Briefly explain why the contents of this folder look the same as those in the previous question..
-              <!-- Enter your answer in the VALUE field below   GROK -->        
-              <input name="q19" id="q19" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text"> <br />
-
-
-              </p>
-
-
-
-
-           <p>&nbsp;</p>
-           <p>Open another Windows File Explorer instance and try to establish an FTP connection to your folder on class storage.<br />
-                  If you are off-campus, make sure you have established a VPN connection first.<br />
-                  Note that it may take a minute or more for a message to appear.<br />
-               You will be making a screen shot of this message.<br />
-                  Use the following format:<br />
-                  <code>
-                      ftp://classes.winona.edu/20193000084/
-                  </code>
-                  <br />             </p> 
-
-           <p> Reflect on what you just did using Windows File Explorer and your web browser.  <br />
-               (50) 20. Briefly explain why there are at least three ways to view files and folders on a network.<br />
-                             <!-- Enter your answer in the VALUE field below   GROK -->        
-              <input name="q20" id="q20" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text"> <br />
-
-
-           </p>
-
-           <p>(50) 21. Use the Snipping Tool to make a screen shot of the message you received when trying to establish the FTP connection.. <br />
-
-         <!--  PgP 2/4/2018 create path using constants and current document assignment -->           
-              Save the screen shot  as &quot;Ex1&quot; in your ' 
-                  <span id="aPath" ></span>                   
-                  <script>document.getElementById("aPath").innerHTML = Path </script>' folder.<br /> 
-
-                  You will be combining screen shots from several exercises at the end of this assignment, just as you did in 
-                  <a href="https://eprofessor.azurewebsites.net/Formative00/Formative00.html#PDFfileCreation" class="bg-info text-white" target="_blank">Formative00</a>-PDF File Creation. 
-              </p>
-
-         </div>  
-
-      <div  class="col-lg-12 text-danger" >
-         <h2>Screen Shot Ex1</h2>
-          <hr />
-      </div>
-
-
-
-
-
-
-    <div class=" col-lg-12"><a href="#Exercise04" class="btn btn-info" data-toggle="collapse">Thinking Outside the Box</a></div>        
-      
-       <div id="Exercise04" class="collapse in  col-lg-12"> 
-
-          <p>Study the list of eleven (11) types of general network connections presented below.</p>
-           <p> Computer Networks &ndash; Basic Connections<br />
-               a. Terminal/microcomputer-to-mainframe computer connections<br />
-               b. Microcomputer-to-local area network connections<br />
-               c. Microcomputer-to-Internet connections<br />
-               d. Local area network-to-local area network connections<br />
-               e. Personal area network-to-workstation connections<br />
-               f. Local area network-to-metropolitan area network connections<br />
-               g. Local area network-to-wide area network connections<br />
-               h. Wide area network-to-wide area network connections<br />
-               i. IOT sensor-to-local area network connections<br />
-               j. Satellite and microwave connections<br />
-               k. Wireless telephone connections</p>
-
-           <p> (50) 22.  List which of the eleven network connections listed above most likely involve a connection to the Internet:<br />             
-
-              <!-- Enter your answer in the VALUE field below   GROK -->        
-              <input name="q22" id="q22" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text"> <br />
-
-           </p>   
-       </div> 
-      <hr />
-
-
-
-    <div class=" col-lg-12"><a href="#Exercise05" class="btn btn-info" data-toggle="collapse">Hands-on Projects</a></div>        
-      
-       <div id="Exercise05" class="collapse in  col-lg-12"> 
-
-          <p>List at least four network applications and the type of network connection used, (see list above) at Winona State University.<br />
-              Consider applications that you use to register for classes, participate in classes, submit homework, and apply for jobs.<br /><br />
-
-              (50) 23. Network application 1:<br />             
-
-              <!-- Enter your answer in the VALUE field below   GROK -->        
-              <input name="q23" id="q23" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text"> <br />
-
-              (50) 24. Network application 2:<br />             
-
-              <!-- Enter your answer in the VALUE field below   GROK -->        
-              <input name="q24" id="q24" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text"> <br />
-
-              (50) 25. Network application 3:<br />             
-
-              <!-- Enter your answer in the VALUE field below   GROK -->        
-              <input name="q25" id="q25" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text"> <br />
-
-              (50) 26. Network application 4:<br />             
-
-              <!-- Enter your answer in the VALUE field below   GROK -->        
-              <input name="q26" id="q26" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text"> <br />
-
-
-
-
-              (50) 27. Which, if any, of the four applications you listed, use a local area network?<br />             
-
-              <!-- Enter your answer in the VALUE field below   GROK -->        
-              <input name="q27" id="q27" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text"> <br />
-
-              (50) 28. Which, if any, of the four applications you listed, use a wide area network?<br />             
-
-              <!-- Enter your answer in the VALUE field below   GROK -->        
-              <input name="q28" id="q28" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text"> <br />
-
-
-          </p>
-
-
-
-      
-      <hr />
-
-
-
-
-        <p> Visit the <a href="http://e5.onthehub.com/WebStore/ProductsByMajorVersionList.aspx?ws=190fbb0d-be9b-e011-969d-0030487d8897&amp;vsro=8" class="bg-info text-white" target="_blank">Microsoft Imagine</a> website.<br />
-            Download and install Microsoft Visio Professional 2016, 32 bit version.<br />
-            Do not install 64 bit, it will cause you a LOT of problems.<br />
-            Note that it is a large, 2 GB, download.<br />
-            It will download as an .iso file, which you must mount using Windows File Explorer.<br />
-            Once mounted, run the setup.exe file.<br />
-            Launch Visio, and enter the Product Key from the Microsoft Imagine website<br />
-
-            <img alt="visio product key" class="img-responsive" src="VisioProductKey.PNG" /><br />
-
-            Then use Visio to draw a network diagram or map of these applications and their connections.<br />
-            Refer to Lynda.com or the internet for assistance using Visio.<br />
-            Make sure to label all 4 applications, and show the corresponding server.<br />
-            Also make sure to use, at a minimum, firewalls, switches and routers, as appropriate.<br />
-            Save the file, and then use the Snipping tool to make a screen shot.<br /><br />
-
-    <!--  PgP 2/4/2018 create path using constants and current document assignment -->           
-        (100) 29. Save the screen shot of the Visio diagram &quot;Ex2&quot; in your ' 
-            <span id="bPath" ></span>                   
-            <script>document.getElementById("bPath").innerHTML = Path </script>' folder.<br /> 
-
-            You will be combining screen shots from several exercises at the end of this assignment, just as you did in 
-            <a href="https://eprofessor.azurewebsites.net/Formative00/Formative00.html#PDFfileCreation" class="bg-info text-white" target="_blank">Formative00</a>-PDF File Creation. 
-        </p>
-
-    </div>  
-
-      <div  class="col-lg-12 text-danger" >
-         <h2>Screen Shot Ex2</h2>
-          <hr />
-      </div>
-
-
-   
-     
-<!--  From here to end difference question numbers and Summative numbering for PDF of file uploaded to D2L    -->
-
-     
-    <div class="col-lg-12"><a href="#ExercisePDF" class="btn btn-info" data-toggle="collapse">Exercise-PDF File Creation</a></div>
-      
-    <div id="ExercisePDF" class="collapse in  col-lg-12"> 
-            <p>Use a web browser to verify that you have published your website to https://classes.winona.edu/... <br />
-                Check that your name, StarID, email, class, semester, section and all of your answers are correct and visible. <br />
-                From the menu choose File&gt;Print... and using &quot;Microsoft Print to PDF&quot; save a copy of this assignment as a .pdf file in your   ' 
-                  <span id="dPath" ></span>
-                <script>document.getElementById("dPath").innerHTML = Path; </script>' folder.<br /> 
+                <!-- Enter your answer in the VALUE field below   GROK -->
+                <input name="q8" id="q8" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text">
+                <br />
 
             </p>
-           <br />
-               
-          <p>(50) 30. Save your file 'WebPage.pdf' to the ' 
-                  <span id="ePath" ></span>              
-<script>document.getElementById("ePath").innerHTML = Path; </script>' folder.<br /> 
 
 
-          </p>
-
-      <div  class="text-danger" >
-         <h2>WebPage.pdf</h2>
-          <hr />
-      </div>
-
-        <p>  Create one .pdf (portable document format) file from the screen shots that you have taken by following these steps.</p>
-        
-        <ol>             
-          <li> Open File Explorer, make sure the screen shot files are properly named(Ex1, Ex2 , Ex3.. ) &nbsp; </li>
-          <li> Select all of the screen shots to be combined. </li>         
-          <li>Right Click and select &#39;Print&#39; from the short-cut menu.      </li>
-          <li>In the bottom center of the &#39;Print Pictures&#39; dialog box uncheck the box &quot;Fit picture to frame&quot;</li>    
-          <li>Click on &#39;Print&#39; and save the file with the name&nbsp; &quot;ScreenShots.pdf&quot; in your '
-              <span id="fPath" ></span>              
-              <script>document.getElementById("fPath").innerHTML = Path; </script>' folder.<br /> </li>
-        </ol>
-
-
-          <p>(50) 31. Save your file 'ScreenShots.pdf' to the ' 
-                  <span id="gPath" ></span>              
-<script>document.getElementById("gPath").innerHTML = Path; </script>' folder.<br /> 
-
-          </p>
-
-      <div  class="text-danger" >
-         <h2>ScreenShots.pdf</h2>
-          <hr />
-      </div>
-
-
-       <p>  &nbsp;</p>
-         <p>  Use PDFill to merge the <strong>WebPage.pdf</strong> file with the <strong>ScreenShots.pdf </strong>file, and save it as &#39;<strong>Summative01.pdf</strong>&#39; in ' 
-                  <span id="hPath" ></span>              
-<script>document.getElementById("hPath").innerHTML = Path; </script>' folder.<br /> 
-
-         </p>
-
-
-        <p>(50) 32. Upload your file 'Summative01.pdf' to the D2L 'Summative01' Assignment folder.</p>
-
-      <div  class="text-danger" >
-         <h2>Summative01.pdf</h2>
-      </div>
-      <hr />
-
-        </div> 
+            <hr />
 
 
 
 
-  <div class="col-lg-12"><a href="#ExerciseAssignmentSubmission" class="btn btn-info" data-toggle="collapse">Exercise-Assignment Submission</a></div>
- 
-  <div id="ExerciseAssignmentSubmission" class="collapse in  col-lg-12">
-                <p>Use a browser to view your completed and published website at: https://classes.winona.edu/...      <br /> 
-                    Ensure that you have linked this assignment on your home page.
-                Note that your screen shots do not have to be completed to perform this step.<br>  </p>
+            <p>
+                Fill in the 5 layers of the TCP/IP (Transmission Control Protocol/Internet Protocol)  suite in the table below:<br />
+                <br />
+
+                (25) 9. Layer number 5:<br />
+
+                <!-- Enter your answer in the VALUE field below   GROK -->
+                <input name="q9" id="q9" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text">
+                <br />
+
+                (25) 10. Layer number 4:<br />
+
+                <!-- Enter your answer in the VALUE field below   GROK -->
+                <input name="q10" id="q10" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text">
+                <br />
+
+                (25) 11. Layer number 3:<br />
+
+                <!-- Enter your answer in the VALUE field below   GROK -->
+                <input name="q11" id="q11" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text">
+                <br />
+
+                (25) 12. Layer number 2:<br />
+
+                <!-- Enter your answer in the VALUE field below   GROK -->
+                <input name="q12" id="q12" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text">
+                <br />
+
+                (25) 13. Layer number 1:<br />
+
+                <!-- Enter your answer in the VALUE field below   GROK -->
+                <input name="q13" id="q13" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text">
+                <br />
+
+            </p>
+
+
+            <hr />
+
+            <p>
+                Investigate how convergence applies to the telecommunications industry, then briefly answer the following questions.<br />
+                <br />
+
+                (50) 14. With respect to the various technologies:<br />
+
+                <!-- Enter your answer in the VALUE field below   GROK -->
+                <input name="q14" id="q14" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text">
+                <br />
+
+                (50) 15. With respect to wireless technologies:<br />
+
+                <!-- Enter your answer in the VALUE field below   GROK -->
+                <input name="q15" id="q15" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text">
+                <br />
+
+            </p>
+
+        </div>
+        <hr />
+
+
+
+
+        <div class=" col-lg-12"><a href="#Exercise03" class="btn btn-info" data-toggle="collapse">Exercises</a></div>
+
+        <div id="Exercise03" class="collapse in  col-lg-12">
+
+            <p>
+                Using the TCP/IP suite list the progression of messages as the 'Get File' command moves from your computer, through routers, to the server 'classes' and back.<br />
+                Assume it travels from your computer, through 2 routers, then to the web server.<br />
+                Hint: remember the TCP/IP suite from the question above.<br />
+                <br />
+
+                (50) 16. List messages:<br />
+
+                <!-- Enter your answer in the VALUE field below   GROK -->
+                <input name="q16" id="q16" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text">
+                <br />
+
+                (50) 17. List two characteristics that distinguish a personal area network from other types of networks:<br />
+
+                <!-- Enter your answer in the VALUE field below   GROK -->
+                <input name="q17" id="q17" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text">
+            </p>
+
+            <hr />
+
+            <p>
+                Open Windows File Explorer and navigate to the folder with your username for this class, located on the T: drive.<br />
+                (50) 18.  Briefly describe the contents of this folder.
+              <!-- Enter your answer in the VALUE field below   GROK -->
+                <input name="q18" id="q18" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text">
+                <br />
+
+
+            </p>
+
+            <p>
+                Leave File Explorer visible, and now open a browser window, and navigate to your website homepage by using a url (web adderss) of the following format:<br />
+                <code>https://classes.winona.edu/20193000084/&lt;username&gt;/ </code>
+                <br />
+                (50) 19.   Briefly explain why the contents of this folder look the same as those in the previous question..
+              <!-- Enter your answer in the VALUE field below   GROK -->
+                <input name="q19" id="q19" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text">
+                <br />
+
+
+            </p>
+
+
+
+
+            <p>&nbsp;</p>
+            <p>
+                Open another Windows File Explorer instance and try to establish an FTP connection to your folder on class storage.<br />
+                If you are off-campus, make sure you have established a VPN connection first.<br />
+                Note that it may take a minute or more for a message to appear.<br />
+                You will be making a screen shot of this message.<br />
+                Use the following format:<br />
+                <code>ftp://classes.winona.edu/20193000084/
+                </code>
+                <br />
+            </p>
+
+            <p>
+                Reflect on what you just did using Windows File Explorer and your web browser. 
+                <br />
+                (50) 20. Briefly explain why there are at least three ways to view files and folders on a network.<br />
+                <!-- Enter your answer in the VALUE field below   GROK -->
+                <input name="q20" id="q20" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text">
+                <br />
+
+
+            </p>
+
+            <p>
+                (50) 21. Use the Snipping Tool to make a screen shot of the message you received when trying to establish the FTP connection..
+                <br />
+
+                <!--  PgP 2/4/2018 create path using constants and current document assignment -->
+                Save the screen shot  as &quot;Ex1&quot; in your ' 
+                  <span id="aPath"></span>
+                <script>document.getElementById("aPath").innerHTML = Path </script>
+                ' folder.<br />
+
+                You will be combining screen shots from several exercises at the end of this assignment, just as you did in 
+                  <a href="https://eprofessor.azurewebsites.net/Formative00/Formative00.html#PDFfileCreation" class="bg-info text-white" target="_blank">Formative00</a>-PDF File Creation. 
+            </p>
+
+        </div>
+
+        <div class="col-lg-12 text-danger">
+            <h2>Screen Shot Ex1</h2>
+            <hr />
+        </div>
+
+
+
+
+
+
+        <div class=" col-lg-12"><a href="#Exercise04" class="btn btn-info" data-toggle="collapse">Thinking Outside the Box</a></div>
+
+        <div id="Exercise04" class="collapse in  col-lg-12">
+
+            <p>Study the list of eleven (11) types of general network connections presented below.</p>
+            <p>
+                Computer Networks &ndash; Basic Connections<br />
+                a. Terminal/microcomputer-to-mainframe computer connections<br />
+                b. Microcomputer-to-local area network connections<br />
+                c. Microcomputer-to-Internet connections<br />
+                d. Local area network-to-local area network connections<br />
+                e. Personal area network-to-workstation connections<br />
+                f. Local area network-to-metropolitan area network connections<br />
+                g. Local area network-to-wide area network connections<br />
+                h. Wide area network-to-wide area network connections<br />
+                i. IOT sensor-to-local area network connections<br />
+                j. Satellite and microwave connections<br />
+                k. Wireless telephone connections
+            </p>
+
+            <p>
+                (50) 22.  List which of the eleven network connections listed above most likely involve a connection to the Internet:<br />
+
+                <!-- Enter your answer in the VALUE field below   GROK -->
+                <input name="q22" id="q22" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text">
+                <br />
+
+            </p>
+        </div>
+        <hr />
+
+
+
+        <div class=" col-lg-12"><a href="#Exercise05" class="btn btn-info" data-toggle="collapse">Hands-on Projects</a></div>
+
+        <div id="Exercise05" class="collapse in  col-lg-12">
+
+            <p>
+                List at least four network applications and the type of network connection used, (see list above) at Winona State University.<br />
+                Consider applications that you use to register for classes, participate in classes, submit homework, and apply for jobs.<br />
+                <br />
+
+                (50) 23. Network application 1:<br />
+
+                <!-- Enter your answer in the VALUE field below   GROK -->
+                <input name="q23" id="q23" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text">
+                <br />
+
+                (50) 24. Network application 2:<br />
+
+                <!-- Enter your answer in the VALUE field below   GROK -->
+                <input name="q24" id="q24" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text">
+                <br />
+
+                (50) 25. Network application 3:<br />
+
+                <!-- Enter your answer in the VALUE field below   GROK -->
+                <input name="q25" id="q25" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text">
+                <br />
+
+                (50) 26. Network application 4:<br />
+
+                <!-- Enter your answer in the VALUE field below   GROK -->
+                <input name="q26" id="q26" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text">
+                <br />
+
+
+
+
+                (50) 27. Which, if any, of the four applications you listed, use a local area network?<br />
+
+                <!-- Enter your answer in the VALUE field below   GROK -->
+                <input name="q27" id="q27" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text">
+                <br />
+
+                (50) 28. Which, if any, of the four applications you listed, use a wide area network?<br />
+
+                <!-- Enter your answer in the VALUE field below   GROK -->
+                <input name="q28" id="q28" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text">
+                <br />
+
+
+            </p>
+
+
+
+
+            <hr />
+
+
+
+
+            <p>
+                Visit the <a href="http://e5.onthehub.com/WebStore/ProductsByMajorVersionList.aspx?ws=190fbb0d-be9b-e011-969d-0030487d8897&amp;vsro=8" class="bg-info text-white" target="_blank">Microsoft Imagine</a> website.<br />
+                Download and install Microsoft Visio Professional 2016, 32 bit version.<br />
+                Do not install 64 bit, it will cause you a LOT of problems.<br />
+                Note that it is a large, 2 GB, download.<br />
+                It will download as an .iso file, which you must mount using Windows File Explorer.<br />
+                Once mounted, run the setup.exe file.<br />
+                Launch Visio, and enter the Product Key from the Microsoft Imagine website<br />
+
+                <img alt="visio product key" class="img-responsive" src="VisioProductKey.PNG" /><br />
+
+                Then use Visio to draw a network diagram or map of these applications and their connections.<br />
+                Refer to Lynda.com or the internet for assistance using Visio.<br />
+                Make sure to label all 4 applications, and show the corresponding server.<br />
+                Also make sure to use, at a minimum, firewalls, switches and routers, as appropriate.<br />
+                Save the file, and then use the Snipping tool to make a screen shot.<br />
+                <br />
+
+                <!--  PgP 2/4/2018 create path using constants and current document assignment -->
+                (100) 29. Save the screen shot of the Visio diagram &quot;Ex2&quot; in your ' 
+            <span id="bPath"></span>
+                <script>document.getElementById("bPath").innerHTML = Path </script>
+                ' folder.<br />
+
+                You will be combining screen shots from several exercises at the end of this assignment, just as you did in 
+            <a href="https://eprofessor.azurewebsites.net/Formative00/Formative00.html#PDFfileCreation" class="bg-info text-white" target="_blank">Formative00</a>-PDF File Creation. 
+            </p>
+
+        </div>
+
+        <div class="col-lg-12 text-danger">
+            <h2>Screen Shot Ex2</h2>
+            <hr />
+        </div>
+
+
+
+
+        <!--  From here to end difference question numbers and Summative numbering for PDF of file uploaded to D2L    -->
+
+
+        <div class="col-lg-12"><a href="#ExercisePDF" class="btn btn-info" data-toggle="collapse">Exercise-PDF File Creation</a></div>
+
+        <div id="ExercisePDF" class="collapse in  col-lg-12">
+            <p>
+                Use a web browser to verify that you have published your website to https://classes.winona.edu/...
+                <br />
+                Check that your name, StarID, email, class, semester, section and all of your answers are correct and visible.
+                <br />
+                From the menu choose File&gt;Print... and using &quot;Microsoft Print to PDF&quot; save a copy of this assignment as a .pdf file in your   ' 
+                  <span id="dPath"></span>
+                <script>document.getElementById("dPath").innerHTML = Path; </script>
+                ' folder.<br />
+
+            </p>
+            <br />
+
+            <p>
+                (50) 30. Save your file 'WebPage.pdf' to the ' 
+                  <span id="ePath"></span>
+                <script>document.getElementById("ePath").innerHTML = Path; </script>
+                ' folder.<br />
+
+
+            </p>
+
+            <div class="text-danger">
+                <h2>WebPage.pdf</h2>
+                <hr />
+            </div>
+
+            <p>Create one .pdf (portable document format) file from the screen shots that you have taken by following these steps.</p>
+
+            <ol>
+                <li>Open File Explorer, make sure the screen shot files are properly named(Ex1, Ex2 , Ex3.. ) &nbsp; </li>
+                <li>Select all of the screen shots to be combined. </li>
+                <li>Right Click and select &#39;Print&#39; from the short-cut menu.      </li>
+                <li>In the bottom center of the &#39;Print Pictures&#39; dialog box uncheck the box &quot;Fit picture to frame&quot;</li>
+                <li>Click on &#39;Print&#39; and save the file with the name&nbsp; &quot;ScreenShots.pdf&quot; in your '
+              <span id="fPath"></span>
+                    <script>document.getElementById("fPath").innerHTML = Path; </script>
+                    ' folder.<br />
+                </li>
+            </ol>
+
+
+            <p>
+                (50) 31. Save your file 'ScreenShots.pdf' to the ' 
+                  <span id="gPath"></span>
+                <script>document.getElementById("gPath").innerHTML = Path; </script>
+                ' folder.<br />
+
+            </p>
+
+            <div class="text-danger">
+                <h2>ScreenShots.pdf</h2>
+                <hr />
+            </div>
+
+
+            <p>&nbsp;</p>
+            <p>
+                Use PDFill to merge the <strong>WebPage.pdf</strong> file with the <strong>ScreenShots.pdf </strong>file, and save it as &#39;<strong>Summative01.pdf</strong>&#39; in ' 
+                  <span id="hPath"></span>
+                <script>document.getElementById("hPath").innerHTML = Path; </script>
+                ' folder.<br />
+
+            </p>
+
+
+            <p>(50) 32. Upload your file 'Summative01.pdf' to the D2L 'Summative01' Assignment folder.</p>
+
+            <div class="text-danger">
+                <h2>Summative01.pdf</h2>
+            </div>
+            <hr />
+
+        </div>
+
+
+
+
+        <div class="col-lg-12"><a href="#ExerciseAssignmentSubmission" class="btn btn-info" data-toggle="collapse">Exercise-Assignment Submission</a></div>
+
+        <div id="ExerciseAssignmentSubmission" class="collapse in  col-lg-12">
+            <p>
+                Use a browser to view your completed and published website at: https://classes.winona.edu/...     
+                <br />
+                Ensure that you have linked this assignment on your home page.
+                Note that your screen shots do not have to be completed to perform this step.<br>
+            </p>
 
             (50) 33. Home Page Hyperlink<br />
-            Check and verify that this assignment is hyperlinked on your home page.<br /><br />
+            Check and verify that this assignment is hyperlinked on your home page.<br />
+            <br />
 
             (50) 34. Assignment submission<br />
             Press the Submit button at the top or bottom of this page.
-                Read and follow instructions on the confirmation page.&nbsp; Correct any errors.</div> 
-           <hr />
+                Read and follow instructions on the confirmation page.&nbsp; Correct any errors.
+        </div>
+        <hr />
 
- 
-     
-      <div class="col-lg-12"><br /><input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit"> <br /></div>
 
-  
-  </form> 
+
+        <div class="col-lg-12">
+            <br />
+            <input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit">
+            <br />
+        </div>
+
+
+    </form>
 
 
 
     <!-- Creative Commons License Info -->
-    <div id="xLicense" class=" col-lg-12 text-muted" ></div>
+    <div id="xLicense" class=" col-lg-12 text-muted"></div>
 
-   <div id="xfooter" class=" col-lg-12 text-muted"></div>
+    <div id="xfooter" class=" col-lg-12 text-muted"></div>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
-	<script src="../js/jquery-1.js"></script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="../js/jquery-1.js"></script>
 
-	<!-- Include all compiled plugins (below), or include individual files as needed --> 
-	<script src="../js/bootstrap.js"></script>
-  
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../js/bootstrap.js"></script>
+
 </body></html>
