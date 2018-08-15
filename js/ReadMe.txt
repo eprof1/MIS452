@@ -14,7 +14,7 @@
 
 // student- update variables below this line
 
-var xeMail = "Your_eMail@winona.edu";
+var xeMail = "YourEmail@winona.edu";
 
 var xFirstName = "Your First Name";
 
