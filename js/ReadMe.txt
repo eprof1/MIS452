@@ -14,15 +14,15 @@
 
 // student- update variables below this line
 
-var xeMail = "YourEmail@winona.edu";
+var xeMail = "YourStarID@go.minnstate.edu";
 
-var xFirstName = "Your First Name";
+var xFirstName = "YourFirstName";
 
-var xLastName = "Your Last Name";
+var xLastName = "YourLastName";
 
-var xStarID = "Your StarID";
+var xStarID = "YourStarID";
 
-var xSection = "Your Section";
+var xSection = "YourSection";
 
 
 // student-do no modify variables below here, unless told to do so.
