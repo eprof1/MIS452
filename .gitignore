@@ -180,8 +180,9 @@ publish/
 # Note: Comment the next line if you want to checkin your web deploy settings,
 # but database connection strings (with potential passwords) will be unencrypted
 # PgP 2/17/2018 we want pub.xml included, there are no databases in this solution; and we need to create a .sln with .publishproj.
-#*.pubxml
-#*.publishproj
+# PgP 7/24/2018 going to try minimalist approach, pubxml will come from initial clone, but do not update GitHub repo
+*.pubxml
+*.publishproj
 
 # Microsoft Azure Web App publish settings. Comment the next line if you want to
 # checkin your Azure Web App publish settings, but sensitive information contained

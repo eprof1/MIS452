@@ -11,7 +11,8 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <SiteUrlToLaunchAfterPublish />
     <LaunchSiteAfterPublish>True</LaunchSiteAfterPublish>
     <ExcludeApp_Data>False</ExcludeApp_Data>
-    <!--  network path to webserver with current YearTerm, CourseID and WSU network username -->
+    <!--  network path to webserver with current YearTerm, CourseID and WSU network username 
+    replace 'Username' with your WSU network name, such as jrstudent16  -->
     <publishUrl>\\winona.edu\dfs\Students\ClassStorage\20193000084\Username\</publishUrl>
     <!-- if true, removes files from web server before publishing, often resolves publication issues,
     be mindful of repo location of files like web.config, constants.js; PgP 8/20/2018 -->
