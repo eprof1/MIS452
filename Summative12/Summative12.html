@@ -5,11 +5,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <!-- PgP 6/15/2019 update page, added integral check web db submissions, split constants into two files, one for students, one for course -->
     <!-- Bootstrap -->
-    <link href="../css/bootstrap.css" rel="stylesheet">
+    <link href="../../ReadOnly/bootstrap.css" rel="stylesheet">
 
-    <!-- constant file to update email, firstname, lastname, starid, section on students' pages -->
-    <script src="../js/constants.js"></script>
+    <!-- constant file for student firstname, lastname, starid on students' pages -->
+    <script src="../constants.js"></script>
+
+    <!-- course constant file that contains semester, class, section pages -->
+    <script src="../../ReadOnly/CourseConstants.js"></script>
 
     <!-- model assignment file, version 1 released 2018/02/18 PgP -->
 
@@ -64,7 +68,7 @@
         <!-- -end-Student, class and assignment information-end -->
 
         <!-- Calculate the correct path for saving the files -->
-        <script>Path = startPath + xStarID + "&#92;OneDrive - MNSCU&#92;" + xClass + "&#92;" + document.getElementById("assignment").value + "&#92;"; </script>
+        <script>Path = "&#92;OneDrive - MNSCU&#92;" + xClass + "&#92;" + document.getElementById("assignment").value + "&#92;"; </script>
 
 
         <div class="col-lg-12">
@@ -242,7 +246,7 @@
                 Check that your name, StarID, email, class, semester, section and all of your answers are correct and visible.
                 <br />
                 From the menu choose File&gt;Print... and using &quot;Microsoft Print to PDF&quot; save a copy of this assignment as a .pdf file in your   ' 
-                  <span id="dPath"></span>
+                <code><span id="dPath"></span></code>
                 <script>document.getElementById("dPath").innerHTML = Path; </script>
                 ' folder.<br />
 
@@ -250,8 +254,8 @@
             <br />
 
             <p>
-                (50) 23. Save your file 'Summative12.pdf' to the ' 
-                  <span id="ePath"></span>
+                (50) 23. Save your file 'Summative12.pdf' in your ' 
+                <code><span id="ePath"></span></code>
                 <script>document.getElementById("ePath").innerHTML = Path; </script>
                 ' folder.<br />
 
@@ -307,10 +311,10 @@
     <div id="xfooter" class=" col-lg-12 text-muted"></div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="../js/jquery-1.js"></script>
+    <script src="../../ReadOnly/jquery-1.js"></script>
 
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="../js/bootstrap.js"></script>
+    <script src="../../ReadOnly/bootstrap.js"></script>
 
 </body>
 </html>
