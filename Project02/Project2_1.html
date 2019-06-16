@@ -5,11 +5,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <!-- PgP 6/15/2019 update page, added integral check web db submissions, split constants into two files, one for students, one for course -->
     <!-- Bootstrap -->
-    <link href="../css/bootstrap.css" rel="stylesheet">
+    <link href="../../ReadOnly/bootstrap.css" rel="stylesheet">
 
-    <!-- constant file to update email, firstname, lastname, starid, section on students' pages -->
-    <script src="../js/constants.js"></script>
+    <!-- constant file for student firstname, lastname, starid on students' pages -->
+    <script src="../constants.js"></script>
+
+    <!-- course constant file that contains semester, class, section pages -->
+    <script src="../../ReadOnly/CourseConstants.js"></script>
 
     <!-- model assignment file, version 1 released 2018/02/18 PgP -->
 
@@ -64,7 +68,7 @@
         <!-- -end-Student, class and assignment information-end -->
 
         <!-- Calculate the correct path for saving the files -->
-        <script>Path = startPath + xStarID + "&#92;OneDrive - MNSCU&#92;" + xClass + "&#92;" + document.getElementById("assignment").value + "&#92;"; </script>
+        <script>Path = "&#92;OneDrive - MNSCU&#92;" + xClass + "&#92;" + document.getElementById("assignment").value + "&#92;"; </script>
 
 
         <div class="col-lg-12">
@@ -106,7 +110,7 @@
                 <a href="https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/about/" class="bg-info text-white" target="_blank">Information on Hyper-V</a> - good reference to understand capabiiities and uses of Hyper-V virtual machine technology
             </p>
             <p>
-                .iso image files can be obtained from the WSU network at:&nbsp; <a href="file://mispgp/VirtualMachineImages">\\mispgp\VirtualMachineImages</a>, and from varous websites
+                .iso image files can be obtained from the WSU network at:&nbsp; <code>\\mispgp\VirtualMachineImages</code>, and from varous websites
             </p>
             <hr />
 
@@ -149,7 +153,7 @@
             <br />
             <hr />
             (50) 3. Save the screen shot  as &quot;Ex3-DSL&quot; in your ' 
-                  <span id="bPath"></span>
+                 <code><span id="bPath"></span></code> 
             <script>document.getElementById("bPath").innerHTML = Path; </script>
             ' folder.<br />
 
@@ -185,7 +189,7 @@
 
             <br />
             (50) 5. Save the screen shot  as &quot;Ex5-NIC&quot; in your ' 
-                  <span id="cPath"></span>
+                <code>  <span id="cPath"></span></code>
             <script>document.getElementById("cPath").innerHTML = Path; </script>
             ' folder.<br />
 
@@ -218,7 +222,7 @@
             <p>
                 Create a Windows Server 2012&nbsp; vm using the WindowsServer2012.vhdx file available at:
                 <br />
-                \\mispgp\VirtuaMachineImages\MIS452Fall2018\Windows2012</p>
+                <code>\\mispgp\VirtuaMachineImages\MIS452Fall2018\Windows2012</code></p>
             <p>
                 To create the vm, first download the&nbsp; .vhdx file to your laptop, in your 'Virtual Machines' folder.<br />
             </p>
@@ -226,7 +230,7 @@
             <p>Make a screen shot of your&nbsp; vm  showing the date:</p>
 
             (50) 7. Save the screen shot  as &quot;Ex7-WS2012&quot; in your ' 
-                  <span id="kPath"></span>
+                  <code><span id="kPath"></span></code>
             <script>document.getElementById("kPath").innerHTML = Path; </script>
             ' folder.<br />
 
@@ -246,7 +250,7 @@
             <p>
                 Create a Windows XP vm using the WinXPSP3.iso file available at:
                 <br />
-                \\mispgp\VirtuaMachineImages\MIS452Fall2010\WinXP
+                <code>\\mispgp\VirtuaMachineImages\MIS452Fall2010\WinXP</code>
             </p>
             <p>
                 To create the WinXP vm, first download this .iso file to your laptop, in your 'Virtual Machines' folder.<br />
@@ -264,14 +268,14 @@
                 Using your WinXP vm, install Audacity.<br />
                 <a href="http://audacity.sourceforge.net/">Audacity</a> is recommended. It is a small file, about 2MB<br />
                 A copy on an .iso file is available in the folder:<br />
-                \\mispgp\VirtuaMachineImages\MIS452Fall2018<br />
+               <code> \\mispgp\VirtuaMachineImages\MIS452Fall2018</code><br />
                 <br />
                 Do the Audacity installation by mounting the .iso file onto your VM by using the appropriate settings.
   <br />
             </p>
             <p>&nbsp;Use the Snipping Tool and make a screen shot showing your WinXP vm running your newly installed application:</p>
             (50) 8. Save the screen shot  as &quot;Ex8-XP&quot; in your ' 
-                  <span id="lPath"></span>
+                 <code><span id="lPath"></span></code> 
             <script>document.getElementById("lPath").innerHTML = Path; </script>
             ' folder.<br />
 
@@ -298,7 +302,7 @@
             </p>
             <p>Make a screen shot showing the disk management console and the new hard drive installed in the WinXP vm:</p>
             (100) 9. Save the screen shot  as &quot;Ex9-VHD&quot; in your ' 
-                  <span id="mPath"></span>
+                  <code><span id="mPath"></span></code>
             <script>document.getElementById("mPath").innerHTML = Path; </script>
             ' folder.<br />
 
@@ -330,7 +334,7 @@
                 Check that your name, StarID, email, class, semester, section and all of your answers are correct and visible.
                     <br />
                 From the menu choose File&gt;Print... and using &quot;Microsoft Print to PDF&quot; save a copy of this assignment as a .pdf file in your   ' 
-                  <span id="dPath"></span>
+                <code>  <span id="dPath"></span></code>
                 <script>document.getElementById("dPath").innerHTML = Path; </script>
                 ' folder.<br />
             </p>
@@ -338,7 +342,7 @@
 
             <p>
                 (50) 10. Save your file 'WebPage.pdf' to the ' 
-                  <span id="ePath"></span>
+                <code>  <span id="ePath"></span></code>
                 <script>document.getElementById("ePath").innerHTML = Path; </script>
                 ' folder.<br />
 
@@ -358,7 +362,7 @@
                 <li>Right Click and select &#39;Print&#39; from the short-cut menu.      </li>
                 <li>In the bottom center of the &#39;Print Pictures&#39; dialog box uncheck the box &quot;Fit picture to frame&quot;</li>
                 <li>Click on &#39;Print&#39; and save the file with the name&nbsp; &quot;ScreenShots.pdf&quot; in your '
-              <span id="fPath"></span>
+                <code><span id="fPath"></span></code> 
                     <script>document.getElementById("fPath").innerHTML = Path; </script>
                     ' folder.<br />
                 </li>
@@ -367,7 +371,7 @@
 
             <p>
                 (50) 11. Save your file 'ScreenShots.pdf' to the ' 
-                  <span id="gPath"></span>
+                <code> <span id="gPath"></span></code> 
                 <script>document.getElementById("gPath").innerHTML = Path; </script>
                 ' folder.<br />
 
@@ -382,7 +386,7 @@
             <p>&nbsp;</p>
             <p>
                 Use PDFill to merge the <strong>WebPage.pdf</strong> file with the <strong>ScreenShots.pdf </strong>file, and save it as &#39;<strong>Project02_1.pdf</strong>&#39; in ' 
-                  <span id="hPath"></span>
+                <code>  <span id="hPath"></span></code>
                 <script>document.getElementById("hPath").innerHTML = Path; </script>
                 ' folder.<br />
 
@@ -438,10 +442,10 @@
     <div id="xfooter" class=" col-lg-12 text-muted"></div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="../js/jquery-1.js"></script>
+    <script src="../../ReadOnly/jquery-1.js"></script>
 
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="../js/bootstrap.js"></script>
+    <script src="../../ReadOnly/bootstrap.js"></script>
 
 </body>
 </html>
