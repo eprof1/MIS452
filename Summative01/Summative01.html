@@ -5,12 +5,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <!-- PgP 6/15/2019 update page, added integral check web db submissions, split constants into two files, one for students, one for course -->
     <!-- Bootstrap -->
-    <link href="../css/bootstrap.css" rel="stylesheet">
+    <link href="../../ReadOnly/bootstrap.css" rel="stylesheet">
 
-    <!-- constant file to update email, firstname, lastname, starid, section on students' pages -->
-    <script src="../js/constants.js"></script>
+    <!-- constant file for student firstname, lastname, starid on students' pages -->
+    <script src="../constants.js"></script>
 
+    <!-- course constant file that contains semester, class, section pages -->
+    <script src="../../ReadOnly/CourseConstants.js"></script>
     <!-- model assignment file, version 1 released 2018/02/18 PgP -->
 
     <title>MIS452Summative01</title>
@@ -64,7 +67,7 @@
         <!-- -end-Student, class and assignment information-end -->
 
         <!-- Calculate the correct path for saving the files -->
-        <script>Path = startPath + xStarID + "&#92;OneDrive - MNSCU&#92;" + xClass + "&#92;" + document.getElementById("assignment").value + "&#92;"; </script>
+        <script>Path = "&#92;OneDrive - MNSCU&#92;" + xClass + "&#92;" + document.getElementById("assignment").value + "&#92;"; </script>
 
 
         <div class="col-lg-12">
@@ -172,11 +175,7 @@
 
             </p>
 
-
             <hr />
-
-
-
 
             <p>
                 Fill in the 5 layers of the TCP/IP (Transmission Control Protocol/Internet Protocol)  suite in the table below:<br />
@@ -214,7 +213,6 @@
 
             </p>
 
-
             <hr />
 
             <p>
@@ -236,10 +234,8 @@
             </p>
 
         </div>
+
         <hr />
-
-
-
 
         <div class=" col-lg-12"><a href="#Exercise03" class="btn btn-info" data-toggle="collapse">Exercises</a></div>
 
@@ -277,18 +273,14 @@
 
             <p>
                 Leave File Explorer visible, and now open a browser window, and navigate to your website homepage by using a url (web adderss) of the following format:<br />
-                <code>https://classes.winona.edu/20193000084/&lt;username&gt;/ </code>
+                <code>https://classes.winona.edu/20203000039/&lt;username&gt;/ </code>
                 <br />
                 (50) 19.   Briefly explain why the contents of this folder look the same as those in the previous question..
               <!-- Enter your answer in the VALUE field below   GROK -->
                 <input name="q19" id="q19" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text">
                 <br />
 
-
             </p>
-
-
-
 
             <p>&nbsp;</p>
             <p>
@@ -297,7 +289,7 @@
                 Note that it may take a minute or more for a message to appear.<br />
                 You will be making a screen shot of this message.<br />
                 Use the following format:<br />
-                <code>ftp://classes.winona.edu/20193000084/
+                <code>ftp://classes.winona.edu/20203000039/
                 </code>
                 <br />
             </p>
@@ -319,7 +311,7 @@
 
                 <!--  PgP 2/4/2018 create path using constants and current document assignment -->
                 Save the screen shot  as &quot;Ex1&quot; in your ' 
-                  <span id="aPath"></span>
+                <code><span id="aPath"></span></code>
                 <script>document.getElementById("aPath").innerHTML = Path; </script>
                 ' folder.<br />
 
@@ -333,11 +325,6 @@
             <h2>Screen Shot Ex1</h2>
             <hr />
         </div>
-
-
-
-
-
 
         <div class=" col-lg-12"><a href="#Exercise04" class="btn btn-info" data-toggle="collapse">Thinking Outside the Box</a></div>
 
@@ -368,9 +355,8 @@
 
             </p>
         </div>
+
         <hr />
-
-
 
         <div class=" col-lg-12"><a href="#Exercise05" class="btn btn-info" data-toggle="collapse">Hands-on Projects</a></div>
 
@@ -405,9 +391,6 @@
                 <input name="q26" id="q26" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text">
                 <br />
 
-
-
-
                 (50) 27. Which, if any, of the four applications you listed, use a local area network?<br />
 
                 <!-- Enter your answer in the VALUE field below   GROK -->
@@ -420,16 +403,9 @@
                 <input name="q28" id="q28" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text">
                 <br />
 
-
             </p>
 
-
-
-
             <hr />
-
-
-
 
             <p>
                 Visit the <a href="http://e5.onthehub.com/WebStore/ProductsByMajorVersionList.aspx?ws=190fbb0d-be9b-e011-969d-0030487d8897&amp;vsro=8" class="bg-info text-white" target="_blank">Microsoft Imagine</a> website.<br />
@@ -451,7 +427,7 @@
 
                 <!--  PgP 2/4/2018 create path using constants and current document assignment -->
                 (100) 29. Save the screen shot of the Visio diagram &quot;Ex2&quot; in your ' 
-            <span id="bPath"></span>
+           <code><span id="bPath"></span></code>
                 <script>document.getElementById("bPath").innerHTML = Path; </script>
                 ' folder.<br />
 
@@ -467,10 +443,7 @@
         </div>
 
 
-
-
         <!--  From here to end difference question numbers and Summative numbering for PDF of file uploaded to D2L    -->
-
 
         <div class="col-lg-12"><a href="#ExercisePDF" class="btn btn-info" data-toggle="collapse">Exercise-PDF File Creation</a></div>
 
@@ -481,7 +454,7 @@
                 Check that your name, StarID, email, class, semester, section and all of your answers are correct and visible.
                 <br />
                 From the menu choose File&gt;Print... and using &quot;Microsoft Print to PDF&quot; save a copy of this assignment as a .pdf file in your   ' 
-                  <span id="dPath"></span>
+                 <code><span id="dPath"></span></code>
                 <script>document.getElementById("dPath").innerHTML = Path; </script>
                 ' folder.<br />
 
@@ -490,10 +463,9 @@
 
             <p>
                 (50) 30. Save your file 'WebPage.pdf' to the ' 
-                  <span id="ePath"></span>
+                <code><span id="ePath"></span></code>
                 <script>document.getElementById("ePath").innerHTML = Path; </script>
                 ' folder.<br />
-
 
             </p>
 
@@ -510,7 +482,7 @@
                 <li>Right Click and select &#39;Print&#39; from the short-cut menu.      </li>
                 <li>In the bottom center of the &#39;Print Pictures&#39; dialog box uncheck the box &quot;Fit picture to frame&quot;</li>
                 <li>Click on &#39;Print&#39; and save the file with the name&nbsp; &quot;ScreenShots.pdf&quot; in your '
-              <span id="fPath"></span>
+             <code><span id="fPath"></span></code>
                     <script>document.getElementById("fPath").innerHTML = Path; </script>
                     ' folder.<br />
                 </li>
@@ -519,7 +491,7 @@
 
             <p>
                 (50) 31. Save your file 'ScreenShots.pdf' to the ' 
-                  <span id="gPath"></span>
+               <code><span id="gPath"></span></code>
                 <script>document.getElementById("gPath").innerHTML = Path; </script>
                 ' folder.<br />
 
@@ -534,10 +506,9 @@
             <p>&nbsp;</p>
             <p>
                 Use PDFill to merge the <strong>WebPage.pdf</strong> file with the <strong>ScreenShots.pdf </strong>file, and save it as &#39;<strong>Summative01.pdf</strong>&#39; in ' 
-                  <span id="hPath"></span>
+                 <code><span id="hPath"></span></code>
                 <script>document.getElementById("hPath").innerHTML = Path; </script>
                 ' folder.<br />
-
             </p>
 
 
@@ -585,17 +556,16 @@
     </form>
 
 
-
     <!-- Creative Commons License Info -->
     <div id="xLicense" class=" col-lg-12 text-muted"></div>
 
     <div id="xfooter" class=" col-lg-12 text-muted"></div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="../js/jquery-1.js"></script>
+    <script src="../../ReadOnly/jquery-1.js"></script>
 
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="../js/bootstrap.js"></script>
+    <script src="../../ReadOnly/bootstrap.js"></script>
 
 </body>
 </html>
