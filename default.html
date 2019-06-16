@@ -2,42 +2,81 @@
 <html lang="en">
 
 <head>
+    <!-- PgP 6/15/2019 update page, added integral check web db submissions, split constants into two files, one for students, one for course -->
     <!-- PgP 2/5/2018  Need to update this page to a real RWD -->
+    <title>MIS452 Home Page</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <!-- constant file to update email, firstname, lastname, starid, section on students' pages -->
-    <script src="js/footer.js"></script>
+    <!-- Bootstrap for this course -->
+    <link href="../ReadOnly/bootstrap.css" rel="stylesheet">
 
-    <title>MIS452 Home Page</title>
+    <!-- constant file for student firstname, lastname, starid on students' pages -->
+    <script src="constants.js"></script>
+
+    <!-- course constant file that contains semester, class, section pages -->
+    <script src="../ReadOnly/CourseConstants.js"></script>
 
 </head>
 
 <body class="container-fluid" onload="setVariables()">
 
 
-    <!-- Replace YOUR NAME with your Full Name in the line below   GROK -->
-    <h1 class=" text-center text-primary">[My Name] MIS 452 Fall 2018 Homepage </h1>
+    <!-- PgP 6/15/2009 Scripted web page header -->
+    <div id="xHeading" class=" col-lg-12">
+        <script>document.getElementById("xHeading").innerHTML = pageHeading; </script>
+    </div>
+
+
+
 
     <div class="row col-lg-12">
         <div class="col-lg-5 h2 text-primary">
             <!-- Replace USERNAME with your WSU network username in the line below   GROK -->
-            <a href="mailto:you@go.minnstate.edu?subject=MIS452AssignmentFeedback&amp;cc=ppaulson@winona.edu;jsalo06@winona.edu;eashland16@winona.edu&amp;body=For%20assistance%20correcting%20any%20errors%20please%20contact%20a%20course%20TA" class="bg-info text-white">
+            <a href="mailto:you@go.minnstate.edu?subject=MIS452AssignmentFeedback&amp;cc=ppaulson@winona.edu;brody.dunsmoor@go.winona.edu;hbrosious16@winona.edu&amp;body=For%20assistance%20correcting%20any%20errors%20please%20contact%20a%20course%20TA" class="bg-info text-white">
 
-                <!-- Replace My First Name with your First Name in the line below   GROK -->
-                Email to [My First Name]</a>
-
+                <!-- PgP 6/15/2019 scirpted First Name  -->
+                Email to 
+                <span id="xName">
+                    <script>document.getElementById("xName").innerHTML = xFirstName</script>
+                </span></a>
         </div>
+
         <div class="col-lg-3">
         </div>
 
         <div class="col-lg-4 h2 text-primary ">
-            <a href="#" class="bg-info text-white">Attendance</a>
+            <a href="Attendance.html" class="bg-info text-white">Attendance</a>
         </div>
     </div>
 
+
+
+    <form class="container-fluid" action="https://eprofessor.azurewebsites.net/code/grading/CourseAssignmentSubmissions.asp" method="post" name="frmAssignment" id="frmAssignment">
+
+
+        <!-- PgP 6/15/2019 add hidden fields -start-Student, class and assignment information. Assignment hard-coded, other values from constants.js file-start -->
+
+        <input class="form-control" name="FirstName" id="FirstName" type="hidden" value="default first name">
+        <input class="form-control" name="LastName" id="LastName" type="hidden" value="default last name">
+        <input class="form-control" name="pin" id="pin" type="hidden" value="default StarID">
+        <input class="form-control" name="email" id="email" type="hidden" value="default email address">
+        <input class="form-control" name="semester" id="semester" type="hidden" value="default">
+        <input class="form-control" name="class" id="class" value="xClass" type="hidden">
+        <input class="form-control" name="section" id="section" value="default" type="hidden">
+        <input class="form-control" name="assignment" id="assignment" value="Attendance" type="hidden">
+        <input name="InstID" id="InstID" value="00617282" type="hidden">
+
+        <!-- -end-Student, class and assignment information-end -->
+
+
+        <div class="col-lg-12">
+            <br />
+            <input class="text-danger btn-block btn-lg" name="Submit" value="Check Assignment Submissions" type="submit">
+            <br />
+        </div>
+
+    </form>
 
 
 
@@ -45,100 +84,100 @@
         <tbody>
             <tr class="text-center">
                 <th scope="col">Week</th>
-                <th scope="col">Due-Saturday</th>
+                <th scope="col">Due-Monday</th>
                 <th scope="col">Assignment(s)</th>
                 <th scope="col">Project</th>
             </tr>
             <tr>
                 <td>1</td>
-                <td>9/1/18</td>
+                <td>9/2/19</td>
                 <td>Formative00</td>
                 <td>&nbsp;</td>
             </tr>
             <tr>
                 <td>2</td>
-                <td>9/8/18</td>
+                <td>9/9/19</td>
                 <td>&nbsp;</td>
-                <td>Project01&nbsp; (Project01-VS-no hyperlink required)</td>
+                <td><a href="https://eprofessor.azurewebsites.net/Project1GitVS2019/default.html">Project01</a>-no hyperlink required</td>
             </tr>
             <tr>
                 <td>3</td>
-                <td>9/15/18</td>
+                <td>9/16/19</td>
                 <td>Summative01</td>
                 <td>&nbsp;</td>
             </tr>
             <tr>
                 <td>4</td>
-                <td>9/22/18</td>
+                <td>9/23/19</td>
                 <td>Summative02</td>
                 <td>&nbsp;</td>
             </tr>
             <tr>
                 <td>5</td>
-                <td>9/29/18</td>
+                <td>9/30/19</td>
                 <td>Summative03</td>
                 <td>&nbsp;</td>
             </tr>
             <tr>
                 <td>6</td>
-                <td>10/6/18</td>
+                <td>10/6/19</td>
                 <td>Summative04</td>
                 <td>&nbsp;</td>
             </tr>
             <tr>
                 <td>7</td>
-                <td>10/13/18</td>
+                <td>10/14/19</td>
                 <td>Summative05</td>
                 <td>&nbsp;</td>
             </tr>
             <tr>
                 <td>8</td>
-                <td>10/20/18</td>
+                <td>10/21/19</td>
                 <td>Summative06</td>
                 <td>&nbsp;</td>
             </tr>
             <tr>
                 <td>9</td>
-                <td>10/27/18</td>
+                <td>10/28/19</td>
                 <td>Summative07<br />
                     Summative08</td>
                 <td>&nbsp;</td>
             </tr>
             <tr>
                 <td>10</td>
-                <td>11/3/18</td>
+                <td>11/4/19</td>
                 <td>Summative09<br />
                     Summative10</td>
                 <td>&nbsp;</td>
             </tr>
             <tr>
                 <td>11</td>
-                <td>11/10/18</td>
+                <td>11/11/19</td>
                 <td>Summative11</td>
                 <td>&nbsp;</td>
             </tr>
             <tr>
                 <td>12</td>
-                <td>11/17/18</td>
+                <td>11/18/19</td>
                 <td>Summative12</td>
                 <td>&nbsp;</td>
             </tr>
             <tr>
                 <td>13</td>
-                <td>11/24/18</td>
+                <td>11/25/19</td>
                 <td>Summative13</td>
                 <td>&nbsp;</td>
             </tr>
             <tr>
                 <td>14</td>
-                <td>12/1/18</td>
+                <td>12/2/19</td>
                 <td>&nbsp;</td>
                 <td>Project02 Part 1<br />
                     Project02 Part 2</td>
             </tr>
             <tr>
                 <td>15</td>
-                <td>12/8/18</td>
+                <td>12/9/19</td>
                 <td>&nbsp;</td>
                 <td>Project03</td>
             </tr>
