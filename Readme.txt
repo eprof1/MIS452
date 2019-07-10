@@ -8,6 +8,13 @@ var xLastName = "MyLastName";
 
 var xStarID = "MyStarID";
 
+
+// STAY AWAY!!!
+
+// GO BACK!!!
+
+// DO NOT MODIFY ANYTHING BELOW THIS LINE!!!!
+
 var xeMail = xStarID + "@go.minnstate.edu";
 
-// *** end of constants.js  file***
+// *** end of file***
