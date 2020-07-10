@@ -2,8 +2,13 @@
 <html lang="en">
 
 <head>
+
+	<!--PgP 7/8/2020 updated page. 
+		constants.js file now completed in Formative00
+		constants.js file controls student information for attendance, email feedback and running assignment submission report. 
 	<!-- PgP 6/15/2019 update page, added integral check web db submissions, split constants into two files, one for students, one for course -->
 	<!-- PgP 2/5/2018  Need to update this page to a real RWD -->
+
 	<title>MIS452 Home Page</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -28,55 +33,70 @@
 	</div>
 
 
+	<!-- 
+		PgP 2/28/2020 Add separate form to submit attendance		
+		PgP 3/1/2020 Attendance form and new .asp script work nicely, modified courseconstants.js also
+	-->
 
-
-	<div class="row col-lg-12">
-		<div class="col-lg-5 h2 text-primary">
-			<!-- Replace USERNAME with your WSU network username in the line below   GROK -->
-			<a href="mailto:you@go.minnstate.edu?subject=MIS452AssignmentFeedback&amp;cc=mista@winona.edu&amp;body=For%20assistance%20correcting%20any%20errors%20please%20contact%20a%20course%20TA" class="bg-info text-white">
-
-				<!-- PgP 6/15/2019 scirpted First Name  -->
-				Email to 
-                <span id="xName">
-					<script>document.getElementById("xName").innerHTML = xFirstName</script>
-				</span></a>
-		</div>
-
-		<div class="col-lg-3">
-		</div>
-
-		<div class="col-lg-4 h2 text-primary ">
-			<a href="Attendance.html" class="bg-info text-white">Attendance</a>
-		</div>
+	<div class="col-lg-12">
+		<hr />
 	</div>
 
+	<div class="col-lg-12">
 
 
-	<form class="container-fluid" action="https://eprofessor.azurewebsites.net/code/grading/CourseAssignmentSubmissions.asp" method="post" name="frmAssignment" id="frmAssignment">
+		<form class="container-fluid col-lg-4" action="https://eprofessor.azurewebsites.net/code/SubmitAttendance.asp" method="post" name="frmAttendance" id="frmAttendance">
+
+			<input class="form-control" name="FirstName" id="FirstName3" type="hidden" value="default first name">
+			<input class="form-control" name="LastName" id="LastName3" type="hidden" value="default last name">
+			<input class="form-control" name="pin3" id="pin3" type="hidden" value="default StarID">
+			<input class="form-control" name="email3" id="email3" type="hidden" value="default email address">
+			<input class="form-control" name="semester" id="semester3" type="hidden" value="default">
+			<input class="form-control" name="class" id="class3" value="xClass" type="hidden">
+			<input class="form-control" name="section" id="section3" value="default" type="hidden">
+			<input class="form-control" name="assignment" id="assignment3" value="Attendance" type="hidden">
+			<input name="InstID" id="InstID3" value="00617282" type="hidden">
 
 
-		<!-- PgP 6/15/2019 add hidden fields -start-Student, class and assignment information. Assignment hard-coded, other values from constants.js file-start -->
+			<input class="text-danger btn-block btn-lg" type="submit" value="Submit Attendance" />
 
-		<input class="form-control" name="FirstName" id="FirstName" type="hidden" value="default first name">
-		<input class="form-control" name="LastName" id="LastName" type="hidden" value="default last name">
-		<input class="form-control" name="pin" id="pin" type="hidden" value="default StarID">
-		<input class="form-control" name="email" id="email" type="hidden" value="default email address">
-		<input class="form-control" name="semester" id="semester" type="hidden" value="default">
-		<input class="form-control" name="class" id="class" value="xClass" type="hidden">
-		<input class="form-control" name="section" id="section" value="default" type="hidden">
-		<input class="form-control" name="assignment" id="assignment" value="Attendance" type="hidden">
-		<input name="InstID" id="InstID" value="00617282" type="hidden">
+			<hr />
 
-		<!-- -end-Student, class and assignment information-end -->
+		</form>
+
+		<!-- PgP 2/28/2020 End of attendance form  -->
 
 
-		<div class="col-lg-12">
-			<br />
+		<form class="container-fluid col-lg-4" action="https://eprofessor.azurewebsites.net/code/grading/CourseAssignmentSubmissions.asp" method="post" name="frmAssignment" id="frmAssignment">
+
+			<!-- -start-Student, class and assignment information. Assignment hard-coded, other values from constants.js file-start -->
+
+			<input class="form-control" name="FirstName" id="FirstName" type="hidden" value="default first name">
+			<input class="form-control" name="LastName" id="LastName" type="hidden" value="default last name">
+			<input class="form-control" name="pin" id="pin" type="hidden" value="default StarID">
+			<input class="form-control" name="email" id="email" type="hidden" value="default email address">
+			<input class="form-control" name="semester" id="semester" type="hidden" value="default">
+			<input class="form-control" name="class" id="class" value="xClass" type="hidden">
+			<input class="form-control" name="section" id="section" value="default" type="hidden">
+			<input class="form-control" name="assignment" id="assignment" value="Attendance" type="hidden">
+			<input name="InstID" id="InstID" value="00617282" type="hidden">
+
+			<!-- -end-Student, class and assignment information-end -->
 			<input class="text-danger btn-block btn-lg" name="Submit" value="Run Assignment Submissions Report" type="submit">
-			<br />
+			<hr />
+
+		</form>
+
+
+		<div class="text-center">
+			<!-- PgP 3/2/2020 below is  Java Script generated mail to link -->
+			<div id="emailStudent"></div>
+			<script>document.getElementById("emailStudent").innerHTML = xMailTo</script>
+			<hr />
 		</div>
 
-	</form>
+
+	</div>
 
 
 
@@ -84,106 +104,89 @@
 		<tbody>
 			<tr class="text-center">
 				<th scope="col">Week</th>
-				<th scope="col">Due-Monday</th>
 				<th scope="col">Assignment(s)</th>
 				<th scope="col">Project</th>
 			</tr>
 			<tr>
 				<td>1</td>
-				<td>9/2/19</td>
-				<td>Formative00</td>
-				<td>&nbsp;</td>
+				<td><a href="Formative00/Formative00.html">Formative00</a></td>
+				<td>Project01-<a href="https://eprofessor.azurewebsites.net/Code/EntryFormWebsiteURL.asp" target="_blank">submit url</a></td>
 			</tr>
 			<tr>
 				<td>2</td>
-				<td>9/9/19</td>
 				<td>&nbsp;</td>
 				<td><a href="https://eprofessor.azurewebsites.net/Project1GitVS2019/default.html">Project01</a>-no hyperlink required</td>
 			</tr>
 			<tr>
 				<td>3</td>
-				<td>9/16/19</td>
 				<td>Summative01</td>
 				<td>Project04-IOTP01</td>
 			</tr>
 			<tr>
 				<td>4</td>
-				<td>9/23/19</td>
 				<td>Summative02</td>
 				<td>Project04-IOTP02</td>
 			</tr>
 			<tr>
 				<td>5</td>
-				<td>9/30/19</td>
 				<td>Summative03</td>
 				<td>Project04-IOTP03</td>
 			</tr>
 			<tr>
 				<td>6</td>
-				<td>10/7/19</td>
 				<td>Summative04</td>
 				<td>Project04-IOTA01</td>
 			</tr>
 			<tr>
 				<td>7</td>
-				<td>10/14/19</td>
 				<td>Summative05</td>
 				<td>Project04-IOTB01</td>
 			</tr>
 			<tr>
 				<td>8</td>
-				<td>10/21/19</td>
 				<td>Summative06</td>
 				<td>Project04-IOT01</td>
 			</tr>
 			<tr>
 				<td>9</td>
-				<td>10/28/19</td>
 				<td>Summative07<br />
 					Summative08</td>
 				<td>Project04-IOT02</td>
 			</tr>
 			<tr>
 				<td>10</td>
-				<td>11/4/19</td>
 				<td>Summative09<br />
 					Summative10</td>
 				<td>Project04-IOT03</td>
 			</tr>
 			<tr>
 				<td>11</td>
-				<td>11/11/19</td>
 				<td>Summative11</td>
 				<td>Project04-IOT04</td>
 			</tr>
 			<tr>
 				<td>12</td>
-				<td>11/18/19</td>
 				<td>Summative12</td>
 				<td>Project04-IOT05</td>
 			</tr>
 			<tr>
 				<td>13</td>
-				<td>11/25/19</td>
 				<td>Summative13</td>
 				<td>Project04-IOT06</td>
 			</tr>
 			<tr>
 				<td>14</td>
-				<td>12/2/19</td>
 				<td>&nbsp;</td>
 				<td>Project02 Part 1<br />
 					Project02 Part 2</td>
 			</tr>
 			<tr>
 				<td>15</td>
-				<td>12/9/19</td>
 				<td>&nbsp;</td>
 				<td>Project03</td>
 			</tr>
 			<tr>
-				<td>&nbsp;</td>
-				<td>&nbsp;</td>
+				<td>16</td>
 				<td>&nbsp;</td>
 				<td>&nbsp;</td>
 			</tr>
@@ -191,6 +194,12 @@
 
 		</tbody>
 	</table>
+
+	<div class="col-lg-12">
+		<p>
+			Assignments are typically due Monday at 7am, actual due dates are in D2L calendar
+		</p>
+	</div>
 
 	<hr />
 
