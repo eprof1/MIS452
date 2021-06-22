@@ -1,3 +1,8 @@
+PgP 6/22/2021
+* Major change to Summative Assignments, book switch from 
+ White-Data Communications and Computer Networks to
+ Tomsho-Network Essentials
+
 PgP 6/16/2019
 
    * This repository contains all files and assignments for Winona State University MIS 452, Management of Telecommunication Systems class for fall 2019.
