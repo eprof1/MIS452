@@ -1,7 +1,7 @@
 PgP 7/28/2021
 * adding links to individual assignments for convenience
 * [Summative01-  ] (./Summative01/Summative01.html)
-* <a href="./Summative02/Summative02.html">Summative02-</a>
+* <a href="https://eprof1.github.io/MIS452/Summative02/Summative02.html" target="_blank">Summative02-</a>
 
 
 PgP 6/22/2021
