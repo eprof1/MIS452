@@ -1,3 +1,9 @@
+PgP 7/28/2021
+* adding links to individual assignments for convenience
+* [Summative01-  ] (/Summative01/Summative01.html)
+* Summative02-
+
+
 PgP 6/22/2021
 * Major change to Summative Assignments, book switch from 
  White-Data Communications and Computer Networks to
