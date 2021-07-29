@@ -1,5 +1,4 @@
-PgP 7/28/2021
-* adding links to individual assignments for convenience
+Course Assignment Links
 * <a href="https://eprof1.github.io/MIS452/Summative01/Summative01.html" target="_blank">Summative01-Introduction to Computer Networks</a>
 * <a href="https://eprof1.github.io/MIS452/Summative02/Summative02.html" target="_blank">Summative02-Network Hardware Essentials</a>
 * <a href="https://eprof1.github.io/MIS452/Summative03/Summative03.html" target="_blank">Summative03-Network Topologies and Technologies</a>
@@ -18,6 +17,8 @@ PgP 7/28/2021
 * <a href="https://eprof1.github.io/MIS452/Project02/Project2_2.html" target="_blank">Project02-Computers and Networking, Part 2</a>
 * <a href="https://eprof1.github.io/MIS452/Project03/Project3Report.html" target="_blank">Project03-SOHO Network Design</a>
 
+PgP 7/28/2021
+* added individual assignment links for convenience
 
 PgP 6/22/2021
 * Major change to Summative Assignments, book switch from 
