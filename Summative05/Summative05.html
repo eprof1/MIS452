@@ -129,7 +129,8 @@
 
 		<div id="Exercise02" class="collapse in  col-lg-12">
 			<p>
-				Do Hands-On Project 5-1 using your laptop, in the Somsen 301 lab, connected to the HP-USB-C dock, with the following modifications.</p>
+				Do Hands-On Project 5-1 using your laptop, in the Somsen 301 lab, connected to the HP-USB-C dock, with the following modifications.
+			</p>
 			<p>
 				In step 3 look for the Ethernet connection with a device name that contains &#39;Realtek USB GbE Family Controller&#39;.&nbsp; It may not be Ethernet 0.<br />
 				<a href="images/EthernetDevice.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/EthernetDevice.PNG', 'popup'); return false;">
@@ -153,8 +154,6 @@
 				<!-- Enter your answer in the VALUE field below   GROK -->
 				<input name="q2" id="q2" size="120" maxlength="120" class="form-control" value="NIC layer" type="text">
 				<br />
-				<br />
-
 
 				(50) 3. What TCP/IP Layer does the Client for Microsoft Networks operate in?:<br />
 
@@ -174,24 +173,343 @@
 				<input name="q5" id="q5" size="120" maxlength="120" class="form-control" value="ipv4: " type="text">
 				<br />
 
-				</p>
-			<p>
-				Read steps 5 through 8, but DO NOT set a static IP address on your laptop.  That will cause you problems on the school network.
-
-				CONTINUE FROM HERE, 7/29/2021<br />
-
-
-				(50) 6. Current status of USB-C dock right indicator light. Example-off, constant green, blinking green...<br />
-				<!-- Enter your answer in the VALUE field below   GROK -->
-				<input name="q6" id="q6" size="120" maxlength="120" class="form-control" value="right light status: " type="text">
-				<br />
-
 			</p>
+			<p>
+				Read steps 5 through 10, but DO NOT set a static IP address on your laptop.  That will cause you problems on the school network.<br />
+				Pay attention to the discussion of IP address, subnet mask, default gateway, and preferred DNS server, all of which are important concepts for the remainder of this course.<br />
+				Remember you can find these values on a Windows computer by opening up a command prompt and typing in <code>ipconfig/all</code><br />
+			</p>
+
+			<p>Below is the result for a Windows computer on a wired network.</p>
+
+			<pre>
+   Ethernet adapter Ethernet 4:
+
+   Connection-specific DNS Suffix  . : HomeNet
+   Description . . . . . . . . . . . : Realtek USB GbE Family Controller #2
+   Physical Address. . . . . . . . . : B0-0C-D1-7B-FE-4D
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+   IPv4 Address. . . . . . . . . . . : 192.168.3.45(Preferred)
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Lease Obtained. . . . . . . . . . : Wednesday, July 28, 2021 8:48:25 AM
+   Lease Expires . . . . . . . . . . : Friday, July 30, 2021 8:48:35 AM
+   Default Gateway . . . . . . . . . : 192.168.3.1
+   DHCP Server . . . . . . . . . . . : 192.168.3.1
+   DNS Servers . . . . . . . . . . . : 192.168.3.1
+   NetBIOS over Tcpip. . . . . . . . : Enabled
+   Connection-specific DNS Suffix Search List : HomeNet
+			</pre>
 
 			<hr />
 			<hr />
 
 		</div>
+
+
+		<div class=" col-lg-12"><a href="#Exercise03" class="btn btn-info" data-toggle="collapse">Hands-On Project 5-2-Identifying Layers in a Frame</a></div>
+
+		<div id="Exercise03" class="collapse in  col-lg-12">
+
+			<p>
+				Do Hands-On Project 5-2 to examine the details of an Ethernet frame, preferably in Somsen 301 during class.<br />
+				You can work with a partner.
+				You can also attempt this in another location, as long as you have permission.<br />
+				Make sure to use your WSU laptop because you have administrator access.<br />
+				Start WireShark, follow the instructions, and enter your answers to the questions in the spaces below.<br /></p>
+			<p>
+				Make sure to select the WireShark Interface that corresponds to the Realtek USB GbE Family Controller, which is the wired connection provided by the USB-C dock.<br />
+
+				<a href="images/WireSharkInterface.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/WireSharkInterface.PNG', 'popup'); return false;">
+					<img src="images/WireSharkInterface.PNG" width="300" alt="select wireshark interface" class="img-responsive img-responsive" /></a><br />
+				Your values will be different.<br /><br />
+
+
+				<a href="images/WireShark5_2.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/WireShark5_2.PNG', 'popup'); return false;">
+					<img src="images/WireShark5_2.PNG" width="300" alt="http packet capture" class="img-responsive img-responsive" /></a><br />
+				Your values will be different.<br />
+			</p>
+
+			<p>
+				(50) 6. In step 9 examine the data portion of the frame and write which layer of the TCP/IP model the HTTP protocol represents.<br />
+
+				<!-- Enter your answer in the VALUE field below   GROK -->
+				<input name="q6" id="q6" size="120" maxlength="120" class="form-control" value="http layer: " type="text">
+				<br />
+			</p>
+
+			<p>
+				(100) 7. Use the Snipping Tool to make a screen shot of your WireShark application, showing the IP, frame and data windows, similar to the screen shot above.<br />
+				Note that your IP addresses and information will be different.<br />
+
+
+				<!--  PgP 2/4/2018 create path using constants and current document assignment -->
+				Save the screen shot  as &quot;Ex1&quot; in your ' 
+                <code><span id="axqPath"></span></code>
+				<script>document.getElementById("axqPath").innerHTML = Path; </script>
+				' folder.<br />
+
+				You will be combining screen shots from several exercises at the end of this assignment, just as you did in 
+                  <a href="../Formative00/Formative00.html#PDFfileCreation" class="bg-info text-white" target="_blank">Formative00</a>-PDF File Creation. 
+			</p>
+			<hr />
+
+		</div>
+
+		<div class="col-lg-12 text-danger">
+			<h2>Screen Shot Ex1</h2>
+			<hr />
+			<hr />
+		</div>
+
+
+
+
+		<div class=" col-lg-12"><a href="#Exercise04" class="btn btn-info" data-toggle="collapse">Hands-On Project 5-3-DNS Tools</a></div>
+
+		<div id="Exercise04" class="collapse in  col-lg-12">
+
+			<p>
+				Do Hands-On Project 5-3 to learn to use DNS tools <code> ipconfig</code> and <code>nslookup</code>, preferably in Somsen 301 during class.<br />
+				You can work with a partner.
+				You can also attempt this in another location, as long as you have permission.<br />
+				Make sure to use your WSU laptop because you have administrator access.<br />
+			</p>
+
+			<p>
+				Perform steps 1 through 4.  Skip steps 5 and 6-do not modify your computer <code>hosts </code> file.
+			</p>
+
+			<p>
+				(50) 8. After step 4, copy the first uncommented (no # as the first line character) line of your hosts file and paste it below.<br />
+
+				<!-- Enter your answer in the VALUE field below   GROK -->
+				<input name="q8" id="q8" size="120" maxlength="120" class="form-control" value="hosts: " type="text">
+				<br />
+			</p>
+
+			<p>
+				Skip steps 7 and 8.<br />
+				In step 9, after typing <code>nslookup </code> and <code>www.yahoo.com</code> the message 'Non-existent domain' will appear.  Ignore it.<br />
+				Skip step 10.<br />
+				Perform step 11, paying attention to the Name: value returned for www.microsoft.com<br />
+			</p>
+
+			<p>
+				(50) 9. From step 11 copy and paste the Name: value of www.microsoft.com below.<br />
+
+				<!-- Enter your answer in the VALUE field below   GROK -->
+				<input name="q9" id="q9" size="120" maxlength="120" class="form-control" value="name: " type="text">
+				<br />
+			</p>
+			</div>
+
+
+
+		<div class=" col-lg-12"><a href="#Exercise05" class="btn btn-info" data-toggle="collapse">Hands-On Project 5-4-DHCP Clients</a></div>
+
+		<div id="Exercise05" class="collapse in  col-lg-12">
+
+			<p>
+				Do Hands-On Project 5-4 to learn to work with DHCP clients using <code> ipconfig</code>, preferably in Somsen 301 during class.<br />
+				You can work with a partner.
+				You can also attempt this in another location, as long as you have permission.<br />
+				Make sure to use your WSU laptop because you have administrator access.<br />
+			</p>
+
+			<p>
+				In step 2, your may have a different connection than Ethernet0, refer to HOP 5-1.<br />
+				In step 4, the box &#39;Obtain an IP address automatically&#39; should already be checked.<br />
+				Perform steps 5 through 8 and answer the question below.
+			</p>
+
+			<p>
+				After step 6 record the ip address of the &#39;Realtek USB GbE Family Controller&#39; - which is the USB-C dock in Somsen 301.<br />
+				In step 7, after running the command <code>ipconfig /renew</code> again note the ip address of the Controller.<br />
+				(50) 10. After running the renew command in step 7 did the Controller ip address change?<br />
+
+				<!-- Enter your answer in the VALUE field below   GROK -->
+				<input name="q10" id="q10" size="120" maxlength="120" class="form-control" value="ip address change?: " type="text">
+				<br />
+			</p>
+
+			</div>
+
+
+
+
+
+		<div class=" col-lg-12"><a href="#Exercise06" class="btn btn-info" data-toggle="collapse">Hands-On Project 5-5-Internetwork Layer</a></div>
+
+		<div id="Exercise06" class="collapse in  col-lg-12">
+
+			<p>
+				Do Hands-On Project 5-5 to learn to work with the Internnetwork layer using Wireshark, preferably in Somsen 301 during class.<br />
+				You can work with a partner.
+				You can also attempt this in another location, as long as you have permission.<br />
+				Make sure to use your WSU laptop because you have administrator access.<br />
+			</p>
+
+			<p>
+				In step 2, remember to select the proper interface.  You may have a different connection than Ethernet0, refer to HOP 5-1.<br />
+				In step 6 record the Version, Time to Live, Protocol and Checksum values below.
+			</p>
+
+			<p>
+				(100) 11. Record step 6 values below:<br />
+
+				<!-- Enter your answer in the VALUE field below   GROK -->
+				<input name="q11" id="q11" size="120" maxlength="120" class="form-control" value="version:  ,TTL:  , Protocol:  , Checksum: " type="text">
+				<br />
+			</p>
+
+			<p>
+				Perform steps 7 through 9 to complete the exercise.
+			</p>
+
+			</div>
+
+
+
+		<div class=" col-lg-12"><a href="#Exercise07" class="btn btn-info" data-toggle="collapse">Hands-On Project 5-6-ARP and ICMP Packets</a></div>
+
+		<div id="Exercise07" class="collapse in  col-lg-12">
+
+			<p>
+				Do Hands-On Project 5-6 to learn to work with Wireshark to capture &#39;tracert&#39; packets, preferably in Somsen 301 during class.<br />
+				You can work with a partner.
+				You can also attempt this in another location, as long as you have permission.<br />
+				Make sure to use your WSU laptop because you have administrator access.<br />
+			</p>
+
+			<p>
+				In step 3, remember to select the proper interface.  You may have a different connection than Ethernet0, refer to HOP 5-1.<br />
+				In step 12 pay special attention to the TTL pattern mentioned.  The Command Prompt window will display a table, with a row for each hop.  You can see the TTL pattern in the WireShark capture window.
+			</p>
+
+			<p>
+				(100) 12. Record the IP address for <code>books.tomsho.com</code> after completing step 12-by examining both the Windows command prompt window and the WireShark data capture window.<br />
+
+				<!-- Enter your answer in the VALUE field below   GROK -->
+				<input name="q12" id="q12" size="120" maxlength="120" class="form-control" value="IP address books.tomsho.com: " type="text">
+				<br />
+			</p>
+
+			</div>
+
+
+		<div class=" col-lg-12"><a href="#Exercise08" class="btn btn-info" data-toggle="collapse">Hands-On Project 5-7-The ARP command</a></div>
+
+		<div id="Exercise08" class="collapse in  col-lg-12">
+
+			<p>
+				Do Hands-On Project 5-7 to learn the purpose of the arp cache, preferably in Somsen 301 during class.<br />
+				You can work with a partner.
+				You can also attempt this in another location, as long as you have permission.<br />
+				Make sure to use your WSU laptop because you have administrator access.<br />
+			</p>
+
+			<p>
+				Skip step 5.<br />
+				In step 4, the box &#39;Obtain an IP address automatically&#39; should already be checked.<br />
+				Perform steps 5 through 8 and answer the question below.
+			</p>
+
+			<p>
+				In step 6 you may encounter a &#39;Request timed out.&#39; message.  If so, try pinging www.winona.edu or www.cnn.com.<br />
+				After step 6, write the ip address for the website you pinged in the space below.<br />
+				Note: this exercise may not work on your computer, in that case enter &#39;not working&#39;.</p>
+
+			<p>
+				(50) 13. www.xxx.com ip address?<br />
+
+				<!-- Enter your answer in the VALUE field below   GROK -->
+				<input name="q13" id="q13" size="120" maxlength="120" class="form-control" value="ip address?: " type="text">
+				<br />
+			</p>
+
+			</div>
+
+
+
+		<div class=" col-lg-12"><a href="#Exercise09" class="btn btn-info" data-toggle="collapse">Hands-On Project 5-8-The netstat command</a></div>
+
+		<div id="Exercise09" class="collapse in  col-lg-12">
+
+			<p>
+				Do Hands-On Project 5-8 to use the <code>netstat</code> program to view IP protocol status and statistics, preferably in Somsen 301 during class.<br />
+				You can work with a partner.
+				You can also attempt this in another location, as long as you have permission.<br />
+				Make sure to use your WSU laptop because you have administrator access.<br />
+			</p>
+
+			<p>
+				Perform all the steps.
+			</p>
+
+			<p>
+				After step 8 make a screen shot of at least the first 6 lines of the IPv4 Route Table.<br />
+
+			<p>
+				(100) 14. Use the Snipping Tool to make a screen shot of the command prompt Route Table.<br />
+
+
+				<!--  PgP 2/4/2018 create path using constants and current document assignment -->
+				Save the screen shot  as &quot;Ex2&quot; in your ' 
+                <code><span id="aqqPath"></span></code>
+				<script>document.getElementById("aqqPath").innerHTML = Path; </script>
+				' folder.<br />
+
+				You will be combining screen shots from several exercises at the end of this assignment, just as you did in 
+                  <a href="../Formative00/Formative00.html#PDFfileCreation" class="bg-info text-white" target="_blank">Formative00</a>-PDF File Creation. 
+			</p>
+			<hr />
+
+		</div>
+
+		<div class="col-lg-12 text-danger">
+			<h2>Screen Shot Ex2</h2>
+			<hr />
+			<hr />
+		</div>
+
+
+		<div class=" col-lg-12"><a href="#Exercise10" class="btn btn-info" data-toggle="collapse">Hands-On Project 5-9-NIC properties</a></div>
+
+		<div id="Exercise10" class="collapse in  col-lg-12">
+
+			<p>
+				Do Hands-On Project 5-9 to examine the NIC properties on your laptop, preferably in Somsen 301 during class.<br />
+				You can work with a partner.
+				You can also attempt this in another location, as long as you have permission.<br />
+				Make sure to use your WSU laptop because you have administrator access.<br />
+			</p>
+
+			<p>
+				In step 2 remember that your connection may be different than Ethernet0.<br />
+				In step 3 enter your MAC/physical address below.<br />
+			</p>
+
+			<p>
+				(50) 15. MAC/physical address?<br />
+
+				<!-- Enter your answer in the VALUE field below   GROK -->
+				<input name="q15" id="q15" size="120" maxlength="120" class="form-control" value="MAC address?: " type="text">
+				<br />
+			</p>
+
+			<p>
+				In step 9 browse to <a class="bg-info" href="https://www.coffer.com/mac_find" target="_blank">www.coffer.com/mac_find</a> to lookup the MAC/physical address vendor.  Write your answer below.<br />
+			<p>
+				(50) 16. MAC address vendor?<br />
+
+				<!-- Enter your answer in the VALUE field below   GROK -->
+				<input name="q16" id="q16" size="120" maxlength="120" class="form-control" value="MAC vendor?: " type="text">
+				<br />
+			</p>
+
+			</div>
+
 
 
 		<div class=" col-lg-12"><a href="#Exercise03" class="btn btn-info" data-toggle="collapse">Packet Tracer Lab 4-1-Straight and Crossover Cables</a></div>
@@ -227,6 +545,15 @@
 				For background information please refer to the book, and this article on <a class="bg-info" href="https://en.wikipedia.org/wiki/Ethernet_crossover_cable" target="_blank">Ethernet crossover cables</a>.
 
 			</p>
+
+			<p>
+				(50) 6. Current status of USB-C dock right indicator light. Example-off, constant green, blinking green...<br />
+				<!-- Enter your answer in the VALUE field below   GROK -->
+				<input name="q6" id="q6" size="120" maxlength="120" class="form-control" value="right light status: " type="text">
+				<br />
+
+			</p>
+
 
 			<p>
 				(50)  7. In step 4, briefly explain what happens when you use a Cross-Over cable to connect Switch2 and Router1. In other words, can you establish a connection between the devices?
@@ -496,3 +823,14 @@
 
 
 
+				(50) 7. In step 6 examine the Ethernet II frame fields and enter the value for the NIC manufacturer below:<br />
+
+				<!-- Enter your answer in the VALUE field below   GROK -->
+				<input name="q7" id="q7" size="120" maxlength="120" class="form-control" value="NIC manufacturer: " type="text">
+				<br />
+
+				(100) 8. In step 8 copy the text/data portion of the ICMP packet and paste it in the space below:<br />
+
+				<!-- Enter your answer in the VALUE field below   GROK -->
+				<input name="q8" id="q8" size="120" maxlength="120" class="form-control" value="data packet:" type="text">
+				<br />
