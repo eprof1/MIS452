@@ -12,7 +12,7 @@ PgP 7/28/2021
 * <a href="https://eprof1.github.io/MIS452/Summative10/Summative10.html" target="_blank">Summative10-Wide Area Networking and Cloud Computing</a>
 * <a href="https://eprof1.github.io/MIS452/Summative11/Summative11.html" target="_blank">Summative11-Network Operating System Fundamentals</a>
 * <a href="https://eprof1.github.io/MIS452/Summative12/Summative12.html" target="_blank">Summative12-Network Management and Administration</a>
-* <a href="https://eprof1.github.io/MIS452/Summative13/Summative13.html" target="_blank">Summative13-The Internet of Thinigs (IoT)</a>
+* <a href="https://eprof1.github.io/MIS452/Summative13/Summative13.html" target="_blank">Summative13-The Internet of Things (IoT)</a>
 * <a href="https://eprof1.github.io/MIS452/Summative14/Summative14.html" target="_blank">Summative14-Troubleshooting and Support</a>
 * <a href="https://eprof1.github.io/MIS452/Project02/Project2_1.html" target="_blank">Project02-Computers and Networking, Part 1</a>
 * <a href="https://eprof1.github.io/MIS452/Project02/Project2_2.html" target="_blank">Project02-Computers and Networking, Part 2</a>
