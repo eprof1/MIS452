@@ -94,7 +94,6 @@
 				<li>Select the most suitable NIC bus and features for a computer</li>
 			</ul>
 
-
 			<hr />
 		</div>
 		<!-- -end-objectives-end -->
@@ -103,7 +102,6 @@
 		<div class=" col-lg-12"><a href="#Exercise01" class="btn btn-info" data-toggle="collapse">Questions</a></div>
 
 		<div id="Exercise01" class="collapse in  col-lg-12">
-
 
 			<p>
 				Preboot Execution Environment (PXE) compliant Network Interface Cards have been used for diskless workstations, also known as thin clients.<br />
@@ -123,40 +121,47 @@
 		</div>
 
 
-		<div class=" col-lg-12"><a href="#Exercise02" class="btn btn-info" data-toggle="collapse">Hands-On Project 8-1-MAC Address</a></div>
+		<div class=" col-lg-12"><a href="#Exercise02" class="btn btn-info" data-toggle="collapse">Hands-On Project 8-1-Switching Loop</a></div>
 
 		<div id="Exercise02" class="collapse in  col-lg-12">
 
 			<p>
-				Do Hands-On Project 8-1<br />
-				In step 2,press the Start button and type the command <code>ncpa.cpl</code> to display the Network Connections dialog box.<br />
-				Your active ethernet connection may not be Ethernet0- if you are in Somsen 301 look for the 'Realtek USB GbE' connection associated with the USB-C dock.<br />
-
-				<a href="images/mac.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/mac.PNG', 'popup'); return false;">
-					<img src="images/mac.PNG" width="300" alt="mac or physical address" class="img-responsive img-responsive" /></a><br />
+				Read Hands-On Project 8-1<br />
+				The equipment to perform this project is not available yet.<br />
+				But read the Project, and then review the material on Switching Loops, Broadcast Storms, Bridging Loops and Spanning Tree Protocol.<br />
+				These topics are discussed in 8-1d-Advanced Switch Features, and additional information is available online.
 			</p>
+
 			<p>
-				(50) 2. After step 3, enter your MAC/Physical address below.
-			
-			<!-- Enter your answer in the VALUE field below   GROK -->
-				<input name="q2" id="q2" size="120" maxlength="120" class="form-control" value="mac address: " type="text">
+				(50) 2. After step 10, reflect on the concept of broadcast storms and packets 'living forever'.<br />
+				At the router level, list another device or tool that is used to prevent data packets from circulating forever on the Internet.<br />
+
+				<!-- Enter your answer in the VALUE field below   GROK -->
+				<input name="q2" id="q2" size="120" maxlength="120" class="form-control" value="endless packets: " type="text">
 				<br />
+			</p>
 
-				In step 4, verify the MAC address displayed is the same shown for step 3.<br />
-				<a href="images/mac2.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/mac2.PNG', 'popup'); return false;">
-					<img src="images/mac2.PNG" width="300" alt="mac or physical address" class="img-responsive img-responsive" /></a><br />
-
-				In step 5, verify the MAC address displayed is the same shown for steps 3 and 4.<br />
-				<a href="images/mac3.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/mac3.PNG', 'popup'); return false;">
-					<img src="images/mac3.PNG" width="300" alt="mac or physical address" class="img-responsive img-responsive" /></a><br />
+		</div>
 
 
+
+
+
+		<div class=" col-lg-12"><a href="#Exercise03" class="btn btn-info" data-toggle="collapse">Hands-On Project 8-2-Computer Routing Table</a></div>
+
+		<div id="Exercise03" class="collapse in  col-lg-12">
+
+			<p>
+				Do Hands-On Project 8-2<br />
+				The Figure 5-19 data frame for an HTTP request is shown below.<br />
 			</p>
 
 			<p>
-				(50) 3. Use the Snipping Tool to make a screen shot of the command window showing your MAC address.<br />
+				(50) 3. After completing Step 3, use the Snipping Tool to make a screen shot of the command window showing the results of the <code>route print</code> command.<br />
+				Note: you do not have to capture all lines, the first 20 lines are sufficient.<br />
+			</p>
 
-
+			<p>
 				<!--  PgP 2/4/2018 create path using constants and current document assignment -->
 				Save the screen shot  as &quot;Ex1&quot; in your ' 
                 <code><span id="aqPath"></span></code>
@@ -167,9 +172,12 @@
                   <a href="../Formative00/Formative00.html#PDFfileCreation" class="bg-info text-white" target="_blank">Formative00</a>-PDF File Creation. 
 			</p>
 
+			<p>
+				Complete the remaining steps.<br />
+				You do not have to perform step 6 and delete your 0.0.0.0 route.  But if you do, be very careful to record the 0.0.0.0 gateway value per step 4.<br />
+				Note: it may work better to <code>ping www.cnn.com</code> in steps 6 and 8.<br />
+			</p>
 
-
-			<hr />
 			<hr />
 
 		</div>
@@ -183,74 +191,150 @@
 
 
 
-		<div class=" col-lg-12"><a href="#Exercise03" class="btn btn-info" data-toggle="collapse">Hands-On Project 7-4-Data Frames</a></div>
-
-		<div id="Exercise03" class="collapse in  col-lg-12">
-
-			<p>
-				Do Hands-On Project 7-4<br />
-
-				The Figure 5-19 data frame for an HTTP request is shown below.<br />
-
-				<a href="images/DataFrame_5_19.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/DataFrame_5_19.PNG', 'popup'); return false;">
-					<img src="images/DataFrame_5_19.PNG" width="300" alt="data frame" class="img-responsive img-responsive" /></a><br />
-
-			</p>
-
-
-			<p>
-				Potential frame contents shown below.<br />
-
-				<a href="images/frameContents.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/frameContents.PNG', 'popup'); return false;">
-					<img src="images/frameContents.PNG" width="600" alt="frame contents" class="img-responsive img-responsive" /></a><br />
-
-			</p>
-
-
-			<p>
-				Write your answers for frames 1 through 5 in the spaces below.<br />
-
-				(50). 4. Contents of frame 1.<br />
-
-				<!-- Enter your answer in the VALUE field below   GROK -->
-				<input name="q4" id="q4" size="120" maxlength="120" class="form-control" value="frame 1: " type="text">
-				<br />
-
-				(50). 5. Contents of frame 2.<br />
-
-				<!-- Enter your answer in the VALUE field below   GROK -->
-				<input name="q5" id="q5" size="120" maxlength="120" class="form-control" value="frame 2: " type="text">
-				<br />
-
-
-				(50). 6. Contents of frame 3.<br />
-
-				<!-- Enter your answer in the VALUE field below   GROK -->
-				<input name="q6" id="q6" size="120" maxlength="120" class="form-control" value="frame 3: " type="text">
-				<br />
-
-				(50). 7. Contents of frame 4.<br />
-
-				<!-- Enter your answer in the VALUE field below   GROK -->
-				<input name="q7" id="q7" size="120" maxlength="120" class="form-control" value="frame 4: " type="text">
-				<br />
-			</p>
-			(50). 8. Contents of frame 5.<br />
-
-			<!-- Enter your answer in the VALUE field below   GROK -->
-			<input name="q8" id="q8" size="120" maxlength="120" class="form-control" value="frame 5: " type="text">
-			<br />
-		</div>
-
-
-
-
-		<div class=" col-lg-12"><a href="#Exercise04" class="btn btn-info" data-toggle="collapse">Packet Tracer Lab</a></div>
+		<div class=" col-lg-12"><a href="#Exercise04" class="btn btn-info" data-toggle="collapse">Packet Tracer Lab 8-1-Switching Loop</a></div>
 
 		<div id="Exercise04" class="collapse in  col-lg-12">
 
-			<p>There are no Packet Tracer Labs for this chapter.</p>
+			<p>The Packet Tracer Labs are accessible from MindTap in two ways:</p>
+			<ul>
+				<li>Under the Practice section of the Module<br />
+					<a href="images/PacketTracer.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/PacketTracer.PNG', 'popup'); return false;">
+						<img src="images/PacketTracer.PNG" width="400" alt="packet tracer location" class="img-responsive img-responsive" /></a>
+				</li>
+
+				<li>In the Chapter Review section of the book<br />
+					<a href="images/PacketTracer2.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/PacketTracer2.PNG', 'popup'); return false;">
+						<img src="images/PacketTracer2.PNG" width="200" alt="packet tracer location" class="img-responsive img-responsive" /></a>
+				</li>
+			</ul>
+
+			<p>
+				The files needed for Packet Tracer labs are available on the Cengage Website, in Professor Paulson's OneDrive ReadOnly folder for this course, or in the WSU network drive ReadOnly folder for this course.<br />
+				You must save a copy of these files to your 
+				<code>
+					<span id="bbPath"></span>
+					<script>document.getElementById("bbPath").innerHTML = "&#92;OneDrive - MNSCU&#92;" + xClass + "&#92;";  </script>
+				</code>
+				folder.
+			</p>
+
+			<p>
+				Follow the instructions in Packet Tracer Lab 8-1 to examine the results of a switching loop.<br />
+				When done, answer the question below.<br />
+				For background information please refer to the book.
+			</p>
+
+			<p>
+				After step 5 answer the following question.<br />
+
+				(50). 4. Is the packet from PC0 eventually delivered to Server0?<br />
+
+				<!-- Enter your answer in the VALUE field below   GROK -->
+				<input name="q4" id="q4" size="120" maxlength="120" class="form-control" value="delivery: " type="text">
+				<br />
+			</p>
+
+			<p>
+				In step 7, it may help to press the 'Capture Then Forward' button several times to speed up the connection process.<br />
+
+			</p>
+
 		</div>
+
+		<div class=" col-lg-12"><a href="#Exercise08" class="btn btn-info" data-toggle="collapse">Packet Tracer Lab 8-2-Configuring Switch VLANs</a></div>
+
+		<div id="Exercise08" class="collapse in  col-lg-12">
+
+
+			<p>
+				Follow the instructions in Packet Tracer Lab 8-2 to configure a Switch VLAN.<br />
+				When done, answer the questions below.<br />
+				For background information please refer to the book.<br />
+				Note there are some suggestions to improve your results.
+			</p>
+
+			<p>In step 5, to open the PC1 Command Prompt window click PC1, click the Desktop tab, click Command Prompt as shown below.</p>
+
+			<p>
+				<a href="images/PacketTracerCommandPrompt.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/PacketTracerCommandPrompt.PNG', 'popup'); return false;">
+					<img src="images/PacketTracerCommandPrompt.PNG" width="200" alt="packet tracer command prompt" class="img-responsive img-responsive" /></a>
+			</p>
+
+
+			<p>In step 3 click the 'Realtime' button before you execute the <code>ping</code> command. You will see results faster.</p>
+			<p>In step 16, if your configuration does not match Figure 8-20, go back and rerun the appropriate connection commands.</p>
+
+			<p>
+				(100) 5. After step 19 use the Snipping Tool to make a screen shot of the PC1 command prompt window showing the failed PC1 to PC3 ping attempt.<br />
+
+
+				<!--  PgP 2/4/2018 create path using constants and current document assignment -->
+				Save the screen shot  as &quot;Ex2&quot; in your ' 
+                <code><span id="adPath"></span></code>
+				<script>document.getElementById("adPath").innerHTML = Path; </script>
+				' folder.<br />
+
+				You will be combining screen shots from several exercises at the end of this assignment, just as you did in 
+                  <a href="../Formative00/Formative00.html#PDFfileCreation" class="bg-info text-white" target="_blank">Formative00</a>-PDF File Creation. 
+			</p>
+
+		</div>
+
+		<div class="col-lg-12 text-danger">
+			<h2>Screen Shot Ex2</h2>
+			<hr />
+			<hr />
+		</div>
+
+
+
+		<div class=" col-lg-12"><a href="#Exercise09" class="btn btn-info" data-toggle="collapse">Packet Tracer Lab 8-3-Communicate Between VLANs</a></div>
+
+		<div id="Exercise09" class="collapse in  col-lg-12">
+
+
+			<p>
+				Follow the instructions in Packet Tracer Lab 8-3 to configure a router to communicate between VLANs.<br />
+				When done, answer the questions below.<br />
+				For background information please refer to the book.<br />
+			</p>
+
+
+			<p>
+				<a href="images/PacketTracerCommandPrompt.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/PacketTracerCommandPrompt.PNG', 'popup'); return false;">
+					<img src="images/PacketTracerCommandPrompt.PNG" width="200" alt="packet tracer command prompt" class="img-responsive img-responsive" /></a>
+			</p>
+
+
+			<p>
+				(100) 6. After step 12 use the Snipping Tool to make a screen shot of the PC1 command prompt window showing the successful PC1 to PC3 ping attempt.<br />
+
+				<!--  PgP 2/4/2018 create path using constants and current document assignment -->
+				Save the screen shot as &quot;Ex3&quot; in your ' 
+                <code><span id="afPath"></span></code>
+				<script>document.getElementById("afPath").innerHTML = Path; </script>
+				' folder.<br />
+
+				You will be combining screen shots from several exercises at the end of this assignment, just as you did in 
+                  <a href="../Formative00/Formative00.html#PDFfileCreation" class="bg-info text-white" target="_blank">Formative00</a>-PDF File Creation. 
+			</p>
+
+		</div>
+
+		<div class="col-lg-12 text-danger">
+			<h2>Screen Shot Ex3</h2>
+			<hr />
+			<hr />
+		</div>
+
+
+
+
+
+
+
+
+
 
 
 
@@ -273,7 +357,7 @@
 			</p>
 
 			<p>
-				(50) 9. Save your file 'WebPage.pdf' to the ' 
+				(50) 7. Save your file 'WebPage.pdf' to the ' 
                 <code><span id="ePath"></span></code>
 				<script>document.getElementById("ePath").innerHTML = Path; </script>
 				' folder.<br />
@@ -302,7 +386,7 @@
 
 
 			<p>
-				(50) 10. Save your file 'ScreenShots.pdf' in your ' 
+				(50) 8. Save your file 'ScreenShots.pdf' in your ' 
                 <code><span id="gPath"></span></code>
 				<script>document.getElementById("gPath").innerHTML = Path; </script>
 				' folder.<br />
@@ -325,7 +409,7 @@
 			</p>
 
 
-			<p>(50) 11. Upload your file 'Summative08.pdf' to the D2L 'Summative08' Assignment folder.</p>
+			<p>(50) 9. Upload your file 'Summative08.pdf' to the D2L 'Summative08' Assignment folder.</p>
 
 		</div>
 
@@ -348,11 +432,11 @@
                 Note that your screen shots do not have to be completed to perform this step.<br>
 			</p>
 
-			(50) 12. Home Page Hyperlink<br />
+			(50) 10. Home Page Hyperlink<br />
 			Check and verify that this assignment is hyperlinked on your home page.<br />
 			<br />
 
-			(50) 13. Assignment submission<br />
+			(50) 11. Assignment submission<br />
 			Press the Submit button at the top or bottom of this page.
                 Read and follow instructions on the confirmation page.&nbsp; Correct any errors.
 		</div>
