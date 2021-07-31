@@ -88,15 +88,8 @@
 
 			<!--Above this line similar except for Assignment number and title   -->
 			<ul>
-				<li>Explain IPv4 addressing</li>
-				<li>Use Classless Interdomain Routing Notation</li>
-				<li>Perform subnetting calculations</li>
-				<li>Configure IPv4 addresses</li>
-				<li>Describe Network Address Translation</li>
-				<li>Describe IPv6</li>
-				<li>Recognize IPv6 address types</li>
-				<li>Explain IPv6 autoconfiguration</li>
-				<li>Describe IPv4 to IPv6 transitioning methods</li>
+				<li>Describe the OSI and IEEE 802 networking models</li>
+				<li>Summarize the IEEE 802 networking standards</li>
 			</ul>
 
 
@@ -111,18 +104,18 @@
 
 
 			<p>
-				IPv4 and IPv6 based networks ensure reliable and efficient data transmission across a wide assortment of global networks.<br />
-				Sometimes it takes a while before a new idea reaches a &#39;critical mass&#39;.<br />
-				Investigate the history of the development of packet switched networks.<br />
+				Networks are meant to ensure reliable and efficient data transmission across a wide assortment of global networks.<br />
+				These networks are composed of hardware manufactured by many different organizations.<br />
+				How can anyone (individual, company, organization, government) be sure a piece of equipment purchased from vendor A will work with vendor's B, C, D and ...?<br />
 				Note: do not only rely on the book for the answer.<br />
-				Check out Wikipedia!  <a href="https://en.wikipedia.org/wiki/Packet_switching" class="bg-info text-white" target="_blank">Packet Switching</a>
+				Check out Wikipedia!  <a href="https://en.wikipedia.org/wiki/interop" class="bg-info text-white" target="_blank">Interop</a>
 			</p>
 
 			<p>
-				(50) 1. List at least one reason that the Bell System (based on a circuit switched dedicated network model) showed little interest in the &#39;packet switching&#39; work of Paul Baran and Donald Davies.
+				(50) 1. List at least one reason that the annual Interop conference has occurred for the last 30+ years.
 			</p>
 			<!-- Enter your answer in the VALUE field below   GROK -->
-			<input name="q1" id="q1" size="120" maxlength="120" class="form-control" value="Internet architecture: " type="text">
+			<input name="q1" id="q1" size="120" maxlength="120" class="form-control" value="Interop: " type="text">
 			<br />
 
 			<hr />
@@ -132,162 +125,62 @@
 
 		<div class="col-lg-12">
 			<p>
-				<strong>Note-for Projects 6-1,2,3 and 4 there is one Excel file</strong>
+				<strong>Note-for Projects 7-1,2,3 and 4 there is one Excel file</strong>
 			</p>
 		</div>
 
-		<div class=" col-lg-12"><a href="#Exercise02" class="btn btn-info" data-toggle="collapse">Hands-On Project 6-1-Decimal Binary Conversion</a></div>
+		<div class=" col-lg-12"><a href="#Exercise02" class="btn btn-info" data-toggle="collapse">Hands-On Project 7-1-MAC Address</a></div>
 
 		<div id="Exercise02" class="collapse in  col-lg-12">
 
 			<p>
-				(50) 2. Do Hands-On Project 6-1<br />
-				You are advised to try these problems by hand after reading the book, section 6-1a, Binary Math.<br />
-				Down the Excel file- <a class="bg-info" href="../Summative07/Summative07_Projects.xlsx">Summative07_Projects.xlsx</a>, and save  as &quot;Summative07_Projects&quot; in your ' 
-                <code><span id="aPath"></span></code>
-				<script>document.getElementById("aPath").innerHTML = Path; </script>
-				' folder.<br />
-				Note: the worksheets are protected, but NOT password protected, to prevent inadvertent changes to formulas and data.<br />
+				Do Hands-On Project 7-1<br />
+				In step 2,press the Start button and type the command <code>ncpa.cpl</code> to display the Network Connections dialog box.<br />
+				Your active ethernet connection may not be Ethernet0- if you are in Somsen 301 look for the 'Realtek USB GbE' connection associated with the USB-C dock.<br />
 
-				When the Hands-On Projects are complete, you will upload this file to the D2L Summative07XL folder.<br />
-
-				There are several ways to handle this conversion, an example using the DEC2BIN() function is shown below. 
+				<a href="images/mac.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/mac.PNG', 'popup'); return false;">
+					<img src="images/mac.PNG" width="300" alt="mac or physical address" class="img-responsive img-responsive" /></a><br />
 			</p>
 			<p>
-				<a href="../Summative07/images/Dec2Bin.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/Dec2Bin.PNG', 'popup'); return false;">
-					<img src="../Summative07/images/Dec2Bin.PNG" width="300" alt="decimal to binary conversion" class="img-responsive img-responsive" /></a><br />
-
-			</p>
-
-			<hr />
-			<hr />
-
-		</div>
-
-
-		<div class=" col-lg-12"><a href="#Exercise03" class="btn btn-info" data-toggle="collapse">Hands-On Project 6-2-Binary Decimal Conversion</a></div>
-
-		<div id="Exercise03" class="collapse in  col-lg-12">
-
-			<p>
-				(50) 3. Do Hands-On Project 6-2<br />
-				You are advised to try these problems by hand after reading the book, section 6-1a, Binary Math.<br />
-				Use the Excel file- Summative07_Projects.xlsx, to complete this project.<br />
-
-				<!--  PgP 2/4/2018 create path using constants and current document assignment -->
-				Save this file  as &quot;Summative07_Projects&quot; in your ' 
-                <code><span id="aaPath"></span></code>
-				<script>document.getElementById("aaPath").innerHTML = Path; </script>
-				' folder.<br />
-
-				When complete, you will upload this file to the D2L Summative07XL folder.<br />
-
-				There are several ways to handle this conversion, an example using the BIN2DEC2() function is shown below. 
-			</p>
-			<p>
-				<a href="../Summative07/images/Bin2Dec.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/Bin2Dec.PNG', 'popup'); return false;">
-					<img src="../Summative07/images/Bin2Dec.PNG" width="300" alt="binary to decimal conversion" class="img-responsive img-responsive" /></a><br />
-
-			</p>
-
-		</div>
-
-
-		<div class=" col-lg-12"><a href="#Exercise04" class="btn btn-info" data-toggle="collapse">Hands-On Project 6-3-CIDR Notation</a></div>
-
-		<div id="Exercise04" class="collapse in  col-lg-12">
-
-			<p>
-				(50). 4. Do Hands-On Project 6-3
+				(50) 2. After step 3, enter your MAC/Physical address below.
+			
+			<!-- Enter your answer in the VALUE field below   GROK -->
+				<input name="q2" id="q2" size="120" maxlength="120" class="form-control" value="mac address: " type="text">
 				<br />
-				You are advised to try these problems by hand after reading the book, section 6-3a, Calculating a Subnet Mask.<br />
-				Use the Excel file- Summative07_Projects.xlsx, to complete this project.<br />
 
-				<!--  PgP 2/4/2018 create path using constants and current document assignment -->
-				Save this file  as &quot;Summative07_Projects&quot; in your ' 
-                <code><span id="abPath"></span></code>
-				<script>document.getElementById("abPath").innerHTML = Path; </script>
-				' folder.<br />
+				In step 4, verify the MAC address displayed is the same shown for step 3.<br />
+				<a href="images/mac2.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/mac2.PNG', 'popup'); return false;">
+					<img src="images/mac2.PNG" width="300" alt="mac or physical address" class="img-responsive img-responsive" /></a><br />
 
-				When complete, you will upload this file to the D2L Summative07XL folder.<br />
-
-				There are several ways to handle this conversion, the Excel file demonstrates one method.<br />
-				Please pay special attention to the forumulas and notes provided in the spreadsheet.
-			</p>
-			<hr />
-			<hr />
+				In step 5, verify the MAC address displayed is the same shown for steps 3 and 4.<br />
+				<a href="images/mac3.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/mac3.PNG', 'popup'); return false;">
+					<img src="images/mac3.PNG" width="300" alt="mac or physical address" class="img-responsive img-responsive" /></a><br />
 
 
-		</div>
-
-
-
-		<div class=" col-lg-12"><a href="#Exercise05" class="btn btn-info" data-toggle="collapse">Hands-On Project 6-4-Determine network Prefix</a></div>
-
-		<div id="Exercise05" class="collapse in  col-lg-12">
-
-			<p>
-				(50). 5. Do Hands-On Project 6-4
-				<br />
-				You are advised to try these problems by hand after reading the book, section 6-3a, Calculating a Subnet Mask.<br />
-				Use the Excel file- Summative07_Projects.xlsx, to complete this project.<br />
-
-				<!--  PgP 2/4/2018 create path using constants and current document assignment -->
-				Save this file  as &quot;Summative07_Projects&quot; in your ' 
-                <code><span id="acPath"></span></code>
-				<script>document.getElementById("acPath").innerHTML = Path; </script>
-				' folder.<br />
-
-				When complete, you will upload this file to the D2L Summative07XL folder.<br />
-
-				There are several ways to handle this conversion, the Excel file demonstrates one method.<br />
-				Once you determine the number of host bits required to handle the Required hosts, the prefix is readily calculable.<br />
-				Please pay special attention to the forumulas and notes provided in the spreadsheet.
-			</p>
-			<hr />
-			<hr />
-
-		</div>
-
-
-
-
-
-		<div class=" col-lg-12"><a href="#Exercise06" class="btn btn-info" data-toggle="collapse">Hands-On Project 6-5-nslookup Command</a></div>
-
-		<div id="Exercise06" class="collapse in  col-lg-12">
-
-			<p>
-				Do Hands-On Project 6-5 to learn to use the <code>nslookup</code> command to find out information about the network.<br />
-				You can work with a partner.
-				Make sure to use your WSU laptop because you have administrator access.<br />
 			</p>
 
 			<p>
-				Open an elevated Command Prompt (admin).<br />
-				Type in <code>nslookup -type=ns www.winona.edu</code>
-				<br />
-				<a class="bg-info text-white" target="_blank" href="https://en.wikipedia.org/wiki/Nslookup">nslookup</a> displays information on network DNS.
-			</p>
-
-
-			<p>
-				(50) 6. Use the Snipping Tool to make a screen shot of the command window.<br />
+				(50) 3. Use the Snipping Tool to make a screen shot of the command window showing your MAC address.<br />
 
 
 				<!--  PgP 2/4/2018 create path using constants and current document assignment -->
 				Save the screen shot  as &quot;Ex1&quot; in your ' 
-                <code><span id="axqPath"></span></code>
-				<script>document.getElementById("axqPath").innerHTML = Path; </script>
+                <code><span id="aqPath"></span></code>
+				<script>document.getElementById("aqPath").innerHTML = Path; </script>
 				' folder.<br />
 
 				You will be combining screen shots from several exercises at the end of this assignment, just as you did in 
                   <a href="../Formative00/Formative00.html#PDFfileCreation" class="bg-info text-white" target="_blank">Formative00</a>-PDF File Creation. 
 			</p>
 
+
+
+			<hr />
+			<hr />
+
 		</div>
 
-		<div class="col-lg-12 text-danger">
+				<div class="col-lg-12 text-danger">
 			<h2>Screen Shot Ex1</h2>
 			<hr />
 			<hr />
@@ -296,115 +189,75 @@
 
 
 
+		<div class=" col-lg-12"><a href="#Exercise03" class="btn btn-info" data-toggle="collapse">Hands-On Project 7-4-Data Frames</a></div>
 
-
-		<div class=" col-lg-12"><a href="#Exercise07" class="btn btn-info" data-toggle="collapse">Packet Tracer Lab 6-1-Setting Invalid IP Address</a></div>
-
-		<div id="Exercise07" class="collapse in  col-lg-12">
-
-			<p>The Packet Tracer Labs are accessible from MindTap in two ways:</p>
-			<ul>
-				<li>Under the Practice section of the Module<br />
-					<a href="../Summative07/images/PacketTracer.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/PacketTracer.PNG', 'popup'); return false;">
-						<img src="../Summative07/images/PacketTracer.PNG" width="400" alt="packet tracer location" class="img-responsive img-responsive" /></a>
-				</li>
-
-				<li>In the Chapter Review section of the book<br />
-					<a href="../Summative07/images/PacketTracer2.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/PacketTracer2.PNG', 'popup'); return false;">
-						<img src="../Summative07/images/PacketTracer2.PNG" width="200" alt="packet tracer location" class="img-responsive img-responsive" /></a>
-				</li>
-			</ul>
+		<div id="Exercise03" class="collapse in  col-lg-12">
 
 			<p>
-				The files needed for Packet Tracer labs are available on the Cengage Website, in Professor Paulson's OneDrive ReadOnly folder for this course, or in the WSU network drive ReadOnly folder for this course.<br />
-				You must save a copy of these files to your 
-				<code>
-					<span id="bbPath"></span>
-					<script>document.getElementById("bbPath").innerHTML = "&#92;OneDrive - MNSCU&#92;" + xClass + "&#92;";  </script>
-				</code>
-				folder.
+				Do Hands-On Project 7-4<br />
+
+				The Figure 5-19 data frame for an HTTP request is shown below.<br />
+
+				<a href="images/DataFrame_5_19.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/DataFrame_5_19.PNG', 'popup'); return false;">
+					<img src="images/DataFrame_5_19.PNG" width="300" alt="data frame" class="img-responsive img-responsive" /></a><br />
+
 			</p>
+
 
 			<p>
-				Follow the instructions in Packet Tracer Lab 6-1 to try to set an invalid IP Address.<br />
-				When done, perform the tasks below.<br />
-				For background information please refer to the book.
+
+				Potential frame contents shown below.<br />
+
+				<a href="images/frameContents.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/frameContents.PNG', 'popup'); return false;">
+					<img src="images/frameContents.PNG" width="600" alt="frame contents" class="img-responsive img-responsive" /></a><br />
+
 			</p>
+
 
 			<p>
-				<a href="../Summative07/images/PacketTracerIP.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/PacketTracerIP.PNG', 'popup'); return false;">
-					<img src="../Summative07/images/PacketTracerIP.PNG" width="200" alt="packet tracer IP configuration" class="img-responsive img-responsive" /></a>
+				Write your answers for frames 1 through 5 in the spaces below.<br />
+
+				(50). 4. Contents of frame 1.<br />
+			
+			<!-- Enter your answer in the VALUE field below   GROK -->
+				<input name="q4" id="q4" size="120" maxlength="120" class="form-control" value="frame 1: " type="text">
+				<br />
+
+				(50). 5. Contents of frame 2.<br />
+			
+			<!-- Enter your answer in the VALUE field below   GROK -->
+				<input name="q5" id="q5" size="120" maxlength="120" class="form-control" value="frame 2: " type="text">
+				<br />
+
+
+				(50). 6. Contents of frame 3.<br />
+			
+			<!-- Enter your answer in the VALUE field below   GROK -->
+				<input name="q6" id="q6" size="120" maxlength="120" class="form-control" value="frame 3: " type="text">
+				<br />
+
+				(50). 7. Contents of frame 4.<br />
+			
+			<!-- Enter your answer in the VALUE field below   GROK -->
+				<input name="q7" id="q7" size="120" maxlength="120" class="form-control" value="frame 4: " type="text">
+				<br />
 			</p>
-
-			<p>
-				(50) 7. Use the Snipping Tool to make a screen shot of the Desktop Properties IP configuration window showing the error message from step 6.<br />
-
-
-				<!--  PgP 2/4/2018 create path using constants and current document assignment -->
-				Save the screen shot  as &quot;Ex2&quot; in your ' 
-                <code><span id="acxPath"></span></code>
-				<script>document.getElementById("acxPath").innerHTML = Path; </script>
-				' folder.<br />
-
-				You will be combining screen shots from several exercises at the end of this assignment, just as you did in 
-                  <a href="../Formative00/Formative00.html#PDFfileCreation" class="bg-info text-white" target="_blank">Formative00</a>-PDF File Creation. 
-			</p>
-
+				(50). 8. Contents of frame 5.<br />
+			
+			<!-- Enter your answer in the VALUE field below   GROK -->
+				<input name="q8" id="q8" size="120" maxlength="120" class="form-control" value="frame 5: " type="text">
+				<br />
 		</div>
 
-		<div class="col-lg-12 text-danger">
-			<h2>Screen Shot Ex2</h2>
-			<hr />
-			<hr />
+
+
+
+		<div class=" col-lg-12"><a href="#Exercise04" class="btn btn-info" data-toggle="collapse">Packet Tracer Lab</a></div>
+
+		<div id="Exercise04" class="collapse in  col-lg-12">
+
+			<p>There are no Packet Tracer Labs for this chapter.</p>
 		</div>
-
-
-		<div class=" col-lg-12"><a href="#Exercise08" class="btn btn-info" data-toggle="collapse">Packet Tracer Lab 6-2-Setting IPv6 Static Addresses</a></div>
-
-		<div id="Exercise08" class="collapse in  col-lg-12">
-
-
-			<p>
-				Follow the instructions in Packet Tracer Lab 6-2 to set a IPv6 static address.<br />
-				When done, answer the questions below.<br />
-				For background information please refer to the book.
-			</p>
-
-			<p>
-				<a href="../Summative07/images/PacketTracerIP.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/PacketTracerIP.PNG', 'popup'); return false;">
-					<img src="../Summative07/images/PacketTracerIP.PNG" width="200" alt="packet tracer IP configuration" class="img-responsive img-responsive" /></a>
-			</p>
-
-
-			<p>In step 5, to open the PC0 Command Prompt window click PC0, click the Desktop tab, click Command Prompt as shown below.</p>
-
-			<p>
-				<a href="../Summative07/images/PacketTracerCommandPrompt.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/PacketTracerCommandPrompt.PNG', 'popup'); return false;">
-					<img src="../Summative07/images/PacketTracerCommandPrompt.PNG" width="200" alt="packet tracer command prompt" class="img-responsive img-responsive" /></a>
-			</p>
-
-			<p>
-				(50) 8. After step 5 use the Snipping Tool to make a screen shot of the PC0 command prompt window showing the successful ping request.<br />
-
-
-				<!--  PgP 2/4/2018 create path using constants and current document assignment -->
-				Save the screen shot  as &quot;Ex3&quot; in your ' 
-                <code><span id="adPath"></span></code>
-				<script>document.getElementById("adPath").innerHTML = Path; </script>
-				' folder.<br />
-
-				You will be combining screen shots from several exercises at the end of this assignment, just as you did in 
-                  <a href="../Formative00/Formative00.html#PDFfileCreation" class="bg-info text-white" target="_blank">Formative00</a>-PDF File Creation. 
-			</p>
-
-		</div>
-
-		<div class="col-lg-12 text-danger">
-			<h2>Screen Shot Ex3</h2>
-			<hr />
-			<hr />
-		</div>
-
 
 
 
