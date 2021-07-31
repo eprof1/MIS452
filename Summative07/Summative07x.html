@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- PgP 6/15/2019 update page, added integral check web db submissions, split constants into two files, one for students, one for course -->
+    <!-- Bootstrap -->
+    <link href="../../ReadOnly/bootstrap.css" rel="stylesheet">
+
+    <!-- constant file for student firstname, lastname, starid on students' pages -->
+    <script src="../constants.js"></script>
+
+    <!-- course constant file that contains semester, class, section pages -->
+    <script src="../../ReadOnly/CourseConstants.js"></script>
+
+    <!-- model assignment file, version 1 released 2018/02/18 PgP -->
+
+    <title>MIS452Summative07</title>
+</head>
+
+<body onload="setVariables()">
+
+    <form class="container-fluid" action="https://eprofessor.azurewebsites.net/code/ProcessFormData.asp" method="post" name="frmAssignment" id="frmAssignment">
+        <input name="InstID" id="InstID" value="00617282" type="hidden">
+
+        <h1 class=" text-center">Local Area Networks</h1>
+
+        <!-- -start-Student, class and assignment information. Assignment hard-coded, other values from constants.js file-start -->
+        <div class="row col-lg-12">
+            <div class="col-lg-3">
+                <label class="text-primary" for="FirstName">First Name:</label>
+                <input class="form-control" name="FirstName" id="FirstName" type="text" value="default first name" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="LastName">Last Name:</label>
+                <input class="form-control" name="LastName" id="LastName" type="text" value="default last name" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="pin">StarID:</label>
+                <input class="form-control" name="pin" id="pin" type="text" value="default StarID" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="email">Email:</label>
+                <input class="form-control" name="email" id="email" type="email" value="default email address" readonly="readonly">
+            </div>
+        </div>
+
+        <div class="row col-lg-12">
+            <div class="col-lg-3">
+                <label class="text-primary" for="semester">Semester:</label>
+                <input class="form-control" name="semester" id="semester" type="text" value="default" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="class">Class:</label>
+                <input class="form-control" name="class" id="class" value="xClass" type="text" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="section">Section:</label>
+                <input class="form-control" name="section" id="section" value="default" type="text" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="assignment">Assignment:</label>
+                <input class="form-control" name="assignment" id="assignment" value="Summative07" type="text" readonly="readonly">
+            </div>
+        </div>
+        <!-- -end-Student, class and assignment information-end -->
+
+        <!-- Calculate the correct path for saving the files -->
+        <script>Path = "&#92;OneDrive - MNSCU&#92;" + xClass + "&#92;" + document.getElementById("assignment").value + "&#92;"; </script>
+
+
+        <div class="col-lg-12">
+            <br />
+            <input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit">
+            <br />
+        </div>
+
+        <div class="col-lg-12 h3 text-danger">
+            875 Points
+            <hr />
+        </div>
+
+        <!-- -start-objectives-start -->
+        <div class="col-lg-12"><a href="#Objectives" class="btn btn-info" data-toggle="collapse">Learning Objectives</a></div>
+        <div id="Objectives" class=" collapse in col-lg-12">
+
+            <!--Above this line similar except for Assignment number and title   -->
+
+            <ul>
+                <li>Explain functions, activities, advantages and disadvantages of Local Area Networks</li>
+                <li>Contrast physical and logical layouts of Local Area Networks</li>
+                <li>Specify Medium Access Control techniques</li>
+                <li>Explain IEEE 802 frame formats</li>
+            </ul>
+
+            <hr />
+        </div>
+        <!-- -end-objectives-end -->
+
+
+        <div class=" col-lg-12"><a href="#Exercise01" class="btn btn-info" data-toggle="collapse">Questions</a></div>
+
+        <div id="Exercise01" class="collapse in  col-lg-12">
+            Research some esoteric but useful network concepts.
+            <p>
+                <br />
+                Note: do not only rely on the book for the answer.<br />
+                Consult LinkedIn Learning and Wikipedia.
+                <br />
+
+                (50) 1. What is the tie-in between Robert Metcalfe and CSMA/CD(Carrier sense multiple access / collision detection)?
+                <br />
+                Briefly explain your answer.<br />
+                <!-- Enter your answer in the VALUE field below   GROK -->
+                <input name="q1" id="q1" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text">
+                <br />
+            </p>
+            <p>
+                (25) 2.What does &quot;promiscuous mode&quot; mean in relation to the above question?<br />
+                Briefly explain your answer.<br />
+
+                <!-- Enter your answer in the VALUE field below   GROK -->
+                <input name="q2" id="q2" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text">
+                <br />
+            </p>
+            <hr />
+        </div>
+
+
+        <div class=" col-lg-12"><a href="#Exercise02" class="btn btn-info" data-toggle="collapse">Review Questions</a></div>
+
+        <div id="Exercise02" class="collapse in  col-lg-12">
+
+            <p>page 233 </p>
+            <p>
+                (25) 3. What is the difference between a physical design and a logical design?<br />
+                <!-- Enter your answer in the VALUE field below   GROK -->
+                <input name="q3" id="q3" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text">
+                <br />
+
+            </p>
+            <p>
+                (25) 4. What is meant by a &quot;nondeterministic&quot; protocol?<br />
+                <!-- Enter your answer in the VALUE field below   GROK -->
+                <input name="q4" id="q4" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text">
+                <br />
+            </p>
+
+            <p>
+                (25) 5. What is the primary advantage of power over Ethernet ?<br />
+                <!-- Enter your answer in the VALUE field below   GROK -->
+                <input name="q5" id="q5" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text">
+                <br />
+            </p>
+            <p>
+                (25) 6. What is the primary disadvantage of power over Ethernet ?<br />
+                <!-- Enter your answer in the VALUE field below   GROK -->
+                <input name="q6" id="q6" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text">
+                <br />
+            </p>
+            <hr />
+        </div>
+
+
+        <div class=" col-lg-12"><a href="#Exercise03" class="btn btn-info" data-toggle="collapse">Exercises</a></div>
+
+        <div id="Exercise03" class="collapse in  col-lg-12">
+            <p>page 243 </p>
+            <p>
+                (25) 7. Is a hub a passive device?
+                <br />
+                Explain.<br />
+                <!-- Enter your answer in the VALUE field below   GROK -->
+                <input name="q7" id="q7" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text">
+                <br />
+                <br />
+            </p>
+            <p>
+                (25) 8. If a network were described as 1000BaseT, list everything you would know<br />
+                about that network.<br />
+                <!-- Enter your answer in the VALUE field below   GROK -->
+                <input name="q8" id="q8" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text">
+                <br />
+            </p>
+            <p>
+                (25)  9. Which of the wireless LAN protocols can support data rates as high as 54Mbps? Is this theoretical or actual?<br />
+                <!-- Enter your answer in the VALUE field below   GROK -->
+                <input name="q9" id="q9" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text">
+                <br />
+            </p>
+            <p>
+                (50) 10. Your company wants to create a wireless network for the entire office building.<br />
+                The building is 10 stories high, and the company wants to incorporate IEEE 802.11a<br />
+                by placing one access point on the tenth floor.<br />
+                Will this layout work?
+                <br />
+                Explain your answer.<br />
+                <!-- Enter your answer in the VALUE field below   GROK -->
+                <input name="q10" id="q10" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text">
+                <br />
+
+            </p>
+            <p></p>
+            <hr />
+
+        </div>
+
+
+        <div class=" col-lg-12"><a href="#Exercise04" class="btn btn-info" data-toggle="collapse">Thinking Outside the Box</a></div>
+
+        <div id="Exercise04" class="collapse in  col-lg-12">
+            <p>page 237 </p>
+            <p>
+                (75) 11. A large company has many different departments housed in a large office complex in the city.<br />
+                Each department has a database of local information.<br />
+                The company wants to let all the employees from around the company access any of these databases.<br />
+                What type of network would you recommend for such a situation?<br />
+                Explain your answer.
+                <br />
+
+                <!-- Enter your answer in the VALUE field below   GROK -->
+                <input name="q11" id="q11" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text">
+                <br />
+            </p>
+            <hr />
+
+        </div>
+
+
+        <div class=" col-lg-12"><a href="#Exercise05" class="btn btn-info" data-toggle="collapse">Hands-on Projects</a></div>
+
+        <div id="Exercise05" class="collapse in  col-lg-12">
+            <p>page 238 (p246 in 5e)</p>
+            <p>Windows Server 2008 virtual machine- password is Wsu5838</p>
+            <p>
+                <a href="http://en.wikipedia.org/wiki/Wireshark">Investigate</a> <a href="http://www.wireshark.org/">WireShark</a> which is installed on the WinSrv2008 vm. (note: WireShark was formerly Ethereal)<br />
+                <img src="WireShark.png" alt="WireShark" class="img-responsive" />
+                <br />
+                Start up both the Win 2008 server and Win982e Virtual Machines.<br />
+                Make sure both network cards are set to 'local only'<br />
+                Make sure that the Win 2008 server has IIS running.<br />
+                Open IE in the Win 98 machine and browse to 'http://server2008v'
+                <br />
+                <br />
+                (25) 12. What do you see in IE?<br />
+
+
+                <!-- Enter your answer in the VALUE field below   GROK -->
+                <input name="q12" id="q12" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text">
+                <br />
+
+            </p>
+            <p></p>
+
+            <p>
+                (50) 13. Use the Snipping Tool to make a screen shot of the captured packets window from WireShark in the Win2008 vm.
+                <br />
+
+                <!--  PgP 2/4/2018 create path using constants and current document assignment -->
+                Save the screen shot  as &quot;ExWS&quot; in your ' 
+                <code><span id="aPath"></span></code>
+                <script>document.getElementById("aPath").innerHTML = Path; </script>
+                ' folder.<br />
+
+                You will be combining screen shots from several exercises at the end of this assignment, just as you did in 
+                <a href="https://eprofessor.azurewebsites.net/Formative00/Formative00.html#PDFfileCreation" class="bg-info text-white" target="_blank">Formative00</a>-PDF File Creation. 
+            </p>
+
+        </div>
+
+
+        <div class="col-lg-12 text-danger">
+            <h2>Screen Shot ExWS</h2>
+            <hr />
+        </div>
+
+
+        <p>
+            (50) 14. Use the Snipping Tool to make a screen shot of the WireShark window in the Win2008 vm.
+                <br />
+
+            <!--  PgP 2/4/2018 create path using constants and current document assignment -->
+            Save the screen shot  as &quot;ExVM&quot; in your ' 
+            <code><span id="bPath"></span></code>
+            <script>document.getElementById("bPath").innerHTML = Path; </script>
+            ' folder.<br />
+
+            You will be combining screen shots from several exercises at the end of this assignment, just as you did in 
+                <a href="https://eprofessor.azurewebsites.net/Formative00/Formative00.html#PDFfileCreation" class="bg-info text-white" target="_blank">Formative00</a>-PDF File Creation. 
+        </p>
+        <p></p>
+
+
+        <div class="col-lg-12 text-danger">
+            <h2>Screen Shot ExVM</h2>
+            <hr />
+        </div>
+
+        <p>
+            (125) 15. What does this data mean?<br />
+
+            <!-- Enter your answer in the VALUE field below   GROK -->
+            <input name="q15" id="q15" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text">
+            <br />
+
+        </p>
+        <hr />
+
+
+        <!--  From here to end difference question numbers and Summative numbering for PDF of file uploaded to D2L    -->
+
+
+        <div class="col-lg-12"><a href="#ExercisePDF" class="btn btn-info" data-toggle="collapse">Exercise-PDF File Creation</a></div>
+
+        <div id="ExercisePDF" class="collapse in  col-lg-12">
+            <p>
+                Use a web browser to verify that you have published your website to https://classes.winona.edu/...
+                <br />
+                Check that your name, StarID, email, class, semester, section and all of your answers are correct and visible.
+                <br />
+                From the menu choose File&gt;Print... and using &quot;Microsoft Print to PDF&quot; save a copy of this assignment as a .pdf file in your   ' 
+                <code><span id="dPath"></span></code>
+                <script>document.getElementById("dPath").innerHTML = Path; </script>
+                ' folder.<br />
+
+            </p>
+            <br />
+
+            <p>
+                (50) 16. Save your file 'WebPage.pdf' in your ' 
+                <code><span id="ePath"></span></code>
+                <script>document.getElementById("ePath").innerHTML = Path; </script>
+                ' folder.<br />
+
+
+            </p>
+
+            <div class="text-danger">
+                <h2>WebPage.pdf</h2>
+                <hr />
+            </div>
+
+            <p>Create one .pdf (portable document format) file from the screen shots that you have taken by following these steps.</p>
+
+            <ol>
+                <li>Open File Explorer, make sure the screen shot files are properly named(Ex1, Ex2 , Ex3.. )  </li>
+                <li>Select all of the screen shots to be combined. </li>
+                <li>Right Click and select &#39;Print&#39; from the short-cut menu.      </li>
+                <li>In the bottom center of the &#39;Print Pictures&#39; dialog box uncheck the box &quot;Fit picture to frame&quot;</li>
+                <li>Click on &#39;Print&#39; and save the file with the name &quot;ScreenShots.pdf&quot; in your '
+                <code><span id="fPath"></span></code>
+                    <script>document.getElementById("fPath").innerHTML = Path; </script>
+                    ' folder.<br />
+                </li>
+            </ol>
+
+
+            <p>
+                (50) 17. Save your file 'ScreenShots.pdf' in your ' 
+                <code><span id="gPath"></span></code>
+                <script>document.getElementById("gPath").innerHTML = Path; </script>
+                ' folder.<br />
+            </p>
+
+            <div class="text-danger">
+                <h2>ScreenShots.pdf</h2>
+                <hr />
+            </div>
+
+
+            <p></p>
+            <p>
+                Use PDFill to merge the WebPage.pdf file with the ScreenShots.pdf file, and save it as &#39;Summative07.pdf&#39; in your ' 
+                <code><span id="hPath"></span></code>
+                <script>document.getElementById("hPath").innerHTML = Path; </script>
+                ' folder.<br />
+
+            </p>
+
+
+            <p>(50) 18. Upload your file 'Summative07.pdf' to the D2L 'Summative07' Assignment folder.</p>
+
+            <div class="text-danger">
+                <h2>Summative07.pdf</h2>
+            </div>
+            <hr />
+
+        </div>
+
+
+
+
+        <div class="col-lg-12"><a href="#ExerciseAssignmentSubmission" class="btn btn-info" data-toggle="collapse">Exercise-Assignment Submission</a></div>
+
+        <div id="ExerciseAssignmentSubmission" class="collapse in  col-lg-12">
+            <p>
+                Use a browser to view your completed and published website at: https://classes.winona.edu/...     
+                <br />
+                Ensure that you have linked this assignment on your home page.
+                Note that your screen shots do not have to be completed to perform this step.<br>
+            </p>
+
+            (50) 19. Home Page Hyperlink<br />
+            Check and verify that this assignment is hyperlinked on your home page.<br />
+            <br />
+
+            (50) 20. Assignment submission<br />
+            Press the Submit button at the top or bottom of this page.
+                Read and follow instructions on the confirmation page. Correct any errors.
+        </div>
+        <hr />
+
+
+
+        <div class="col-lg-12">
+            <br />
+            <input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit">
+            <br />
+        </div>
+
+
+    </form>
+
+
+
+    <!-- Creative Commons License Info -->
+    <div id="xLicense" class=" col-lg-12 text-muted"></div>
+
+    <div id="xfooter" class=" col-lg-12 text-muted"></div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="../../ReadOnly/jquery-1.js"></script>
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../../ReadOnly/bootstrap.js"></script>
+
+</body>
+</html>
