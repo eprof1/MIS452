@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- PgP 6/15/2019 update page, added integral check web db submissions, split constants into two files, one for students, one for course -->
+    <!-- Bootstrap -->
+    <link href="../../ReadOnly/bootstrap.css" rel="stylesheet">
+
+    <!-- constant file for student firstname, lastname, starid on students' pages -->
+    <script src="../constants.js"></script>
+
+    <!-- course constant file that contains semester, class, section pages -->
+    <script src="../../ReadOnly/CourseConstants.js"></script>
+
+    <!-- model assignment file, version 1 released 2018/02/18 PgP -->
+
+    <title>MIS452Summative11</title>
+</head>
+
+<body onload="setVariables()">
+
+    <form class="container-fluid" action="https://eprofessor.azurewebsites.net/code/ProcessFormData.asp" method="post" name="frmAssignment" id="frmAssignment">
+        <input name="InstID" id="InstID" value="00617282" type="hidden">
+
+        <h1 class=" text-center">Voice and Data Networks</h1>
+
+        <!-- -start-Student, class and assignment information. Assignment hard-coded, other values from constants.js file-start -->
+        <div class="row col-lg-12">
+            <div class="col-lg-3">
+                <label class="text-primary" for="FirstName">First Name:</label>
+                <input class="form-control" name="FirstName" id="FirstName" type="text" value="default first name" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="LastName">Last Name:</label>
+                <input class="form-control" name="LastName" id="LastName" type="text" value="default last name" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="pin">StarID:</label>
+                <input class="form-control" name="pin" id="pin" type="text" value="default StarID" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="email">Email:</label>
+                <input class="form-control" name="email" id="email" type="email" value="default email address" readonly="readonly">
+            </div>
+        </div>
+
+        <div class="row col-lg-12">
+            <div class="col-lg-3">
+                <label class="text-primary" for="semester">Semester:</label>
+                <input class="form-control" name="semester" id="semester" type="text" value="default" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="class">Class:</label>
+                <input class="form-control" name="class" id="class" value="xClass" type="text" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="section">Section:</label>
+                <input class="form-control" name="section" id="section" value="default" type="text" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="assignment">Assignment:</label>
+                <input class="form-control" name="assignment" id="assignment" value="Summative11" type="text" readonly="readonly">
+            </div>
+        </div>
+        <!-- -end-Student, class and assignment information-end -->
+
+        <!-- Calculate the correct path for saving the files -->
+        <script>Path = "&#92;OneDrive - MNSCU&#92;" + xClass + "&#92;" + document.getElementById("assignment").value + "&#92;"; </script>
+
+
+        <div class="col-lg-12">
+            <br />
+            <input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit">
+            <br />
+        </div>
+
+        <div class="col-lg-12 h3 text-danger">
+            1000 Points
+            <hr />
+        </div>
+
+        <!-- -start-objectives-start -->
+        <div class="col-lg-12"><a href="#Objectives" class="btn btn-info" data-toggle="collapse">Learning Objectives</a></div>
+        <div id="Objectives" class=" collapse in col-lg-12">
+
+            <!--Above this line similar except for Assignment number and title   -->
+
+
+
+            <hr />
+        </div>
+        <!-- -end-objectives-end -->
+
+
+        <div class=" col-lg-12"><a href="#Exercise01" class="btn btn-info" data-toggle="collapse">Questions</a></div>
+
+        <div id="Exercise01" class="collapse in  col-lg-12">
+            <p>
+                Silos?<br />
+                Note: do not only rely on the book for the answer.<br />
+                Consult LinkedIn Learning and Wikipedia.
+            </p>
+
+
+            <p>(25) 1. Briefly state whether companies benefit from maintaining separate departments for data networking, and their phone systems.</p>
+
+            <!-- Enter your answer in the VALUE field below   GROK -->
+            <input name="q1" id="q1" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text">
+            <br />
+
+        </div>
+
+
+        <hr />
+
+
+
+
+        <div class=" col-lg-12"><a href="#Exercise03" class="btn btn-info" data-toggle="collapse">Exercises</a></div>
+
+        <div id="Exercise03" class="collapse in  col-lg-12">
+
+            <p>page 383 (p392 in 5e)</p>
+            <p>
+                For each of the following scenarios, state whether a telephone line or a trunk should be used:<br />
+
+
+                (25) 2. the connection from your home to the local telephone company<br />
+                <!-- Enter your answer in the VALUE field below   GROK -->
+                <input name="q2" id="q2" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text">
+                <br />
+
+
+                (25) 3. the connection between a large company&rsquo;s PBX and the telephone company<br />
+                <!-- Enter your answer in the VALUE field below   GROK -->
+                <input name="q3" id="q3" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text">
+                <br />
+
+                (25) 4. the connection between two central offices<br />
+                <!-- Enter your answer in the VALUE field below   GROK -->
+                <input name="q4" id="q4" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text">
+                <br />
+
+                <br />
+            </p>
+            <p>
+                You dial in to your Internet service provider using your 56k modem. Once<br />
+                connected, your data rate is shown as 42,000 bps,  not 56k bps.
+                <br />
+                List four possible  reasons.<br />
+
+                (25) 5.
+              <!-- Enter your answer in the VALUE field below   GROK -->
+                <input name="q5" id="q5" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text">
+                <br />
+                (25) 6.
+              <!-- Enter your answer in the VALUE field below   GROK -->
+                <input name="q6" id="q6" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text">
+                <br />
+                (25) 7.
+              <!-- Enter your answer in the VALUE field below   GROK -->
+                <input name="q7" id="q7" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text">
+                <br />
+
+                (25) 8.
+              <!-- Enter your answer in the VALUE field below   GROK -->
+                <input name="q8" id="q8" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text">
+                <br />
+            </p>
+            <hr />
+        </div>
+
+
+
+        <div class=" col-lg-12"><a href="#Exercise04" class="btn btn-info" data-toggle="collapse">Thinking Outside the Box</a></div>
+
+        <div id="Exercise04" class="collapse in  col-lg-12">
+            <p>page 385</p>
+            <p>
+                Your company needs to create or install an application or service that allows employees to dial in using a phone, or use some type of Internet connection from a remote (read not at the company) location and using a single connection access their e-mail, voice mail and data files.<br />
+
+                Investigate the necessary hardware and software requirements.
+            </p>
+
+            <p>
+                (50) 9. What kind of system or systems would allow this?<br />
+                <!-- Enter your answer in the VALUE field below   GROK -->
+                <input name="q9" id="q9" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text">
+                <br />
+
+                (50) 10. Briefly describe the necessary hardware requirements.<br />
+                <!-- Enter your answer in the VALUE field below   GROK -->
+                <input name="q10" id="q10" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text">
+                <br />
+
+                (50) 11. Briefly describe the necessary software requirements.<br />
+                <!-- Enter your answer in the VALUE field below   GROK -->
+                <input name="q11" id="q11" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text">
+                <br />
+
+
+            </p>
+            <hr />
+
+
+        </div>
+
+
+        <div class=" col-lg-12"><a href="#Exercise05" class="btn btn-info" data-toggle="collapse">Hands-on Projects</a></div>
+
+        <div id="Exercise05" class="collapse in  col-lg-12">
+
+            <p>
+                You will create an Ubuntu 18.04 Virtual Machine and install Asterisk, a VOIP server, on it.<br />
+                Feel free to use either Microsoft Hyper-V or VMware workstation.<br />
+                Reference:  <a href="https://linuxize.com/post/how-to-install-asterisk-on-ubuntu-18-04/">Asterisk on Ubuntu</a><br />
+            </p>
+            <hr />
+
+
+            <p>
+                (50) 12. Briefly describe the benefits to an organization of running an Asterisk VOIP server.<br />
+                <!-- Enter your answer in the VALUE field below   GROK -->
+                <input name="q12" id="q12" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text">
+                <br />
+
+
+            </p>
+
+
+            <p>
+                (50) 13. Research the internet and then briefly explain how to connect an Asterisk VOIP server to the
+                <abbr title="Plain Old Telephone System">POTS</abbr>.<br />
+                <!-- Enter your answer in the VALUE field below   GROK -->
+                <input name="q13" id="q13" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text">
+                <br />
+
+
+            </p>
+
+            <p>
+                Use the Snipping tool to make a screen shot of your running Ubuntu server.<br />
+                <br />
+
+                <!--  PgP 2/4/2018 create path using constants and current document assignment -->
+                (100) 14. Save the screen shot of the Asterisk Server &quot;Ex5-1&quot; in your ' 
+                <code><span id="aaPath"></span></code>
+                <script>document.getElementById("aaPath").innerHTML = Path; </script>
+                ' folder.<br />
+
+                You will be combining screen shots from several exercises at the end of this assignment, just as you did in 
+            <a href="https://eprofessor.azurewebsites.net/Formative00/Formative00.html#PDFfileCreation" class="bg-info text-white" target="_blank">Formative00</a>-PDF File Creation. 
+            </p>
+
+        </div>
+
+        <div class="col-lg-12 text-danger">
+            <h2>Screen Shot Ex5-1</h2>
+            <hr />
+        </div>
+
+
+        <div class="col-lg-12">
+            <p>
+                Use the Snipping tool to make a screen shot of your running Asterisk server.<br />
+                <br />
+
+                <!--  PgP 2/4/2018 create path using constants and current document assignment -->
+                (200) 15. Save the screen shot of the Asterisk Server &quot;Ex5-2&quot; in your ' 
+                <code><span id="bPath"></span></code>
+                <script>document.getElementById("bPath").innerHTML = Path; </script>
+                ' folder.<br />
+
+                You will be combining screen shots from several exercises at the end of this assignment, just as you did in 
+            <a href="https://eprofessor.azurewebsites.net/Formative00/Formative00.html#PDFfileCreation" class="bg-info text-white" target="_blank">Formative00</a>-PDF File Creation. 
+            </p>
+        </div>
+
+        <div class="col-lg-12 text-danger">
+            <h2>Screen Shot Ex5-2</h2>
+            <hr />
+        </div>
+
+
+
+
+
+        <!--  From here to end difference question numbers and Summative numbering for PDF of file uploaded to D2L    -->
+
+
+        <div class="col-lg-12"><a href="#ExercisePDF" class="btn btn-info" data-toggle="collapse">Exercise-PDF File Creation</a></div>
+
+        <div id="ExercisePDF" class="collapse in  col-lg-12">
+            <p>
+                Use a web browser to verify that you have published your website to https://classes.winona.edu/...
+                <br />
+                Check that your name, StarID, email, class, semester, section and all of your answers are correct and visible.
+                <br />
+                From the menu choose File&gt;Print... and using &quot;Microsoft Print to PDF&quot; save a copy of this assignment as a .pdf file in your   ' 
+                <code><span id="dPath"></span></code>
+                <script>document.getElementById("dPath").innerHTML = Path; </script>
+                ' folder.<br />
+
+            </p>
+            <br />
+
+            <p>
+                (50) 16. Save your file 'WebPage.pdf' in your ' 
+                <code><span id="ePath"></span></code>
+                <script>document.getElementById("ePath").innerHTML = Path; </script>
+                ' folder.<br />
+
+
+            </p>
+
+            <div class="text-danger">
+                <h2>WebPage.pdf</h2>
+                <hr />
+            </div>
+
+            <p>Create one .pdf (portable document format) file from the screen shots that you have taken by following these steps.</p>
+
+            <ol>
+                <li>Open File Explorer, make sure the screen shot files are properly named(Ex1, Ex2 , Ex3.. ) &nbsp; </li>
+                <li>Select all of the screen shots to be combined. </li>
+                <li>Right Click and select &#39;Print&#39; from the short-cut menu.      </li>
+                <li>In the bottom center of the &#39;Print Pictures&#39; dialog box uncheck the box &quot;Fit picture to frame&quot;</li>
+                <li>Click on &#39;Print&#39; and save the file with the name&nbsp; &quot;ScreenShots.pdf&quot; in your '
+                <code><span id="fPath"></span></code>
+                    <script>document.getElementById("fPath").innerHTML = Path; </script>
+                    ' folder.<br />
+                </li>
+            </ol>
+
+
+            <p>
+                (50) 17. Save your file 'ScreenShots.pdf' in your ' 
+                <code><span id="gPath"></span></code>
+                <script>document.getElementById("gPath").innerHTML = Path; </script>
+                ' folder.<br />
+
+            </p>
+
+            <div class="text-danger">
+                <h2>ScreenShots.pdf</h2>
+                <hr />
+            </div>
+
+
+            <p>&nbsp;</p>
+            <p>
+                Use PDFill to merge the <strong>WebPage.pdf</strong> file with the <strong>ScreenShots.pdf </strong>file, and save it as &#39;<strong>Summative11.pdf</strong>&#39; in your ' 
+                <code><span id="hPath"></span></code>
+                <script>document.getElementById("hPath").innerHTML = Path; </script>
+                ' folder.<br />
+
+            </p>
+
+
+            <p>(50) 18. Upload your file 'Summative11.pdf' to the D2L 'Summative11' Assignment folder.</p>
+
+            <div class="text-danger">
+                <h2>Summative11.pdf</h2>
+            </div>
+            <hr />
+
+        </div>
+
+
+
+
+        <div class="col-lg-12"><a href="#ExerciseAssignmentSubmission" class="btn btn-info" data-toggle="collapse">Exercise-Assignment Submission</a></div>
+
+        <div id="ExerciseAssignmentSubmission" class="collapse in  col-lg-12">
+            <p>
+                Use a browser to view your completed and published website at: https://classes.winona.edu/...     
+                <br />
+                Ensure that you have linked this assignment on your home page.
+                Note that your screen shots do not have to be completed to perform this step.<br>
+            </p>
+
+            (50) 19. Home Page Hyperlink<br />
+            Check and verify that this assignment is hyperlinked on your home page.<br />
+            <br />
+
+            (50) 20. Assignment submission<br />
+            Press the Submit button at the top or bottom of this page.
+                Read and follow instructions on the confirmation page.&nbsp; Correct any errors.
+        </div>
+        <hr />
+
+
+
+        <div class="col-lg-12">
+            <br />
+            <input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit">
+            <br />
+        </div>
+
+
+    </form>
+
+
+
+    <!-- Creative Commons License Info -->
+    <div id="xLicense" class=" col-lg-12 text-muted"></div>
+
+    <div id="xfooter" class=" col-lg-12 text-muted"></div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="../../ReadOnly/jquery-1.js"></script>
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../../ReadOnly/bootstrap.js"></script>
+
+</body>
+</html>
