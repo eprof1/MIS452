@@ -119,9 +119,28 @@
 
             <p>
                 In  this part you will connect a browser on the  WinXP &#39;client&#39; vm to a website on the Windows Server 2012 that is running a website on Internet Information Services.<br />
-                These vms are both from Part 1.<br />
-                <br />
-                Make sure the NICs/Network Adapters for both vms are set to use a Private Virtual Switch that you must create in Hyper-V.
+                These vms are both from Part 1.</p>
+            <p>
+                Notes:</p>
+            <p>
+                The screenshot below shows the final product:<br />
+
+				<a href="Part2Images/WebServerXP2012.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('Part2Images/WebServerXP2012.PNG', 'popup'); return false;">
+					<img src="Part2Images/WebServerXP2012.PNG" width="300" alt="web server" class="img-responsive img-responsive" /></a><br />
+            </p>
+            <p>
+                &nbsp;</p>
+            <p>
+                See <a href="https://learn.microsoft.com/en-us/iis/get-started/whats-new-in-iis-8/installing-iis-8-on-windows-server-2012" class="bg-info text-white" target="_blank" >this article to configure IIS</a> on the Windows 2012 machine. Or Google 'installing IIS on Windows Server 2012'<br />
+                Create and use a .vhd to move a copy of your MIS452 homework website to the IIS website running on the Windows Server 2012 machine.&nbsp; <a href="https://www.groovypost.com/howto/attach-copy-files-vhd-windows-10" class="bg-info text-white" target="_blank"   >See here.</a> Or Google &quot;how to attach and copy files from a vhd in Windows 10&quot;<br />
+                &nbsp;<br />
+                Make sure the NICs/Network Adapters for both vms are set to use a Private Virtual Switch that you must create in Hyper-V.<br />
+                It may be best to use a 'Legacy Network Adapter' in both machines.<br />
+                Set a Private Lan ID <br />
+                Set static IP addresses for both machines, something like<br /> <code>192.168.1.101 </code> and <br /> <code>192.168.1.102</code><br />
+                Use the Disk Management tool to mount the vhd you created to hold the MIS452 website files.<br />
+                Make sure to copy the ReadOnly folder from the course website (T: drive)<br />
+                Note that you will have to modify Internet Explorer browser security settings and add the IP addresses to 'Trusted Sites'<br />
             </p>
             <p>
                 &nbsp;
@@ -129,7 +148,7 @@
             </p>
 
             <p>
-                (100) 1. What is the IP address of the Windows 2012 web server?
+                (100) 1. What is the IP address of the Windows 2012 web server?<br />
              <!-- Enter your answer in the VALUE field below   GROK -->
                 <input name="q1" id="q1" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text">
                 <br />
