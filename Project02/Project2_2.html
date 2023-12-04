@@ -135,9 +135,9 @@
                 Create and use a .vhd to move a copy of your MIS452 homework website to the IIS website running on the Windows Server 2012 machine.&nbsp; <a href="https://www.groovypost.com/howto/attach-copy-files-vhd-windows-10" class="bg-info text-white" target="_blank"   >See here.</a> Or Google &quot;how to attach and copy files from a vhd in Windows 10&quot;<br />
                 &nbsp;<br />
                 Make sure the NICs/Network Adapters for both vms are set to use a Private Virtual Switch that you must create in Hyper-V.<br />
-                It may be best to use a 'Legacy Network Adapter' in both machines.<br />
+                It may be best to use both a regular Network adapter and a 'Legacy Network Adapter' in both machines.<br />
                 Set a Private Lan ID <br />
-                Set static IP addresses for both machines, something like<br /> <code>192.168.1.101 </code> and <br /> <code>192.168.1.102</code><br />
+                Set static IP addresses on the &#39;Legacy Network Adapter&#39; for both machines, something like<br /> <code>192.168.1.101 </code> and <br /> <code>192.168.1.102</code><br />
                 Use the Disk Management tool to mount the vhd you created to hold the MIS452 website files.<br />
                 Make sure to copy the ReadOnly folder from the course website (T: drive)<br />
                 Note that you will have to modify Internet Explorer browser security settings and add the IP addresses to 'Trusted Sites'<br />
