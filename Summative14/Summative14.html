@@ -1,0 +1,657 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- PgP 6/15/2019 update page, added integral check web db submissions, split constants into two files, one for students, one for course -->
+    <!-- Bootstrap -->
+    <link href="../../ReadOnly/bootstrap.css" rel="stylesheet">
+
+    <!-- constant file for student firstname, lastname, starid on students' pages -->
+    <script src="../constants.js"></script>
+
+    <!-- course constant file that contains semester, class, section pages -->
+    <script src="../../ReadOnly/CourseConstants.js"></script>
+
+    <!-- model assignment file, version 1 released 2018/02/18 PgP -->
+
+    <title>MIS452Summative14</title>
+</head>
+
+<body onload="setVariables()">
+
+    <form class="container-fluid" action="https://eprofessor.azurewebsites.net/code/ProcessFormData.asp" method="post" name="frmAssignment" id="frmAssignment">
+        <input name="InstID" id="InstID" value="00617282" type="hidden">
+
+        <h1 class=" text-center">Network Management and Administration</h1>
+
+        <!-- -start-Student, class and assignment information. Assignment hard-coded, other values from constants.js file-start -->
+        <div class="row col-lg-12">
+            <div class="col-lg-3">
+                <label class="text-primary" for="FirstName">First Name:</label>
+                <input class="form-control" name="FirstName" id="FirstName" type="text" value="default first name" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="LastName">Last Name:</label>
+                <input class="form-control" name="LastName" id="LastName" type="text" value="default last name" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="pin">StarID:</label>
+                <input class="form-control" name="pin" id="pin" type="text" value="default StarID" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="email">Email:</label>
+                <input class="form-control" name="email" id="email" type="email" value="default email address" readonly="readonly">
+            </div>
+        </div>
+
+        <div class="row col-lg-12">
+            <div class="col-lg-3">
+                <label class="text-primary" for="semester">Semester:</label>
+                <input class="form-control" name="semester" id="semester" type="text" value="default" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="class">Class:</label>
+                <input class="form-control" name="class" id="class" value="xClass" type="text" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="section">Section:</label>
+                <input class="form-control" name="section" id="section" value="default" type="text" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="assignment">Assignment:</label>
+                <input class="form-control" name="assignment" id="assignment" value="Summative14" type="text" readonly="readonly">
+            </div>
+        </div>
+        <!-- -end-Student, class and assignment information-end -->
+
+        <!-- Calculate the correct path for saving the files -->
+        <script>Path = "&#92;OneDrive - MNSCU&#92;" + xClass + "&#92;" + document.getElementById("assignment").value + "&#92;"; </script>
+
+
+        <div class="col-lg-12">
+            <br />
+            <input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit">
+            <br />
+        </div>
+
+        <div class="col-lg-12 h3 text-danger">
+            950 Points
+            <hr />
+        </div>
+
+        <!-- -start-objectives-start -->
+        <div class="col-lg-12"><a href="#Objectives" class="btn btn-info" data-toggle="collapse">Learning Objectives</a></div>
+        <div id="Objectives" class=" collapse in col-lg-12">
+
+            <!--Above this line similar except for Assignment number and title   -->
+            <ul>
+                <li>Explain the major components of an operating system</li>
+                <li>Describe and compare the client and server operating systems</li>
+                <li>Describe the components or virtualization and virtualization products</li>
+                <li>Plan for an operating system installation and perform postinstallation tasks</li>
+            </ul>
+
+            <p>
+                Use the course chatbot and the references provided to answer the following questions and solve the following problems.
+            </p>
+
+            <hr />
+        </div>
+        <!-- -end-objectives-end -->
+
+
+        <div class=" col-lg-12"><a href="#Exercise01" class="btn btn-info" data-toggle="collapse">Exercise 1-Questions</a></div>
+
+        <div id="Exercise01" class="collapse in  col-lg-12">
+
+
+            <p>
+                Research network design.<br />
+                Consult LinkedIn Learning, Wikipedia- <a class="bg-info text-white" href="https://en.wikipedia.org/wiki/Hardware_virtualization" target="_blank">capacity management</a>&nbsp; and the <a class="bg-info text-white" href="https://www.dnsstuff.com/network-design-tools" target="_blank">Internet</a>.
+            </p>
+
+
+            <p>
+                (50) 1. Reflect on what you have learned about network technology.<br />
+                Briefly explain the importance of an organization periodically reviewing the network environment.
+            </p>
+
+            <!-- Enter your answer in the VALUE field below   GROK -->
+            <input name="q1" id="q1" size="120" maxlength="120" class="form-control" value="network review: " type="text">
+            <br />
+
+
+            <p>
+                Research <a href="https://en.wikipedia.org/wiki/Network_planning_and_design" class="bg-info text-white" target="_blank">network  planning</a>.<br />
+
+
+                (50) 2. Briefly state the importance of network  planning and design.<br />
+
+                <!-- Enter your answer in the VALUE field below   GROK -->
+                <input name="q2" id="q2" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text">
+                <br />
+            </p>
+
+
+            <hr />
+
+            <p>
+                Research the steps of creating new users in a Windows network environment.<br />
+                Note: some of your computer settings will be different, because your laptop is part of the WSU domain.<br />
+                Be very careful to not change or delete existing accounts or users.
+            </p>
+
+
+
+            <p>
+                (50) 3. Reflect on the process of creating a new Windows user.  Is it easy to do?:<br />
+
+                <!-- Enter your answer in the VALUE field below   GROK -->
+                <input name="q3" id="q3" size="120" maxlength="120" class="form-control" value="new user: " type="text">
+                <br />
+            </p>
+
+            <hr />
+
+
+        </div>
+
+
+
+
+        <div class=" col-lg-12"><a href="#Exercise02" class="btn btn-info" data-toggle="collapse">Exercise 2-Creating Windows Groups</a></div>
+
+        <div id="Exercise02" class="collapse in  col-lg-12">
+
+            <p>
+                Research Windows groups.<br />
+                Create a new Windows group.<br />
+                You can work with a partner.<br />
+                Be careful not to change or delete existing users or groups.
+            </p>
+
+            <p>
+                After you complete the project, in the Computer Management dialog box double-click 'Users', 'Add', enter '20253', click 'Check Names' and exmaine the list.<br />
+
+                <a href="images/groups.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/groups.PNG', 'popup'); return false;">
+                    <img src="images/groups.PNG" width="300" alt="some groups" class="img-responsive img-responsive" /></a><br />
+                <br />
+                Your list will not contain as many results.
+				<br />
+            </p>
+
+            <p>
+                (50) 4. Briefly explain what (or who) the groups in the list represent, and their purpose.<br />
+
+                <!-- Enter your answer in the VALUE field below   GROK -->
+                <input name="q4" id="q4" size="120" maxlength="120" class="form-control" value="20253 groups: " type="text">
+                <br />
+            </p>
+
+        </div>
+
+
+
+        <div class=" col-lg-12"><a href="#Exercise03" class="btn btn-info" data-toggle="collapse">Exercise 3-Linux Groups</a></div>
+
+        <div id="Exercise03" class="collapse in  col-lg-12">
+
+            <p>
+                Create users and groups in Linux using the CLI.<br />
+                You will do this on a Raspberry Pi in Somsen 301.<br />
+                The Raspbian Operating System is based on the Linux Debian distribution.
+				You can work with a partner.<br />
+                Be very careful not to change or delete existing users or groups.
+            </p>
+
+            <p>
+                You are not logged in as root to the Raspberry Pi, instead you are use &#39;pi&#39; .<br />
+                In Debian Linux you  use 'sudo' instead of 'su' to enter superuser mode.<br />
+                Type in 'sudo' at the start of a Terminal window command.<br />
+                Use the chatbot to learn how to create a group 'testgroup1'.
+                In the Terminal window type the command <code>cat /etc/group</code> to produce a list of all the groups.<br />
+                Scroll down to make sure that 'testgroup1' is visible.<br />
+            </p>
+
+            <p>
+                (50) 5. Use the Snipping Tool to make a screenshot of the Terminal window displaying the list of groups.<br />
+                Make sure to that 'testgroup1' is visible.<br />
+
+
+                <!--  PgP 2/4/2018 create path using constants and current document assignment -->
+                Save the screenshot  as &quot;Ex1&quot; in your ' 
+                <code><span id="axqPath"></span></code>
+                <script>document.getElementById("axqPath").innerHTML = Path; </script>
+                ' folder.<br />
+
+                You will be combining screenshots from several exercises at the end of this assignment, just as you did in 
+                  <a href="../Formative00/Formative00.html#PDFfileCreation" class="bg-info text-white" target="_blank">Formative00</a>-PDF File Creation. 
+            </p>
+            <hr />
+        </div>
+
+
+        <div class="col-lg-12 text-danger">
+            <h2>ScreenShot Ex3</h2>
+            <hr />
+            <hr />
+        </div>
+
+
+
+
+
+
+
+
+        <div class=" col-lg-12"><a href="#Exercise04" class="btn btn-info" data-toggle="collapse">Exercise-4-Windows Disk Management</a></div>
+
+        <div id="Exercise04" class="collapse in  col-lg-12">
+
+            <p>
+                Use the chatbot to research and learn about creating and formatting Windows volumes.<br />
+                You can work with a partner.<br />
+                Do NOT actually create new Volumes, or format any partition on your laptop!
+            </p>
+
+            <p>
+                Review all the steps but do not actually carry them out.		
+            </p>
+
+            <p>
+                (50) 6. Use the Snipping Tool to make a screenshot of the Computer Management Console for your laptop.<br />
+
+
+                <!--  PgP 2/4/2018 create path using constants and current document assignment -->
+                Save the screenshot  as &quot;Ex4&quot; in your ' 
+                <code><span id="aqqPath"></span></code>
+                <script>document.getElementById("aqqPath").innerHTML = Path; </script>
+                ' folder.<br />
+
+                You will be combining screenshots from several exercises at the end of this assignment, just as you did in 
+                  <a href="../Formative00/Formative00.html#PDFfileCreation" class="bg-info text-white" target="_blank">Formative00</a>-PDF File Creation. 
+            </p>
+            <hr />
+
+        </div>
+
+        <div class="col-lg-12 text-danger">
+            <h2>ScreenShot Ex4</h2>
+            <hr />
+            <hr />
+        </div>
+
+
+
+
+
+        <div class=" col-lg-12"><a href="#Exercise05" class="btn btn-info" data-toggle="collapse">Exercise 5-NTFS File System</a></div>
+
+        <div id="Exercise05" class="collapse in  col-lg-12">
+
+            <p>
+                Use the chatbot to research file and folder permissions on a Windows network server.<br />
+                You can work with a partner.<br />
+                You can also attempt this from an off-campus location, as long as you establish a Cisco AnyConnect vpn connection.<br />
+                Make sure to use your WSU laptop.<br />
+            </p>
+
+            <p>
+                Use the T: drive, and create the folder 'TestFiles' as a subfolder of your network username folder.<br />
+                Be careful what users or groups you add-instead explore the dialog boxes.<br />
+            </p>
+
+
+            <p>
+                When done, make a screenshot showing the Properties box of the 'TestFiles' dialog box.
+            </p>
+
+
+            <p>
+                (50) 7. Use the Snipping Tool to make a screenshot of the Properties box of your 'TestFiles'.<br />
+
+
+                <!--  PgP 2/4/2018 create path using constants and current document assignment -->
+                Save the screenshot  as &quot;Ex5&quot; in your ' 
+                <code><span id="aPath"></span></code>
+                <script>document.getElementById("aPath").innerHTML = Path; </script>
+                ' folder.<br />
+
+                You will be combining screenshots from several exercises at the end of this assignment, just as you did in 
+                  <a href="../Formative00/Formative00.html#PDFfileCreation" class="bg-info text-white" target="_blank">Formative00</a>-PDF File Creation. 
+            </p>
+            <hr />
+
+        </div>
+
+        <div class="col-lg-12 text-danger">
+            <h2>ScreenShot Ex5</h2>
+            <hr />
+            <hr />
+        </div>
+
+
+
+
+        <div class=" col-lg-12"><a href="#Exercise06" class="btn btn-info" data-toggle="collapse">Exercise-6-Windows File Sharing</a></div>
+
+        <div id="Exercise06" class="collapse in  col-lg-12">
+
+            <p>
+                Use the chatbot to research and understand file sharing.<br />
+                You can work with a partner.<br />
+            </p>
+
+            <p>
+                In this project work with the 'TestFiles' folder that you created on the T: drive in the last exercise.<br />
+            </p>
+
+            <p>
+                Bring up the Computer Management Console and investigate its properties and capabilities. 
+                <br />
+                Make sure the counters are visible in the window and resize it appropriately.
+            </p>
+
+
+            <p>
+                (50) 8. Use the Snipping Tool to make a screenshot of the Computer Management dialog box showing the Performance Monitor displaying %DiskTime, %InterrupTime and Processor Queue Length.<br />
+
+
+                <!--  PgP 2/4/2018 create path using constants and current document assignment -->
+                Save the screenshot  as &quot;Ex6&quot; in your ' 
+                <code><span id="azPath"></span></code>
+                <script>document.getElementById("azPath").innerHTML = Path; </script>
+                ' folder.<br />
+
+                You will be combining screenshots from several exercises at the end of this assignment, just as you did in 
+                  <a href="../Formative00/Formative00.html#PDFfileCreation" class="bg-info text-white" target="_blank">Formative00</a>-PDF File Creation. 
+            </p>
+            <hr />
+
+        </div>
+
+        <div class="col-lg-12 text-danger">
+            <h2>ScreenShot Ex6</h2>
+            <hr />
+            <hr />
+        </div>
+
+
+        <div class=" col-lg-12"><a href="#Exercise07" class="btn btn-info" data-toggle="collapse">Exercise 7-Network Management Calculations</a></div>
+
+        <div id="Exercise07" class="collapse in  col-lg-12">
+
+            <p>
+                Using the following data, use Excel and calculate the payback period.<br />
+                Development cost: $418,040<br />
+                Operation and maintenance costs for year 0 to year 6, respectively:
+                <br />
+                0; $15,045; $16,000; $17,000; $18,000; $19,000; $20,000.<br />
+                Discount rate: 6%<br />
+                Benefits (year 0 -year 6):<br />
+                $0; $150,000; $170,000; $190,000; $210,000; $230,000; $250,000
+            </p>
+            <p>reference: Summative14.xlsx</p>
+
+
+
+            <p>
+                (100) 9. Use the Snipping Tool to make a screenshot of the your Excel calculations.
+                <br />
+
+                <!--  PgP 2/4/2018 create path using constants and current document assignment -->
+                Save the screenshot  as &quot;Ex7Payback&quot; in your ' 
+                <code><span id="arPath"></span></code>
+                <script>document.getElementById("arPath").innerHTML = Path; </script>
+                ' folder.<br />
+
+                You will be combining screenshots from several exercises at the end of this assignment, just as you did in 
+                  <a href="https://eprofessor.azurewebsites.net/Formative00/Formative00.html#PDFfileCreation" class="bg-info text-white" target="_blank">Formative00</a>-PDF File Creation. 
+            </p>
+
+        </div>
+
+        <div class="col-lg-12 text-danger">
+            <h2>ScreenShot Ex7Payback</h2>
+            <hr />
+        </div>
+
+
+        <div class="col-lg-12">
+
+            <p>
+                (50) 10. Save your Excel file 'Summative14.xlsx' in your ' 
+                <code><span id="zPath"></span></code>
+                <script>document.getElementById("zPath").innerHTML = Path; </script>
+                ' folder.<br />
+
+
+            </p>
+
+        </div>
+
+        <div class="col-lg-12 text-danger">
+            <h2>Summative14.xlsx</h2>
+            <hr />
+        </div>
+
+
+
+        <div class="col-lg-12">
+            <p>
+                Use the attached Excel workbook, Summative14.xlsx<br />
+                A component has a MTBF = 500 hours and a transaction takes 4 seconds.<br />
+                Calculate the reliability of the component.
+            </p>
+
+            (100) 11. What is the reliability of the component?
+              <!-- Enter your answer in the VALUE field below   GROK -->
+            <input name="q11" id="q11" size="120" maxlength="120" class="form-control" value="Enter your answer here" type="text">
+            <br />
+
+            <p>&nbsp;  </p>
+
+            <p>
+                (100) 12. Use the Snipping Tool to make a screenshot of the your Excel calculations.
+            <br />
+
+                <!--  PgP 2/4/2018 create path using constants and current document assignment -->
+                Save the screenshot  as &quot;Ex7Rel&quot; in your ' 
+                <code><span id="xPath"></span></code>
+                <script>document.getElementById("xPath").innerHTML = Path; </script>
+                ' folder.<br />
+
+                You will be combining screenshots from several exercises at the end of this assignment, just as you did in 
+                  <a href="https://eprofessor.azurewebsites.net/Formative00/Formative00.html#PDFfileCreation" class="bg-info text-white" target="_blank">Formative00</a>-PDF File Creation. 
+            </p>
+
+
+
+        </div>
+
+        <div class="col-lg-12 text-danger">
+            <h2>ScreenShot Ex7Rel</h2>
+            <hr />
+        </div>
+
+
+        <div class=" col-lg-12"><a href="#Exercise08" class="btn btn-info" data-toggle="collapse">Exercise 8-Networks Systems Down</a></div>
+
+        <div id="Exercise08" class="collapse in  col-lg-12">
+
+
+            <p>
+                Read the article &quot;<a href="AllSystemsDown.pdf" class="bg-info text-white" target="_blank">All Systems Down</a>&quot; .<br />
+                Use the chatbot to investigate this and similar network incidnets.<br />
+
+                Then answer the following questions.<br />
+
+                (50) 13. Briefly summarize what caused the problem with the Beth Israel Deaconess network:
+                <br />
+                <!-- Enter your answer in the VALUE field below   GROK -->
+                <input name="q13" id="q13" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text">
+                <br />
+
+                (50) 14. Discuss with your classmates what could be done to prevent this type of problem in the future:
+                <br />
+                <!-- Enter your answer in the VALUE field below   GROK -->
+                <input name="q14" id="q14" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text">
+                <br />
+
+
+
+
+            </p>
+
+            <hr />
+
+
+        </div>
+
+
+
+
+
+        <div class=" col-lg-12"><a href="#Exercise11" class="btn btn-info" data-toggle="collapse">Packet Tracer Lab</a></div>
+
+        <div id="Exercise11" class="collapse in  col-lg-12">
+
+            <p>There are no Packet Tracer Labs for this chapter.</p>
+
+        </div>
+
+
+
+
+        <!--  From here to end difference question numbers and Summative numbering for PDF of file uploaded to D2L    -->
+
+
+        <div class="col-lg-12"><a href="#ExercisePDF" class="btn btn-info" data-toggle="collapse">Exercise-PDF File Creation</a></div>
+
+        <div id="ExercisePDF" class="collapse in  col-lg-12">
+            <p>
+                Use a web browser to verify that you have published your website to https://classes.winona.edu/...
+                <br />
+                Check that your name, StarID, email, class, semester, section and all of your answers are correct and visible.
+                <br />
+                From the menu choose File&gt;Print... and using &quot;Microsoft Print to PDF&quot; save a copy of this assignment as a .pdf file in your   ' 
+                <code><span id="dPath"></span></code>
+                <script>document.getElementById("dPath").innerHTML = Path; </script>
+                ' folder.
+            </p>
+
+            <p>
+                (50) 15. Save your file 'WebPage.pdf' to the ' 
+                <code><span id="ePath"></span></code>
+                <script>document.getElementById("ePath").innerHTML = Path; </script>
+                ' folder.<br />
+
+
+            </p>
+
+            <div class="text-danger">
+                <h2>WebPage.pdf</h2>
+                <hr />
+            </div>
+
+            <p>Create one .pdf (portable document format) file from the screenshots that you have taken by following these steps.</p>
+
+            <ol>
+                <li>Open File Explorer, make sure the screenshot files are properly named(Ex1, Ex2 , Ex3.. ) &nbsp; </li>
+                <li>Select all of the screenshots to be combined. </li>
+                <li>Right Click and select &#39;Print&#39; from the short-cut menu.      </li>
+                <li>In the bottom center of the &#39;Print Pictures&#39; dialog box uncheck the box &quot;Fit picture to frame&quot;</li>
+                <li>Click on &#39;Print&#39; and save the file with the name&nbsp; &quot;ScreenShots.pdf&quot; in your '
+                <code><span id="fPath"></span></code>
+                    <script>document.getElementById("fPath").innerHTML = Path; </script>
+                    ' folder.<br />
+                </li>
+            </ol>
+
+
+            <p>
+                (50) 16. Save your file 'ScreenShots.pdf' in your ' 
+                <code><span id="gPath"></span></code>
+                <script>document.getElementById("gPath").innerHTML = Path; </script>
+                ' folder.<br />
+
+            </p>
+
+            <div class="text-danger">
+                <h2>ScreenShots.pdf</h2>
+                <hr />
+            </div>
+
+
+            <p>&nbsp;</p>
+            <p>
+                Use PDFill to merge the WebPage.pdf file with the ScreenShots.pdf file, and save it as &#39;Summative14.pdf&#39; in your ' 
+                <code><span id="hPath"></span></code>
+                <script>document.getElementById("hPath").innerHTML = Path; </script>
+                ' folder.<br />
+
+            </p>
+
+
+            <p>(50) 17. Upload your file 'Summative14.pdf' to the D2L 'Summative14' Assignment folder.</p>
+
+        </div>
+
+        <div class="col-lg-12 text-danger">
+            <h2>Summative14.pdf</h2>
+        </div>
+        <hr />
+
+
+
+
+
+        <div class="col-lg-12"><a href="#ExerciseAssignmentSubmission" class="btn btn-info" data-toggle="collapse">Exercise-Assignment Submission</a></div>
+
+        <div id="ExerciseAssignmentSubmission" class="collapse in  col-lg-12">
+            <p>
+                Use a browser to view your completed and published website at: https://classes.winona.edu/...     
+                <br />
+                Ensure that you have linked this assignment on your home page.
+                Note that your screenshots do not have to be completed to perform this step.<br>
+            </p>
+
+            (50) 18. Home Page Hyperlink<br />
+            Check and verify that this assignment is hyperlinked on your home page.<br />
+            <br />
+
+            (50) 19. Assignment submission<br />
+            Press the Submit button at the top or bottom of this page.
+                Read and follow instructions on the confirmation page.&nbsp; Correct any errors.
+        </div>
+        <hr />
+
+
+
+        <div class="col-lg-12">
+            <br />
+            <input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit">
+            <br />
+        </div>
+
+
+    </form>
+
+
+
+    <!-- Creative Commons License Info -->
+    <div id="xLicense" class=" col-lg-12 text-muted"></div>
+
+    <div id="xfooter" class=" col-lg-12 text-muted"></div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="../../ReadOnly/jquery-1.js"></script>
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../../ReadOnly/bootstrap.js"></script>
+
+</body>
+</html>

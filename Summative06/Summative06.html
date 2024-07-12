@@ -1,0 +1,870 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- PgP 6/15/2019 update page, added integral check web db submissions, split constants into two files, one for students, one for course -->
+	<!-- Bootstrap -->
+	<link href="../../ReadOnly/bootstrap.css" rel="stylesheet">
+
+	<!-- constant file for student firstname, lastname, starid on students' pages -->
+	<script src="../constants.js"></script>
+
+	<!-- course constant file that contains semester, class, section pages -->
+	<script src="../../ReadOnly/CourseConstants.js"></script>
+
+	<!-- model assignment file, version 1 released 2018/02/18 PgP -->
+
+	<title>MIS452Summative06</title>
+</head>
+
+<body onload="setVariables()">
+
+	<form class="container-fluid" action="https://eprofessor.azurewebsites.net/code/ProcessFormData.asp" method="post" name="frmAssignment" id="frmAssignment">
+		<input name="InstID" id="InstID" value="00617282" type="hidden">
+
+		<h1 class=" text-center">IP Addressing and Errors</h1>
+
+		<!-- -start-Student, class and assignment information. Assignment hard-coded, other values from constants.js file-start -->
+		<div class="row col-lg-12">
+			<div class="col-lg-3">
+				<label class="text-primary" for="FirstName">First Name:</label>
+				<input class="form-control" name="FirstName" id="FirstName" type="text" value="default first name" readonly="readonly">
+			</div>
+			<div class="col-lg-3">
+				<label class="text-primary" for="LastName">Last Name:</label>
+				<input class="form-control" name="LastName" id="LastName" type="text" value="default last name" readonly="readonly">
+			</div>
+			<div class="col-lg-3">
+				<label class="text-primary" for="pin">StarID:</label>
+				<input class="form-control" name="pin" id="pin" type="text" value="default StarID" readonly="readonly">
+			</div>
+			<div class="col-lg-3">
+				<label class="text-primary" for="email">Email:</label>
+				<input class="form-control" name="email" id="email" type="email" value="default email address" readonly="readonly">
+			</div>
+		</div>
+
+		<div class="row col-lg-12">
+			<div class="col-lg-3">
+				<label class="text-primary" for="semester">Semester:</label>
+				<input class="form-control" name="semester" id="semester" type="text" value="default" readonly="readonly">
+			</div>
+			<div class="col-lg-3">
+				<label class="text-primary" for="class">Class:</label>
+				<input class="form-control" name="class" id="class" value="xClass" type="text" readonly="readonly">
+			</div>
+			<div class="col-lg-3">
+				<label class="text-primary" for="section">Section:</label>
+				<input class="form-control" name="section" id="section" value="default" type="text" readonly="readonly">
+			</div>
+			<div class="col-lg-3">
+				<label class="text-primary" for="assignment">Assignment:</label>
+				<input class="form-control" name="assignment" id="assignment" value="Summative06" type="text" readonly="readonly">
+			</div>
+		</div>
+		<!-- -end-Student, class and assignment information-end -->
+
+		<!-- Calculate the correct path for saving the files -->
+		<script>Path = "&#92;OneDrive - MNSCU&#92;" + xClass + "&#92;" + document.getElementById("assignment").value + "&#92;"; </script>
+
+
+		<div class="col-lg-12">
+			<br />
+			<input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit">
+			<br />
+		</div>
+
+		<div class="col-lg-12 h3 text-danger">
+			1400 Points
+            <hr />
+		</div>
+
+		<!-- -start-objectives-start -->
+		<div class="col-lg-12"><a href="#Objectives" class="btn btn-info" data-toggle="collapse">Learning Objectives</a></div>
+		<div id="Objectives" class=" collapse in col-lg-12">
+
+			<!--Above this line similar except for Assignment number and title   -->
+			<ul>
+				<li>Explain IPv4 addressing</li>
+				<li>Use Classless Interdomain Routing Notation</li>
+				<li>Perform subnetting calculations</li>
+				<li>Configure IPv4 addresses</li>
+				<li>Describe Network Address Translation</li>
+				<li>Describe IPv6</li>
+				<li>Recognize IPv6 address types</li>
+				<li>Explain IPv6 autoconfiguration</li>
+				<li>Describe IPv4 to IPv6 transitioning methods</li>
+                <li>Explain the difference between signal and noise</li>
+                <li>Explain the various error detection, prevention and correction techniques</li>
+                <li>Explain use of checksum</li>
+
+			</ul>
+
+			<p>
+				Use the course chatbot and the references provided to answer the following questions and solve the following problems.
+			</p>
+
+
+			<hr />
+		</div>
+		<!-- -end-objectives-end -->
+
+
+		<div class=" col-lg-12"><a href="#Exercise01" class="btn btn-info" data-toggle="collapse">Questions</a></div>
+
+		<div id="Exercise01" class="collapse in  col-lg-12">
+
+
+			<p>
+				IPv4 and IPv6 based networks ensure reliable and efficient data transmission across a wide assortment of global networks.<br />
+				Sometimes it takes a while before a new idea reaches a &#39;critical mass&#39;.<br />
+				Investigate the history of the development of packet switched networks.<br />
+				Refer to Wikipedia:  <a href="https://en.wikipedia.org/wiki/Packet_switching" class="bg-info text-white" target="_blank">Packet Switching</a>
+			</p>
+
+			<p>
+				(50) 1. List at least one reason that the Bell System (<a href="https://en.wikipedia.org/wiki/Plain_old_telephone_service">POTS- Plain Old Telephone Service</a>)-based on a circuit switched dedicated network model) showed little interest in the &#39;packet switching&#39; work of Paul Baran and Donald Davies.
+			</p>
+			<!-- Enter your answer in the VALUE field below   GROK -->
+			<input name="q1" id="q1" size="120" maxlength="120" class="form-control" value="Internet architecture: " type="text">
+			<br />
+
+			<hr />
+
+            <p>
+                Investigate CRC (Cyclic Redundancy Check) calculations.<br />
+            </p>
+
+
+
+            (50) 2. Why are CRC calculations often done in hardware instead of software?
+            <br />
+            Briefly explain your answer.
+ <br />
+            <!-- Enter your answer in the VALUE field below   GROK -->
+            <input name="q2" id="q2" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text">
+            <br />
+            <hr />
+
+            <p>
+
+            (50) 3. Briefly explain how white noise affects a signal:<br />
+            <!-- Enter your answer in the VALUE field below   GROK -->
+            <input name="q3" id="q3" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text">
+				</p>
+            <br />
+
+
+
+            <p>
+                (25) 4.  Will proper shielding of a medium increase or decrease the chance of errors?
+                <br />
+                Briefly explain your reasoning.<br />
+
+
+                <!-- Enter your answer in the VALUE field below   GROK -->
+                <input name="q4" id="q4" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text">
+                <br />
+
+            </p>
+
+            <p>(50) 5. What type of errors will cyclic checksum not detect?</p>
+            <!-- Enter your answer in the VALUE field below   GROK -->
+            <input name="q5" id="q5" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text">
+            <br />
+
+
+            <p>
+                (50) 6. In communication systems, what does timeout mean?<br />
+                <!-- Enter your answer in the VALUE field below   GROK -->
+                <input name="q6" id="q6" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text">
+                <br />
+
+            </p>
+            <hr />
+
+            <p>
+                You are given the character string
+                <br />
+				<code>
+					1010010
+				</code>
+                <br />
+
+                (50) 7. What bit must be added to support odd parity? <br />
+
+
+                Note: For the problems below, there is a spreadsheet, <a href="Summative06.xlsx">Summative06.xlsx</a>, that you can complete to solve this problem.<br />
+
+                <!-- Enter your answer in the VALUE field below   GROK -->
+                <input name="q7" id="q7" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text">
+                <br />
+
+                <br />
+            </p>
+
+
+            <p>Generate the parity bits and the longitudanal parity bits for even parity for the characters: </p>
+            <div class="col-lg-12">
+
+                <table width="100%" class="table-bordered table-striped">
+                    <tr>
+                        <th scope="col">&nbsp;</th>
+                        <th scope="col">Characters</th>
+                        <th scope="col">Even Parity</th>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>
+                            <div>0 1 0 1 0 1 0</div>
+                        </td>
+                        <td>(25) 8.
+                            <!-- Enter your answer in the VALUE field below   GROK -->
+                            <input name="q8" id="q8" size="10" maxlength="10" class="form-control" value="Enter the parity bit" type="text">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>
+                            <div>0 0 1 1 0 1 0</div>
+                        </td>
+                        <td>(25) 9. 
+                            <!-- Enter your answer in the VALUE field below   GROK -->
+                            <input name="q9" id="q9" size="10" maxlength="10" class="form-control" value="Enter the parity bit" type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>
+                            <div>0 0 1 1 1 1 0</div>
+                        </td>
+                        <td>(25) 10.
+                            <input name="q10" id="q10" size="10" maxlength="10" class="form-control" value="Enter the parity bit" type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>
+                            <div>1 1 1 1 1 1 0</div>
+                        </td>
+                        <td>(25) 11.
+                            <!-- Enter your answer in the VALUE field below   GROK -->
+                            <input name="q11" id="q11" size="10" maxlength="10" class="form-control" value="Enter the parity bit" type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>
+                            <div>0 0 0 0 1 1 0</div>
+                        </td>
+                        <td>(25) 12.
+                            <!-- Enter your answer in the VALUE field below   GROK -->
+                            <input name="q12" id="q12" size="10" maxlength="10" class="form-control" value="Enter the parity bit" type="text"></td>
+                    </tr>
+                    <tr>
+                        <th>Longitudanal Even Parity </th>
+                        <td>
+                            <div></div>
+                        </td>
+                        <td>(25) 13.
+                            <!-- Enter your answer in the VALUE field below   GROK -->
+                            <input name="q13" id="q13" size="10" maxlength="10" class="form-control" value="Enter the parity bit" type="text"></td>
+                    </tr>
+                </table>
+            </div>
+
+            <hr />
+
+            <p>
+                The 12-bit string
+				<code>010111110010</code> with embedded Hamming code bits (c8, c4, c2, c1) has just arrived.<br />
+                This indicates there is an error.<br />
+                Your job is to determine which bit is in error.<br />
+                Use the following table to solve this problem.<br />
+                Use the Summative06.xlsx spreadsheet to solve this problem.<br />
+            </p>
+
+            <div class="table-responsive">
+                <table width="100%" class="table-bordered">
+                    <tr>
+                        <td>b12</td>
+                        <td>b11</td>
+                        <td>b10</td>
+                        <td>b9</td>
+                        <td>c8</td>
+                        <td>b7</td>
+                        <td>b6</td>
+                        <td>b5</td>
+                        <td>c4</td>
+                        <td>b3</td>
+                        <td>c2</td>
+                        <td>c1</td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#FFFF00">0</td>
+                        <td bgcolor="#FFFF00">1</td>
+                        <td bgcolor="#FFFF00">0</td>
+                        <td bgcolor="#FFFF00">1</td>
+                        <td>1</td>
+                        <td bgcolor="#FFFF00">1</td>
+                        <td bgcolor="#FFFF00">1</td>
+                        <td bgcolor="#FFFF00">1</td>
+                        <td>0</td>
+                        <td bgcolor="#FFFF00">0</td>
+                        <td>1</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#333333">&nbsp;</td>
+                        <td bgcolor="#333333">&nbsp;</td>
+                        <td bgcolor="#333333">&nbsp;</td>
+                        <td bgcolor="#333333">&nbsp;</td>
+                        <td bgcolor="#333333">&nbsp;</td>
+                        <td bgcolor="#333333">&nbsp;</td>
+                        <td bgcolor="#333333">&nbsp;</td>
+                        <td bgcolor="#333333">&nbsp;</td>
+                        <td bgcolor="#333333">&nbsp;</td>
+                        <td bgcolor="#333333">&nbsp;</td>
+                        <td bgcolor="#333333">&nbsp;</td>
+                        <td bgcolor="#333333">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>c8</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>c4</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>c2</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>c1</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                </table>
+            </div>
+            <br />
+
+            <p>
+                (75) 14. What is and where is the error?
+                <br />
+                <!-- Enter your answer in the VALUE field below   GROK -->
+                <input name="q14" id="q14" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text">
+                <br />
+
+            </p>
+            <hr />
+
+
+
+		</div>
+
+
+		<div class="col-lg-12">
+			<p>
+				<strong>Note-for these Exercises an Excel file with multiple worksheets is provided.</strong>
+			</p>
+
+			<p><a href="Summative06.xlsx" target="_blank"  class="bg-info" >Summative06.xlsx</a></p>
+		</div>
+
+		<div class=" col-lg-12"><a href="#Exercise02" class="btn btn-info" data-toggle="collapse">Exercise 2-Decimal Binary Conversion</a></div>
+
+		<div id="Exercise02" class="collapse in  col-lg-12">
+
+			<p>
+				(50) 15. Create an Excel formula to convert decimal numbers to binary.<br />
+				You are advised to try these problems by hand after reviewing  Binary Math.<br />
+				Download the Excel file- <a class="bg-info" href="Summative06.xlsx">Summative06.xlsx</a>, and save  to your ' 
+                <code><span id="aPath"></span></code>
+				<script>document.getElementById("aPath").innerHTML = Path; </script>
+				' folder.<br />
+				Note: the worksheets are protected, but NOT password protected, to prevent inadvertent changes to formulas and data.<br />
+
+				When the Exercises are complete, you will upload this file to the D2L Summative06XL folder.<br />
+
+				There are several ways to handle this conversion, an example using the DEC2BIN() function is shown below. 
+			</p>
+			<p>
+				<a href="images/Dec2Bin.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/Dec2Bin.PNG', 'popup'); return false;">
+					<img src="images/Dec2Bin.PNG" width="300" alt="decimal to binary conversion" class="img-responsive img-responsive" /></a><br />
+
+			</p>
+
+			<hr />
+			<hr />
+
+		</div>
+
+
+		<div class=" col-lg-12"><a href="#Exercise03" class="btn btn-info" data-toggle="collapse">Exercise 3-Binary Decimal Conversion</a></div>
+
+		<div id="Exercise03" class="collapse in  col-lg-12">
+
+			<p>
+				(50) 16. Create an Excel formula to convert binary numbers to decimal.<br />
+				You are advised to try these problems by hand after reviewing Binary Math.<br />
+				
+
+				<!--  PgP 2/4/2018 create path using constants and current document assignment -->
+				Save this file  as &quot;Summative06&quot; in your ' 
+                <code><span id="aaPath"></span></code>
+				<script>document.getElementById("aaPath").innerHTML = Path; </script>
+				' folder.<br />
+
+				When complete, you will upload this file to the D2L Summative06XL folder.<br />
+
+				There are several ways to handle this conversion, an example using the BIN2DEC2() function is shown below. 
+			</p>
+			<p>
+				<a href="images/Bin2Dec.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/Bin2Dec.PNG', 'popup'); return false;">
+					<img src="images/Bin2Dec.PNG" width="300" alt="binary to decimal conversion" class="img-responsive img-responsive" /></a><br />
+
+			</p>
+
+		</div>
+
+		<div class="col-lg-12">
+			<p>
+				For Exercises 4 and 5 you can also refer to this <a class="bg-info text-white" href="https://www.calculator.net/ip-subnet-calculator.html" target="_blank"><strong>Subnet Mask Calculator</strong></a>.
+			</p>
+		</div>
+
+
+		<div class=" col-lg-12"><a href="#Exercise04" class="btn btn-info" data-toggle="collapse">Exercise 4-CIDR Notation</a></div>
+
+		<div id="Exercise04" class="collapse in  col-lg-12">
+
+			<p>
+				(50). 17. Use Excel to calculate IP addresses using <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing" target="_blank" class="bg-info text-white">CIDR-Classless Inter-Domain Routing</a>
+				<br />
+				Review Calculating a Subnet Mask.<br />
+				Use the Excel file- Summative06.xlsx, to complete this project.<br />
+
+				<!--  PgP 2/4/2018 create path using constants and current document assignment -->
+				Save this file  as &quot;Summative06&quot; in your ' 
+                <code><span id="abPath"></span></code>
+				<script>document.getElementById("abPath").innerHTML = Path; </script>
+				' folder.<br />
+
+				When complete, you will upload this file to the D2L Summative06XL folder.<br />
+
+				There are several ways to handle this conversion, the Excel file demonstrates one method.<br />
+				Please pay special attention to the forumulas and notes provided in the spreadsheet.
+			</p>
+			<hr />
+			<hr />
+
+
+		</div>
+
+
+
+		<div class=" col-lg-12"><a href="#Exercise05" class="btn btn-info" data-toggle="collapse">Exercise 5-Determine Network Prefixes</a></div>
+
+		<div id="Exercise05" class="collapse in  col-lg-12">
+
+			<p>
+				(50). 18. Review Calculating a Subnet Mask.<br />
+				Use the Excel file- Summative06.xlsx, to complete this project.<br />
+
+				<!--  PgP 2/4/2018 create path using constants and current document assignment -->
+				Save this file  as &quot;Summative06_Projects&quot; in your ' 
+                <code><span id="acPath"></span></code>
+				<script>document.getElementById("acPath").innerHTML = Path; </script>
+				' folder.<br />
+
+				When complete, you will upload this file to the D2L Summative06XL folder.<br />
+
+				There are several ways to handle this conversion, the Excel file demonstrates one method.<br />
+				Once you determine the number of host bits required to handle the Required hosts, the prefix is readily calculable.<br />
+				Please pay special attention to the forumulas and notes provided in the spreadsheet.
+			</p>
+			<hr />
+			<hr />
+
+		</div>
+
+
+
+
+
+		<div class=" col-lg-12"><a href="#Exercise06" class="btn btn-info" data-toggle="collapse">Exercise 6-nslookup Command</a></div>
+
+		<div id="Exercise06" class="collapse in  col-lg-12">
+
+			<p>
+				Research how to use the <code>nslookup</code> command to find out information about the network.<br />
+				You can work with a partner.
+				Make sure to use your WSU laptop because you have administrator access.<br />
+			</p>
+
+			<p>
+				Open an elevated Command Prompt (admin).<br />
+				Type in <code>nslookup -type=ns www.winona.edu</code>
+				<br />
+				<a class="bg-info text-white" target="_blank" href="https://en.wikipedia.org/wiki/Nslookup">nslookup</a> displays information on network DNS.
+			</p>
+
+
+			<p>
+				(50) 19. Use the Snipping Tool to make a screenshot of the command window.<br />
+
+
+				<!--  PgP 2/4/2018 create path using constants and current document assignment -->
+				Save the screenshot  as &quot;Ex1&quot; in your ' 
+                <code><span id="axqPath"></span></code>
+				<script>document.getElementById("axqPath").innerHTML = Path; </script>
+				' folder.<br />
+
+				You will be combining screenshots from several exercises at the end of this assignment, just as you did in 
+                  <a href="../Formative00/Formative00.html#PDFfileCreation" class="bg-info text-white" target="_blank">Formative00</a>-PDF File Creation. 
+			</p>
+
+		</div>
+
+		<div class="col-lg-12 text-danger">
+			<h2>ScreenShot Ex1</h2>
+			<hr />
+			<hr />
+		</div>
+
+
+
+        <div class=" col-lg-12"><a href="#Exercise07" class="btn btn-info" data-toggle="collapse">Exercise 7-Error Probabilities</a></div>
+
+        <div id="Exercise07" class="collapse in  col-lg-12">
+
+
+
+            <p>
+                Your boss has heard a lot about cyclic redundancy checksum (CRC) but is not convinced that it is much better than simple parity.<br />
+                You quote some of the numbers and probabilities of error detection, but they mean little to him.<br />
+                If you could give a more concrete example of how good cyclic redundancy checksum is, you might win the boss over.<br />
+                Reference the probabilities below.<br />
+
+
+								<a href="images/CRCErrors.png" class="img-responsive img-rounded" target="popup" onclick="window.open('images/CRCErrors.png', 'popup'); return false;">
+					<img src="images/CRCErrors.png" width="500" alt="decimal to binary conversion" class="img-responsive img-responsive" /></a><br />
+
+
+            </p>
+            <p>
+                (75) 20. Provide your boss with a brief explanation showing the value of using good cyclic redundancy checksums.<br />
+                <!-- Enter your answer in the VALUE field below   GROK -->
+                <input name="q20" id="q20" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text">
+                <br />
+            </p>
+            <hr />
+            <hr />
+
+            <p>For the next two problems download and open this spreadsheet, <a href="Summative06.xlsx">Summative06.xlsx</a>  <br />
+                It contains worksheets setup to get started with the calculations.
+            </p>
+
+
+            <p>
+                If your company transmits a continuous stream at 128,000 bits per second, how much time will pass before CRC lets an error slip through?
+                <br />
+                Assume an error rate of one frame in 10,000<br />
+                Assume a frame consists of 1,000 bits
+                <br />
+                (50) 21. Briefly explain your reasoning, and show your calculations.
+                <br />
+
+                <!-- Enter your answer in the VALUE field below   GROK -->
+                <input name="q21" id="q21" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text">
+                <br />
+
+            </p>
+            <hr />
+
+            Complete the spreadsheet to do the calculations for this and the other problems in this assignment.
+            <p>
+                (100) 22. Save a copy of your file 'Summative06.xlsx' in your ' 
+                <code><span id="zPath"></span></code>
+                <script>document.getElementById("zPath").innerHTML = Path; </script>
+                ' folder and...<br />
+                <strong>Upload a copy of your completed Summative06.xlsx to the D2L &#39;Summative06&#39; Assignment folder.</strong> </p>
+        </div>
+
+        <div class="col-lg-12 text-danger">
+            <h2>Summative06.xlsx</h2>
+            <hr />
+        </div>
+
+
+
+
+
+
+
+		<div class=" col-lg-12"><a href="#Exercise08" class="btn btn-info" data-toggle="collapse">Exercise 8-Setting Invalid IP Address</a></div>
+
+		<div id="Exercise08" class="collapse in  col-lg-12">
+
+			<p>
+				Save a copy of the Packet Tracer files you create for these exercises to your 
+				<code>
+					<span id="bbPath"></span>
+					<script>document.getElementById("bbPath").innerHTML = Path;  </script>
+				</code>
+				folder.
+			</p>
+
+			<p>
+				Open Packet Tracer, create a new lab and try to set an invalid IP Address.<br />
+				When done, perform the tasks below.<br />
+				For background information please refer to the chtbot.
+			</p>
+
+			<p>
+				<a href="images/PacketTracerIP.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/PacketTracerIP.PNG', 'popup'); return false;">
+					<img src="images/PacketTracerIP.PNG" width="200" alt="packet tracer IP configuration" class="img-responsive img-responsive" /></a>
+			</p>
+
+			<p>
+				(50) 23. Use the Snipping Tool to make a screenshot of the Desktop Properties IP configuration window showing the error message from step 6.<br />
+
+
+				<!--  PgP 2/4/2018 create path using constants and current document assignment -->
+				Save the screenshot  as &quot;Ex2&quot; in your ' 
+                <code><span id="acxPath"></span></code>
+				<script>document.getElementById("acxPath").innerHTML = Path; </script>
+				' folder.<br />
+
+				You will be combining screenshots from several exercises at the end of this assignment, just as you did in 
+                  <a href="../Formative00/Formative00.html#PDFfileCreation" class="bg-info text-white" target="_blank">Formative00</a>-PDF File Creation. 
+			</p>
+
+		</div>
+
+		<div class="col-lg-12 text-danger">
+			<h2>ScreenShot Ex2</h2>
+			<hr />
+			<hr />
+		</div>
+
+
+		<div class=" col-lg-12"><a href="#Exercise09" class="btn btn-info" data-toggle="collapse">Exercise 9-Setting IPv6 Static Addresses</a></div>
+
+		<div id="Exercise09" class="collapse in  col-lg-12">
+
+
+			<p>
+				Open Packet Tracer and set a IPv6 static address.<br />
+				When done, answer the questions below.<br />
+				For background information please refer to the chatbot.
+			</p>
+
+			<p>
+				<a href="images/PacketTracerIP.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/PacketTracerIP.PNG', 'popup'); return false;">
+					<img src="images/PacketTracerIP.PNG" width="200" alt="packet tracer IP configuration" class="img-responsive img-responsive" /></a>
+			</p>
+
+
+			<p>Open the PC0 Command Prompt window click PC0, click the Desktop tab, click Command Prompt as shown below.</p>
+
+			<p>
+				<a href="images/PacketTracerCommandPrompt.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/PacketTracerCommandPrompt.PNG', 'popup'); return false;">
+					<img src="images/PacketTracerCommandPrompt.PNG" width="200" alt="packet tracer command prompt" class="img-responsive img-responsive" /></a>
+			</p>
+
+			<p>
+				(50) 24. Use the Snipping Tool to make a screenshot of the PC0 command prompt window showing the successful ping request.<br />
+
+
+				<!--  PgP 2/4/2018 create path using constants and current document assignment -->
+				Save the screenshot  as &quot;Ex3&quot; in your ' 
+                <code><span id="adPath"></span></code>
+				<script>document.getElementById("adPath").innerHTML = Path; </script>
+				' folder.<br />
+
+				You will be combining screenshots from several exercises at the end of this assignment, just as you did in 
+                  <a href="../Formative00/Formative00.html#PDFfileCreation" class="bg-info text-white" target="_blank">Formative00</a>-PDF File Creation. 
+			</p>
+
+		</div>
+
+		<div class="col-lg-12 text-danger">
+			<h2>ScreenShot Ex3</h2>
+			<hr />
+			<hr />
+		</div>
+
+
+
+
+
+		<!--  From here to end difference question numbers and Summative numbering for PDF of file uploaded to D2L    -->
+
+
+		<div class="col-lg-12"><a href="#ExercisePDF" class="btn btn-info" data-toggle="collapse">Exercise-PDF File Creation</a></div>
+
+		<div id="ExercisePDF" class="collapse in  col-lg-12">
+			<p>
+				Use a web browser to verify that you have published your website to https://classes.winona.edu/...
+                <br />
+				Check that your name, StarID, email, class, semester, section and all of your answers are correct and visible.
+                <br />
+				From the menu choose File&gt;Print... and using &quot;Microsoft Print to PDF&quot; save a copy of this assignment as a .pdf file in your   ' 
+                <code><span id="dPath"></span></code>
+				<script>document.getElementById("dPath").innerHTML = Path; </script>
+				' folder.
+			</p>
+
+			<p>
+				(50) 25. Save your file 'WebPage.pdf' to the ' 
+                <code><span id="ePath"></span></code>
+				<script>document.getElementById("ePath").innerHTML = Path; </script>
+				' folder.<br />
+
+
+			</p>
+
+			<div class="text-danger">
+				<h2>WebPage.pdf</h2>
+				<hr />
+			</div>
+
+			<p>Create one .pdf (portable document format) file from the screenshots that you have taken by following these steps.</p>
+
+			<ol>
+				<li>Open File Explorer, make sure the screenshot files are properly named(Ex1, Ex2 , Ex3.. ) &nbsp; </li>
+				<li>Select all of the screenshots to be combined. </li>
+				<li>Right Click and select &#39;Print&#39; from the short-cut menu.      </li>
+				<li>In the bottom center of the &#39;Print Pictures&#39; dialog box uncheck the box &quot;Fit picture to frame&quot;</li>
+				<li>Click on &#39;Print&#39; and save the file with the name&nbsp; &quot;ScreenShots.pdf&quot; in your '
+                <code><span id="fPath"></span></code>
+					<script>document.getElementById("fPath").innerHTML = Path; </script>
+					' folder.<br />
+				</li>
+			</ol>
+
+
+			<p>
+				(50) 26. Save your file 'ScreenShots.pdf' in your ' 
+                <code><span id="gPath"></span></code>
+				<script>document.getElementById("gPath").innerHTML = Path; </script>
+				' folder.<br />
+
+			</p>
+
+			<div class="text-danger">
+				<h2>ScreenShots.pdf</h2>
+				<hr />
+			</div>
+
+
+			<p>&nbsp;</p>
+			<p>
+				Use PDFill to merge the WebPage.pdf file with the ScreenShots.pdf file, and save it as &#39;Summative06.pdf&#39; in your ' 
+                <code><span id="hPath"></span></code>
+				<script>document.getElementById("hPath").innerHTML = Path; </script>
+				' folder.<br />
+
+			</p>
+
+
+			<p>(50) 27. Upload your file 'Summative06.pdf' to the D2L 'Summative06' Assignment folder.</p>
+
+		</div>
+
+		<div class="col-lg-12 text-danger">
+			<h2>Summative06.pdf</h2>
+		</div>
+		<hr />
+
+
+
+
+
+		<div class="col-lg-12"><a href="#ExerciseAssignmentSubmission" class="btn btn-info" data-toggle="collapse">Exercise-Assignment Submission</a></div>
+
+		<div id="ExerciseAssignmentSubmission" class="collapse in  col-lg-12">
+			<p>
+				Use a browser to view your completed and published website at: https://classes.winona.edu/...     
+                <br />
+				Ensure that you have linked this assignment on your home page.
+                Note that your screenshots do not have to be completed to perform this step.<br>
+			</p>
+
+			(50) 28. Home Page Hyperlink<br />
+			Check and verify that this assignment is hyperlinked on your home page.<br />
+			<br />
+
+			(50) 29. Assignment submission<br />
+			Press the Submit button at the top or bottom of this page.
+                Read and follow instructions on the confirmation page.&nbsp; Correct any errors.
+		</div>
+		<hr />
+
+
+
+		<div class="col-lg-12">
+			<br />
+			<input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit">
+			<br />
+		</div>
+
+
+	</form>
+
+
+
+	<!-- Creative Commons License Info -->
+	<div id="xLicense" class=" col-lg-12 text-muted"></div>
+
+	<div id="xfooter" class=" col-lg-12 text-muted"></div>
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="../../ReadOnly/jquery-1.js"></script>
+
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="../../ReadOnly/bootstrap.js"></script>
+
+</body>
+</html>
