@@ -136,17 +136,33 @@
                 See <a href="https://learn.microsoft.com/en-us/iis/get-started/whats-new-in-iis-8/installing-iis-8-on-windows-server-2012" class="bg-info text-white" target="_blank" >this article to configure IIS</a> on the Windows 2012 machine. Or Google 'installing IIS on Windows Server 2012'<br />
                 Create and use a .vhd to move a copy of your MIS452 homework website to the IIS website running on the Windows Server 2012 machine.&nbsp; <a href="https://www.groovypost.com/howto/attach-copy-files-vhd-windows-10" class="bg-info text-white" target="_blank"   >See here.</a> Or Google &quot;how to attach and copy files from a vhd in Windows 10&quot;<br />
                 &nbsp;<br />
+                Option 1-<br />
                 Make sure the NICs/Network Adapters for both vms are set to use a Private Virtual Switch that you must create in Hyper-V.<br />
                 It may be best to use both a regular Network adapter and a 'Legacy Network Adapter' in both machines.<br />
                 Set a Private Lan ID <br />
-                Set static IP addresses on the &#39;Legacy Network Adapter&#39; for both machines, something like<br /> <code>192.168.1.101 </code> and <br /> <code>192.168.1.102</code><br />
+                Set static IP addresses on the &#39;Legacy Network Adapter&#39; for both machines, something like<br /> <code>192.168.1.101 </code> and <br /> <code>192.168.1.102</code></p>
+            <p>
+               Option 2-(11/2024)<br />
+                Use an Internal Switch.&nbsp; Set the WS2012 VM to a static IP address as before.</p>
+            <p>
+                On your laptop/host machine, find the Hyper-V NIC, and set an IP v4 static address on the same subnet.</p>
+            <p>
+                           <p>
+                &nbsp;
+				<a href="Part2Images/InternalSwitch.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('Part2Images/InternalSwitch.PNG', 'popup'); return false;">
+					<img src="Part2Images/InternalSwitch.PNG" width="300" alt="Internal Switch" class="img-responsive img-responsive" /></a><br />
+            </p>
+</p>
+            <p>
+                <br />
                 Use the Disk Management tool to mount the vhd you created to hold the MIS452 website files.<br />
                 Make sure to copy the ReadOnly folder from the course website (T: drive)<br />
                 Note that you will have to modify Internet Explorer browser security settings and add the IP addresses to 'Trusted Sites'<br />
             </p>
+
             <p>
-                &nbsp;
-            <img src="Part2Images/PrivateVirtualSwitch.PNG" class="img-responsive" alt="Private virtual switch" />
+				<a href="Part2Images/PrivateVirtualSwitch.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('Part2Images/Private VirtualSwitch.PNG', 'popup'); return false;">
+					<img src="Part2Images/PrivateVirtualSwitch.PNG" width="400" alt="Private Virtual Switch" class="img-responsive img-responsive" /></a><br />
             </p>
 
             <p>
